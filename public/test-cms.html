@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMS Function Test</title>
+</head>
+<body>
+    <h1>CMS Function Test</h1>
+    <button onclick="testFunction()">Test CMS Config Function</button>
+    <div id="result"></div>
+
+    <script>
+        async function testFunction() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const response = await fetch('/.netlify/functions/cms-config?repo=https://github.com/builtbytom/monica-leggett-site');
+                const data = await response.json();
+                
+                resultDiv.innerHTML = `
+                    <h2>Status: ${response.status}</h2>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h2>Error:</h2>
+                    <pre>${error.message}</pre>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
