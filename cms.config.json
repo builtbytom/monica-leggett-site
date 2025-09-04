@@ -712,6 +712,64 @@
       ]
     },
     {
+      "id": "learning_center_articles",
+      "title": "Learning Center Articles",
+      "type": "repeater",
+      "fields": [
+        {
+          "id": "slug",
+          "label": "Article URL (no spaces, use dashes)",
+          "type": "text",
+          "required": true,
+          "readonly": true
+        },
+        {
+          "id": "title",
+          "label": "Article Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "description",
+          "label": "Article Description (shows in listing)",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "category",
+          "label": "Category",
+          "type": "select",
+          "options": ["8-Step Framework", "Business", "Leadership", "Personal Growth"],
+          "required": true
+        },
+        {
+          "id": "readingTime",
+          "label": "Reading Time (e.g., '5 min read')",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "publishDate",
+          "label": "Publish Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "featured",
+          "label": "Featured Article",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "id": "content",
+          "label": "Article Content (Full Article)",
+          "type": "markdown",
+          "required": true,
+          "rows": 20
+        }
+      ]
+    },
+    {
       "id": "footer",
       "title": "Website Footer",
       "type": "single",

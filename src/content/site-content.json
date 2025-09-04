@@ -141,6 +141,128 @@
     "investment": "Investment: $497/month (6-month commitment)",
     "guarantee": "100% Satisfaction Guarantee: If you're not completely satisfied after your first month, we'll refund your investment in full."
   },
+  "learning_center_articles": [
+    {
+      "slug": "step-1-awareness",
+      "title": "Step 1: Awareness",
+      "description": "Awareness is the first step to address change. When you are self-aware, you are more confident, get disappointed in yourself less, and become more creative.",
+      "category": "8-Step Framework",
+      "readingTime": "5 min read",
+      "publishDate": "2024-01-15",
+      "featured": true,
+      "content": "Awareness is the first step to address change..."
+    },
+    {
+      "slug": "step-2-acceptance",
+      "title": "Step 2: Acceptance",
+      "description": "When you're feeling stuck, accept that you can move forward one step at a time.",
+      "category": "8-Step Framework",
+      "readingTime": "4 min read",
+      "publishDate": "2024-01-20",
+      "featured": true,
+      "content": "When you're feeling stuck, accept that you can move forward one step at a time..."
+    },
+    {
+      "slug": "step-3-mindset-matters",
+      "title": "Step 3: Mindset Matters",
+      "description": "When you choose the way you think about something, you're really in full charge for the better mindset matters.",
+      "category": "8-Step Framework",
+      "readingTime": "5 min read",
+      "publishDate": "2024-01-25",
+      "featured": true,
+      "content": "When you choose the way you think about something..."
+    },
+    {
+      "slug": "step-4-assess-your-options",
+      "title": "Step 4: Assess Your Options",
+      "description": "By the time in the process you are ready to begin actively assessing, so do. Now it's time to ASSESS your options of choice.",
+      "category": "8-Step Framework",
+      "readingTime": "6 min read",
+      "publishDate": "2024-02-01",
+      "featured": true,
+      "content": "By the time in the process you are ready to begin actively assessing..."
+    },
+    {
+      "slug": "step-5-planning",
+      "title": "Step 5: Planning",
+      "description": "You have decided on a goal and assessed all your options - of one! The best plan will begin planning.",
+      "category": "8-Step Framework",
+      "readingTime": "5 min read",
+      "publishDate": "2024-02-05",
+      "featured": true,
+      "content": "You have decided on a goal and assessed all your options..."
+    },
+    {
+      "slug": "step-6-take-action",
+      "title": "Step 6: Take Action!",
+      "description": "Be the person who will achieve the goal by taking action.",
+      "category": "8-Step Framework",
+      "readingTime": "5 min read",
+      "publishDate": "2024-02-10",
+      "featured": true,
+      "content": "Be the person who will achieve the goal by taking action..."
+    },
+    {
+      "slug": "step-7-completion",
+      "title": "Step 7: Completion",
+      "description": "Take it to the finish line.",
+      "category": "8-Step Framework",
+      "readingTime": "4 min read",
+      "publishDate": "2024-02-15",
+      "featured": true,
+      "content": "Take it to the finish line..."
+    },
+    {
+      "slug": "step-8-reflection",
+      "title": "Step 8: Reflection",
+      "description": "The tool to propel a done. You're relaxed and happy, and now it's time to reflect on how it went.",
+      "category": "8-Step Framework",
+      "readingTime": "5 min read",
+      "publishDate": "2024-02-20",
+      "featured": true,
+      "content": "The tool to propel a done..."
+    },
+    {
+      "slug": "never-too-late",
+      "title": "It's Never Too Late to Pursue Your Goals",
+      "description": "It's February and some people have already lost sight of their resolutions. If they made them at all.",
+      "category": "Personal Growth",
+      "readingTime": "6 min read",
+      "publishDate": "2024-02-25",
+      "featured": false,
+      "content": "It's February and some people have already lost sight..."
+    },
+    {
+      "slug": "what-makes-business-special",
+      "title": "What Makes Your Business So Special",
+      "description": "Why is marketing so darn important? It tells the world about your unique talents.",
+      "category": "Business",
+      "readingTime": "5 min read",
+      "publishDate": "2024-03-01",
+      "featured": false,
+      "content": "Why is marketing so darn important..."
+    },
+    {
+      "slug": "leadership-strengths-weaknesses",
+      "title": "Leadership Strengths and Weaknesses",
+      "description": "Awareness is the key to change. Understanding your leadership strengths and weaknesses is the first step.",
+      "category": "Leadership",
+      "readingTime": "7 min read",
+      "publishDate": "2024-03-05",
+      "featured": false,
+      "content": "Awareness is the key to change..."
+    },
+    {
+      "slug": "winning-strategy",
+      "title": "A Winning Strategy",
+      "description": "Success starts with having the right strategy. Learn how to develop a winning approach.",
+      "category": "Business",
+      "readingTime": "6 min read",
+      "publishDate": "2024-03-10",
+      "featured": false,
+      "content": "Our most thoughts can be hard to stop us..."
+    }
+  ],
   "footer": {
     "about_text": "Monica Leggett is a Professional Certified Coach, author, and speaker dedicated to helping professionals move from doubt to decisive action. Transform your life with proven strategies and personalized support.",
     "newsletter_title": "Stay Connected",
