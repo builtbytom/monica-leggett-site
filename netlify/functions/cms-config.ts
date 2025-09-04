@@ -74,7 +74,12 @@ export const handler: Handler = async (event) => {
       statusCode: 500,
       headers,
       body: JSON.stringify({ 
-        error: error instanceof Error ? error.message : 'Failed to fetch CMS config' 
+        error: error instanceof Error ? error.message : 'Failed to fetch CMS config',
+        stack: error instanceof Error ? error.stack : 'No stack trace',
+        repo,
+        url: `https://api.github.com/repos/${parseGitHubUrl(repo).owner}/${parseGitHubUrl(repo).repo}/contents/cms.config.json`,
+        hasToken: !!GITHUB_TOKEN,
+        tokenLength: GITHUB_TOKEN?.length || 0
       }),
     };
   }
