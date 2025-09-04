@@ -9,10 +9,24 @@ function parseGitHubUrl(url: string): { owner: string; repo: string } {
 }
 
 export const handler: Handler = async (event) => {
+  // CORS headers
+  const headers = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+  };
+
+  // Handle preflight requests
+  if (event.httpMethod === 'OPTIONS') {
+    return { statusCode: 200, headers, body: '' };
+  }
+
   // Only allow GET requests
   if (event.httpMethod !== 'GET') {
     return {
       statusCode: 405,
+      headers,
       body: JSON.stringify({ error: 'Method not allowed' }),
     };
   }
@@ -21,6 +35,7 @@ export const handler: Handler = async (event) => {
   if (!repo) {
     return {
       statusCode: 400,
+      headers,
       body: JSON.stringify({ error: 'Repository URL required' }),
     };
   }
@@ -46,16 +61,14 @@ export const handler: Handler = async (event) => {
 
     return {
       statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
+      headers,
       body: JSON.stringify(config),
     };
   } catch (error) {
     console.error('Error fetching CMS config:', error);
     return {
       statusCode: 500,
+      headers,
       body: JSON.stringify({ 
         error: error instanceof Error ? error.message : 'Failed to fetch CMS config' 
       }),
