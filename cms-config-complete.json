@@ -1,0 +1,2449 @@
+{
+  "site": {
+    "name": "Monica Leggett CMS Configuration",
+    "description": "Complete content management system configuration for monicaleggett.com - Every piece of editable content identified and configured",
+    "version": "1.0.0",
+    "created": "2025-09-04"
+  },
+  "global": {
+    "navigation": {
+      "label": "Website Navigation",
+      "fields": {
+        "logo_text": {
+          "type": "text",
+          "label": "Logo Text",
+          "value": "Monica Leggett",
+          "required": true
+        },
+        "home_link": {
+          "type": "text", 
+          "label": "Home Menu Label",
+          "value": "Home",
+          "required": true
+        },
+        "about_link": {
+          "type": "text",
+          "label": "About Menu Label", 
+          "value": "About",
+          "required": true
+        },
+        "learning_center_link": {
+          "type": "text",
+          "label": "Learning Center Menu Label",
+          "value": "Learning Center", 
+          "required": true
+        },
+        "services_link": {
+          "type": "text",
+          "label": "Services Menu Label",
+          "value": "Services",
+          "required": true
+        },
+        "book_dropdown": {
+          "type": "text",
+          "label": "Book Dropdown Label",
+          "value": "Book",
+          "required": true
+        },
+        "mentor_coaching_dropdown": {
+          "type": "text", 
+          "label": "Mentor Coaching Dropdown Label",
+          "value": "Mentor Coaching",
+          "required": true
+        },
+        "personal_coaching_dropdown": {
+          "type": "text",
+          "label": "Personal Coaching Dropdown Label",
+          "value": "Personal Coaching", 
+          "required": true
+        },
+        "masterminds_dropdown": {
+          "type": "text",
+          "label": "Masterminds Dropdown Label",
+          "value": "Masterminds",
+          "required": true
+        },
+        "contact_link": {
+          "type": "text",
+          "label": "Contact Menu Label",
+          "value": "Contact",
+          "required": true
+        },
+        "consultation_button": {
+          "type": "text",
+          "label": "Free Consultation Button Text",
+          "value": "Free Consultation",
+          "required": true
+        }
+      }
+    },
+    "footer": {
+      "label": "Website Footer",
+      "fields": {
+        "quick_links_heading": {
+          "type": "text",
+          "label": "Quick Links Heading",
+          "value": "Quick Links",
+          "required": true
+        },
+        "services_heading": {
+          "type": "text", 
+          "label": "Services Heading",
+          "value": "Services",
+          "required": true
+        },
+        "newsletter_heading": {
+          "type": "text",
+          "label": "Newsletter Heading", 
+          "value": "Stay Connected",
+          "required": true
+        },
+        "newsletter_description": {
+          "type": "textarea",
+          "label": "Newsletter Description",
+          "value": "Get monthly tips and insights delivered to your inbox.",
+          "required": false
+        },
+        "email_placeholder": {
+          "type": "text",
+          "label": "Email Input Placeholder",
+          "value": "Enter your email",
+          "required": true
+        },
+        "subscribe_button": {
+          "type": "text",
+          "label": "Subscribe Button Text", 
+          "value": "Subscribe",
+          "required": true
+        },
+        "copyright_text": {
+          "type": "text",
+          "label": "Copyright Text",
+          "value": "© 2025 Monica Leggett. All rights reserved.",
+          "required": true
+        },
+        "website_credit": {
+          "type": "text",
+          "label": "Website Credit Text",
+          "value": "Website by Craft My Marketing",
+          "required": true
+        },
+        "website_credit_url": {
+          "type": "text",
+          "label": "Website Credit Link",
+          "value": "https://cmmct.com",
+          "required": true
+        }
+      }
+    }
+  },
+  "pages": {
+    "homepage": {
+      "label": "Homepage",
+      "route": "/",
+      "sections": {
+        "hero_carousel": {
+          "label": "Hero Carousel",
+          "fields": {
+            "main_tagline": {
+              "type": "text",
+              "label": "Main Tagline",
+              "value": "Dream it, plan it, do it, live it!",
+              "required": true
+            },
+            "book_slide": {
+              "label": "Book Slide",
+              "fields": {
+                "book_title": {
+                  "type": "text",
+                  "label": "Book Title",
+                  "value": "Doubtful to Decisive: Eight Steps to Get Unstuck and Take Action",
+                  "required": true
+                },
+                "book_image": {
+                  "type": "image",
+                  "label": "Book Cover Image",
+                  "value": "/images/doubtful-to-decisive-book.png",
+                  "required": true
+                },
+                "get_book_button": {
+                  "type": "text", 
+                  "label": "Get Book Button Text",
+                  "value": "📖 Get the Book",
+                  "required": true
+                },
+                "free_guide_button": {
+                  "type": "text",
+                  "label": "Free Guide Button Text", 
+                  "value": "🎁 Free Action Guide",
+                  "required": true
+                }
+              }
+            },
+            "personal_coaching_slide": {
+              "label": "Personal Coaching Slide",
+              "fields": {
+                "heading": {
+                  "type": "text",
+                  "label": "Heading",
+                  "value": "Personal Transformation",
+                  "required": true
+                },
+                "subheading": {
+                  "type": "text",
+                  "label": "Subheading", 
+                  "value": "One-on-One Guidance to Unlock Your Potential",
+                  "required": true
+                },
+                "image": {
+                  "type": "image",
+                  "label": "Coaching Session Image",
+                  "value": "/images/monica-coaching-session.jpg",
+                  "required": true
+                },
+                "explore_button": {
+                  "type": "text",
+                  "label": "Explore Button Text",
+                  "value": "💬 Explore Coaching",
+                  "required": true
+                },
+                "consultation_button": {
+                  "type": "text",
+                  "label": "Free Consultation Button Text",
+                  "value": "📞 Free Consultation", 
+                  "required": true
+                }
+              }
+            },
+            "mentor_coaching_slide": {
+              "label": "Mentor Coaching Slide",
+              "fields": {
+                "heading": {
+                  "type": "text",
+                  "label": "Heading",
+                  "value": "Mentor Coaching for Coaches",
+                  "required": true
+                },
+                "subheading": {
+                  "type": "text",
+                  "label": "Subheading",
+                  "value": "Elevate Your Coaching Practice to New Heights",
+                  "required": true
+                },
+                "image": {
+                  "type": "image",
+                  "label": "Mentor Coaching Image",
+                  "value": "/images/monica-mentor-coaching.jpg",
+                  "required": true
+                },
+                "level_up_button": {
+                  "type": "text",
+                  "label": "Level Up Button Text",
+                  "value": "🚀 Level Up Your Practice",
+                  "required": true
+                },
+                "discovery_button": {
+                  "type": "text",
+                  "label": "Discovery Call Button Text",
+                  "value": "📅 Discovery Call",
+                  "required": true
+                }
+              }
+            },
+            "masterminds_slide": {
+              "label": "Masterminds Slide",
+              "fields": {
+                "heading": {
+                  "type": "text",
+                  "label": "Heading",
+                  "value": "Join a Powerful Mastermind",
+                  "required": true
+                },
+                "subheading": {
+                  "type": "text",
+                  "label": "Subheading",
+                  "value": "Accelerate Your Growth Through Group Dynamics",
+                  "required": true
+                },
+                "image": {
+                  "type": "image",
+                  "label": "Mastermind Group Image",
+                  "value": "/images/monica-mastermind-group.jpg", 
+                  "required": true
+                },
+                "join_button": {
+                  "type": "text",
+                  "label": "Join Cohort Button Text",
+                  "value": "🤝 Join Next Cohort",
+                  "required": true
+                },
+                "workshop_button": {
+                  "type": "text",
+                  "label": "Free Workshop Button Text",
+                  "value": "🎯 Free Workshop",
+                  "required": true
+                }
+              }
+            }
+          }
+        },
+        "about_monica": {
+          "label": "About Monica Section",
+          "fields": {
+            "heading": {
+              "type": "text",
+              "label": "Section Heading",
+              "value": "Meet Monica",
+              "required": true
+            },
+            "portrait_image": {
+              "type": "image", 
+              "label": "Monica's Portrait",
+              "value": "/images/monica-leggett-portrait.jpg",
+              "required": true
+            },
+            "bio_excerpt": {
+              "type": "textarea",
+              "label": "Bio Excerpt",
+              "value": "Certified coach, author, and speaker focused on transforming lives through practical guidance and authentic connection.",
+              "required": true
+            },
+            "learn_more_button": {
+              "type": "text",
+              "label": "Learn More Button Text",
+              "value": "Learn More About Monica",
+              "required": true
+            }
+          }
+        },
+        "testimonials": {
+          "label": "Testimonials Section",
+          "fields": {
+            "heading": {
+              "type": "text",
+              "label": "Section Heading", 
+              "value": "What Clients Say",
+              "required": true
+            },
+            "testimonial_1": {
+              "label": "Testimonial 1",
+              "fields": {
+                "quote": {
+                  "type": "textarea",
+                  "label": "Quote",
+                  "value": "Monica's coaching completely transformed my approach to challenges. I went from feeling overwhelmed to having a clear action plan.",
+                  "required": true
+                },
+                "author": {
+                  "type": "text",
+                  "label": "Author Name",
+                  "value": "Sarah M.",
+                  "required": true
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Author Title",
+                  "value": "Marketing Director",
+                  "required": false
+                }
+              }
+            },
+            "testimonial_2": {
+              "label": "Testimonial 2", 
+              "fields": {
+                "quote": {
+                  "type": "textarea",
+                  "label": "Quote",
+                  "value": "The 8-step framework gave me the structure I needed to finally launch my business. Monica's guidance was invaluable.",
+                  "required": true
+                },
+                "author": {
+                  "type": "text",
+                  "label": "Author Name",
+                  "value": "Michael R.",
+                  "required": true
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Author Title", 
+                  "value": "Entrepreneur",
+                  "required": false
+                }
+              }
+            },
+            "testimonial_3": {
+              "label": "Testimonial 3",
+              "fields": {
+                "quote": {
+                  "type": "textarea",
+                  "label": "Quote",
+                  "value": "Monica helped me gain clarity on my career path and gave me the confidence to make a major life change successfully.",
+                  "required": true
+                },
+                "author": {
+                  "type": "text",
+                  "label": "Author Name",
+                  "value": "Jennifer K.",
+                  "required": true
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Author Title",
+                  "value": "Life Transition Specialist", 
+                  "required": false
+                }
+              }
+            }
+          }
+        },
+        "action_guide_cta": {
+          "label": "Action Guide Call-to-Action",
+          "fields": {
+            "heading": {
+              "type": "text",
+              "label": "Section Heading",
+              "value": "Ready to Take Action?",
+              "required": true
+            },
+            "description": {
+              "type": "textarea", 
+              "label": "Description",
+              "value": "Download my free Action Guide and start your journey from doubtful to decisive today.",
+              "required": true
+            },
+            "download_button": {
+              "type": "text",
+              "label": "Download Button Text",
+              "value": "Get Your Free Guide",
+              "required": true
+            },
+            "email_placeholder": {
+              "type": "text",
+              "label": "Email Placeholder Text",
+              "value": "Enter your email address",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "about": {
+      "label": "About Page",
+      "route": "/about",
+      "sections": {
+        "hero": {
+          "label": "Hero Section",
+          "fields": {
+            "name": {
+              "type": "text",
+              "label": "Full Name",
+              "value": "Monica Leggett",
+              "required": true
+            },
+            "title": {
+              "type": "text",
+              "label": "Professional Title",
+              "value": "Professional Certified Coach | Author | Speaker",
+              "required": true
+            },
+            "tagline": {
+              "type": "text",
+              "label": "Tagline",
+              "value": "Dream It. Plan It. Do It. Live It!",
+              "required": true
+            },
+            "portrait_image": {
+              "type": "image",
+              "label": "Portrait Image",
+              "value": "/images/monica-leggett-portrait.jpg",
+              "required": true
+            }
+          }
+        },
+        "key_stats": {
+          "label": "Key Statistics",
+          "fields": {
+            "years_experience": {
+              "type": "text",
+              "label": "Years of Experience",
+              "value": "15+ Years Coaching Experience",
+              "required": true
+            },
+            "clients_transformed": {
+              "type": "text",
+              "label": "Clients Transformed",
+              "value": "500+ Clients Transformed",
+              "required": true
+            },
+            "books_published": {
+              "type": "text", 
+              "label": "Books Published",
+              "value": "2 Published Books",
+              "required": true
+            },
+            "years_married": {
+              "type": "text",
+              "label": "Years Married",
+              "value": "37 Years Married",
+              "required": true
+            },
+            "leadership_role": {
+              "type": "text",
+              "label": "Leadership Role",
+              "value": "2019 ICF Chapter President",
+              "required": true
+            }
+          }
+        },
+        "biography": {
+          "label": "Biography Sections",
+          "fields": {
+            "section_1_title": {
+              "type": "text",
+              "label": "Section 1 Title",
+              "value": "Rooted in Connection",
+              "required": true
+            },
+            "section_1_content": {
+              "type": "textarea",
+              "label": "Section 1 Content", 
+              "value": "One of 10 children, I learned early the power of connection, communication, and finding your unique voice in the crowd.",
+              "required": true
+            },
+            "section_2_title": {
+              "type": "text",
+              "label": "Section 2 Title",
+              "value": "Personal Journey",
+              "required": true
+            },
+            "section_2_content": {
+              "type": "textarea",
+              "label": "Section 2 Content",
+              "value": "Married to Steve for 37 years, I raised three children and am now a proud grandmother, always learning from life's transitions.",
+              "required": true
+            },
+            "section_3_title": {
+              "type": "text",
+              "label": "Section 3 Title",
+              "value": "Professional Path",
+              "required": true
+            },
+            "section_3_content": {
+              "type": "textarea",
+              "label": "Section 3 Content",
+              "value": "Founded New Steps Life Coaching in 2007, passionate about helping others navigate life's challenges and opportunities.",
+              "required": true
+            }
+          }
+        },
+        "credentials": {
+          "label": "Credentials",
+          "fields": {
+            "heading": {
+              "type": "text",
+              "label": "Credentials Heading",
+              "value": "Credentials & Certifications",
+              "required": true
+            },
+            "credential_1": {
+              "type": "text",
+              "label": "PCC Certification",
+              "value": "Professional Certified Coach (PCC) - International Coaching Federation",
+              "required": true
+            },
+            "credential_2": {
+              "type": "text",
+              "label": "Mentor Coach",
+              "value": "Mentor Coach",
+              "required": true
+            },
+            "credential_3": {
+              "type": "text",
+              "label": "Chapter President",
+              "value": "ICF Chapter President (2019)",
+              "required": true
+            },
+            "credential_4": {
+              "type": "text",
+              "label": "PeopleMap Trainer",
+              "value": "PeopleMap™ Trainer",
+              "required": true
+            },
+            "credential_5": {
+              "type": "text",
+              "label": "Positive Intelligence Coach",
+              "value": "Positive Intelligence Coach",
+              "required": true
+            }
+          }
+        },
+        "philosophy": {
+          "label": "Coaching Philosophy",
+          "fields": {
+            "philosophy_quote": {
+              "type": "textarea",
+              "label": "Philosophy Quote",
+              "value": "I believe everyone has the answers within them – sometimes you just need a skilled partner to help you uncover them.",
+              "required": true
+            }
+          }
+        },
+        "client_achievements": {
+          "label": "Client Achievements",
+          "fields": {
+            "heading": {
+              "type": "text",
+              "label": "Achievements Heading", 
+              "value": "What Clients Achieve",
+              "required": true
+            },
+            "achievement_1": {
+              "type": "text",
+              "label": "Achievement 1",
+              "value": "Clarity & Focus",
+              "required": true
+            },
+            "achievement_2": {
+              "type": "text",
+              "label": "Achievement 2",
+              "value": "Confidence & Action",
+              "required": true
+            },
+            "achievement_3": {
+              "type": "text",
+              "label": "Achievement 3",
+              "value": "Work-Life Harmony",
+              "required": true
+            },
+            "achievement_4": {
+              "type": "text",
+              "label": "Achievement 4",
+              "value": "Breakthrough Growth", 
+              "required": true
+            },
+            "achievement_5": {
+              "type": "text",
+              "label": "Achievement 5",
+              "value": "Stronger Relationships",
+              "required": true
+            },
+            "achievement_6": {
+              "type": "text",
+              "label": "Achievement 6",
+              "value": "Business Success",
+              "required": true
+            }
+          }
+        },
+        "cta": {
+          "label": "Call to Action",
+          "fields": {
+            "consultation_button": {
+              "type": "text",
+              "label": "Free Consultation Button",
+              "value": "Schedule Free Consultation",
+              "required": true
+            },
+            "book_button": {
+              "type": "text",
+              "label": "Get Book Button",
+              "value": "Get Book",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "book": {
+      "label": "Book Page",
+      "route": "/services/book",
+      "sections": {
+        "hero": {
+          "label": "Book Hero Section",
+          "fields": {
+            "book_title": {
+              "type": "text",
+              "label": "Book Title",
+              "value": "Doubtful to Decisive",
+              "required": true
+            },
+            "book_subtitle": {
+              "type": "text",
+              "label": "Book Subtitle", 
+              "value": "Eight Steps to Get Unstuck and Take Action",
+              "required": true
+            },
+            "author": {
+              "type": "text",
+              "label": "Author Name",
+              "value": "Monica Leggett",
+              "required": true
+            },
+            "price": {
+              "type": "text",
+              "label": "Book Price",
+              "value": "$19.99",
+              "required": true
+            },
+            "published_year": {
+              "type": "text",
+              "label": "Published Year",
+              "value": "2023",
+              "required": true
+            },
+            "book_image": {
+              "type": "image",
+              "label": "Book Cover Image",
+              "value": "/images/doubtful-to-decisive-book.png",
+              "required": true
+            }
+          }
+        },
+        "description": {
+          "label": "Book Description",
+          "fields": {
+            "main_description": {
+              "type": "textarea",
+              "label": "Main Description",
+              "value": "Are you tired of feeling stuck, overwhelmed, or paralyzed by doubt? In this transformative guide, I'll equip you with the tools and strategies to cultivate an empowered mindset, declare your aspirations, and chart a clear path to achieve them.",
+              "required": true
+            }
+          }
+        },
+        "eight_steps": {
+          "label": "8-Step Framework",
+          "fields": {
+            "framework_heading": {
+              "type": "text",
+              "label": "Framework Heading",
+              "value": "The 8-Step Action Cycle",
+              "required": true
+            },
+            "step_1_title": {
+              "type": "text",
+              "label": "Step 1 Title",
+              "value": "Awareness",
+              "required": true
+            },
+            "step_1_description": {
+              "type": "text", 
+              "label": "Step 1 Description",
+              "value": "Recognize where you are and what needs to change",
+              "required": true
+            },
+            "step_2_title": {
+              "type": "text",
+              "label": "Step 2 Title",
+              "value": "Acceptance",
+              "required": true
+            },
+            "step_2_description": {
+              "type": "text",
+              "label": "Step 2 Description",
+              "value": "Face your challenge head-on without judgment",
+              "required": true
+            },
+            "step_3_title": {
+              "type": "text",
+              "label": "Step 3 Title",
+              "value": "Mindset",
+              "required": true
+            },
+            "step_3_description": {
+              "type": "text",
+              "label": "Step 3 Description",
+              "value": "Shift your perspective to empower action",
+              "required": true
+            },
+            "step_4_title": {
+              "type": "text",
+              "label": "Step 4 Title",
+              "value": "Assessment",
+              "required": true
+            },
+            "step_4_description": {
+              "type": "text",
+              "label": "Step 4 Description",
+              "value": "Brainstorm all options without limitation",
+              "required": true
+            },
+            "step_5_title": {
+              "type": "text",
+              "label": "Step 5 Title",
+              "value": "Planning",
+              "required": true
+            },
+            "step_5_description": {
+              "type": "text",
+              "label": "Step 5 Description",
+              "value": "Create your strategic roadmap to success",
+              "required": true
+            },
+            "step_6_title": {
+              "type": "text",
+              "label": "Step 6 Title",
+              "value": "Action",
+              "required": true
+            },
+            "step_6_description": {
+              "type": "text",
+              "label": "Step 6 Description",
+              "value": "Turn dreams into reality with decisive steps",
+              "required": true
+            },
+            "step_7_title": {
+              "type": "text",
+              "label": "Step 7 Title",
+              "value": "Completion",
+              "required": true
+            },
+            "step_7_description": {
+              "type": "text",
+              "label": "Step 7 Description",
+              "value": "Celebrate accomplishments and milestones",
+              "required": true
+            },
+            "step_8_title": {
+              "type": "text",
+              "label": "Step 8 Title",
+              "value": "Reflection",
+              "required": true
+            },
+            "step_8_description": {
+              "type": "text",
+              "label": "Step 8 Description",
+              "value": "Gain insights for continuous improvement",
+              "required": true
+            }
+          }
+        },
+        "testimonial": {
+          "label": "Book Testimonial",
+          "fields": {
+            "testimonial_quote": {
+              "type": "textarea",
+              "label": "Testimonial Quote",
+              "value": "Doubtful to Decisive is like having your own professional coach. Monica's wisdom, paired with practical exercises, creates a powerful combination for transformation.",
+              "required": true
+            },
+            "testimonial_author": {
+              "type": "text",
+              "label": "Testimonial Author",
+              "value": "Margaret H. Greenberg, MAPP, PCC",
+              "required": true
+            }
+          }
+        },
+        "target_audience": {
+          "label": "Target Audience",
+          "fields": {
+            "heading": {
+              "type": "text",
+              "label": "Target Audience Heading",
+              "value": "Perfect For",
+              "required": true
+            },
+            "audience_1": {
+              "type": "text",
+              "label": "Audience 1",
+              "value": "Feeling stuck in career/personal life",
+              "required": true
+            },
+            "audience_2": {
+              "type": "text",
+              "label": "Audience 2",
+              "value": "Aspiring entrepreneurs",
+              "required": true
+            },
+            "audience_3": {
+              "type": "text",
+              "label": "Audience 3",
+              "value": "Small business owners",
+              "required": true
+            },
+            "audience_4": {
+              "type": "text",
+              "label": "Audience 4",
+              "value": "Professionals seeking growth",
+              "required": true
+            },
+            "audience_5": {
+              "type": "text",
+              "label": "Audience 5",
+              "value": "People struggling with indecision",
+              "required": true
+            }
+          }
+        },
+        "book_metrics": {
+          "label": "Book Success Metrics",
+          "fields": {
+            "copies_sold": {
+              "type": "text",
+              "label": "Copies Sold",
+              "value": "500+ Copies Sold",
+              "required": true
+            },
+            "amazon_rating": {
+              "type": "text",
+              "label": "Amazon Rating",
+              "value": "4.8/5 Amazon Rating",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "personal_coaching": {
+      "label": "Personal Coaching Page",
+      "route": "/services/personal-coaching",
+      "sections": {
+        "hero": {
+          "label": "Hero Section",
+          "fields": {
+            "page_title": {
+              "type": "text",
+              "label": "Page Title",
+              "value": "Transform Your Life with Personal Coaching",
+              "required": true
+            },
+            "tagline": {
+              "type": "text",
+              "label": "Tagline",
+              "value": "From Doubtful & Uncertain to Decisive & Crystal Clear",
+              "required": true
+            },
+            "hero_image": {
+              "type": "image",
+              "label": "Hero Image",
+              "value": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600",
+              "required": true
+            }
+          }
+        },
+        "target_audiences": {
+          "label": "Target Coaching Audiences",
+          "fields": {
+            "heading": {
+              "type": "text",
+              "label": "Audiences Heading",
+              "value": "Who I Coach",
+              "required": true
+            },
+            "audience_1": {
+              "type": "text",
+              "label": "Audience 1",
+              "value": "Ambitious Professionals",
+              "required": true
+            },
+            "audience_2": {
+              "type": "text",
+              "label": "Audience 2",
+              "value": "Aspiring Entrepreneurs",
+              "required": true
+            },
+            "audience_3": {
+              "type": "text",
+              "label": "Audience 3",
+              "value": "Life Transitions",
+              "required": true
+            },
+            "audience_4": {
+              "type": "text",
+              "label": "Audience 4",
+              "value": "Overwhelmed Achievers",
+              "required": true
+            },
+            "audience_5": {
+              "type": "text",
+              "label": "Audience 5",
+              "value": "Couples & Partners",
+              "required": true
+            },
+            "audience_6": {
+              "type": "text",
+              "label": "Audience 6",
+              "value": "Emerging Leaders",
+              "required": true
+            }
+          }
+        },
+        "coaching_process": {
+          "label": "Coaching Process",
+          "fields": {
+            "process_heading": {
+              "type": "text",
+              "label": "Process Heading",
+              "value": "My Coaching Process",
+              "required": true
+            },
+            "step_1": {
+              "type": "text",
+              "label": "Process Step 1",
+              "value": "Discovery & Assessment",
+              "required": true
+            },
+            "step_2": {
+              "type": "text",
+              "label": "Process Step 2", 
+              "value": "Vision & Goal Setting",
+              "required": true
+            },
+            "step_3": {
+              "type": "text",
+              "label": "Process Step 3",
+              "value": "Strategic Action Planning",
+              "required": true
+            },
+            "step_4": {
+              "type": "text",
+              "label": "Process Step 4",
+              "value": "Implementation & Support",
+              "required": true
+            },
+            "step_5": {
+              "type": "text",
+              "label": "Process Step 5",
+              "value": "Integration & Growth",
+              "required": true
+            }
+          }
+        },
+        "expected_outcomes": {
+          "label": "Expected Coaching Outcomes",
+          "fields": {
+            "outcomes_heading": {
+              "type": "text",
+              "label": "Outcomes Heading",
+              "value": "What You'll Achieve",
+              "required": true
+            },
+            "outcome_1": {
+              "type": "text",
+              "label": "Outcome 1",
+              "value": "Crystal Clear Vision",
+              "required": true
+            },
+            "outcome_2": {
+              "type": "text",
+              "label": "Outcome 2",
+              "value": "Unshakeable Confidence",
+              "required": true
+            },
+            "outcome_3": {
+              "type": "text",
+              "label": "Outcome 3",
+              "value": "Breakthrough Results",
+              "required": true
+            },
+            "outcome_4": {
+              "type": "text",
+              "label": "Outcome 4",
+              "value": "Mental Fitness",
+              "required": true
+            },
+            "outcome_5": {
+              "type": "text",
+              "label": "Outcome 5",
+              "value": "Authentic Success",
+              "required": true
+            },
+            "outcome_6": {
+              "type": "text",
+              "label": "Outcome 6",
+              "value": "Life Balance",
+              "required": true
+            }
+          }
+        },
+        "testimonials": {
+          "label": "Coaching Testimonials",
+          "fields": {
+            "testimonials_heading": {
+              "type": "text",
+              "label": "Testimonials Heading",
+              "value": "Client Success Stories",
+              "required": true
+            },
+            "testimonial_1": {
+              "type": "textarea",
+              "label": "Testimonial 1",
+              "value": "Monica helped me transition from corporate to launching my own successful consulting business.",
+              "required": true
+            },
+            "testimonial_2": {
+              "type": "textarea",
+              "label": "Testimonial 2",
+              "value": "I gained clarity on my values and landed a leadership role that aligns perfectly.",
+              "required": true
+            },
+            "testimonial_3": {
+              "type": "textarea",
+              "label": "Testimonial 3",
+              "value": "Coaching helped us reconnect, improve communication, and create a shared vision.",
+              "required": true
+            },
+            "testimonial_4": {
+              "type": "textarea",
+              "label": "Testimonial 4",
+              "value": "Mental Fitness coaching transformed how I handle stress and challenges.",
+              "required": true
+            }
+          }
+        },
+        "professional_stats": {
+          "label": "Professional Statistics",
+          "fields": {
+            "years_experience": {
+              "type": "text",
+              "label": "Years Experience",
+              "value": "15+ Years Experience",
+              "required": true
+            },
+            "lives_transformed": {
+              "type": "text",
+              "label": "Lives Transformed",
+              "value": "500+ Lives Transformed",
+              "required": true
+            },
+            "success_rate": {
+              "type": "text",
+              "label": "Success Rate",
+              "value": "98% Client Success Rate",
+              "required": true
+            }
+          }
+        },
+        "cta": {
+          "label": "Call to Action",
+          "fields": {
+            "cta_heading": {
+              "type": "text",
+              "label": "CTA Heading",
+              "value": "Ready to Transform Your Life?",
+              "required": true
+            },
+            "cta_button": {
+              "type": "text",
+              "label": "CTA Button Text",
+              "value": "Free 30-Minute Discovery Call",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "mentor_coaching": {
+      "label": "Mentor Coaching Page",
+      "route": "/services/mentor-coaching",
+      "sections": {
+        "hero": {
+          "label": "Hero Section",
+          "fields": {
+            "page_title": {
+              "type": "text",
+              "label": "Page Title",
+              "value": "Mentor Coaching for Aspiring Coaches",
+              "required": true
+            },
+            "tagline": {
+              "type": "text",
+              "label": "Tagline",
+              "value": "Develop Your Coaching Skills & Build Your Practice with Confidence",
+              "required": true
+            },
+            "hero_image": {
+              "type": "image",
+              "label": "Hero Image",
+              "value": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600",
+              "required": true
+            }
+          }
+        },
+        "key_services": {
+          "label": "Key Services",
+          "fields": {
+            "services_heading": {
+              "type": "text",
+              "label": "Services Heading",
+              "value": "Mentor Coaching Services",
+              "required": true
+            },
+            "service_1": {
+              "type": "text",
+              "label": "Service 1",
+              "value": "ICF Certification Support",
+              "required": true
+            },
+            "service_2": {
+              "type": "text",
+              "label": "Service 2",
+              "value": "Group Mentor Coaching",
+              "required": true
+            },
+            "service_3": {
+              "type": "text",
+              "label": "Service 3",
+              "value": "Individual Mentor Coaching",
+              "required": true
+            }
+          }
+        },
+        "definition": {
+          "label": "Mentor Coaching Definition",
+          "fields": {
+            "definition_text": {
+              "type": "textarea",
+              "label": "Definition",
+              "value": "Mentor coaching is a professional development process where experienced coaches guide emerging coaches to mastery.",
+              "required": true
+            }
+          }
+        },
+        "certification_support": {
+          "label": "Certification Support",
+          "fields": {
+            "certification_heading": {
+              "type": "text",
+              "label": "Certification Heading",
+              "value": "ICF Certification Support",
+              "required": true
+            },
+            "cert_option_1": {
+              "type": "text",
+              "label": "ACC Preparation",
+              "value": "ACC Preparation",
+              "required": true
+            },
+            "cert_option_2": {
+              "type": "text",
+              "label": "PCC Advancement",
+              "value": "PCC Advancement",
+              "required": true
+            },
+            "cert_option_3": {
+              "type": "text",
+              "label": "Credential Renewal",
+              "value": "Credential Renewal",
+              "required": true
+            }
+          }
+        },
+        "group_program": {
+          "label": "Group Mentor Coaching Program",
+          "fields": {
+            "group_heading": {
+              "type": "text",
+              "label": "Group Program Heading",
+              "value": "Group Mentor Coaching Program",
+              "required": true
+            },
+            "program_duration": {
+              "type": "text",
+              "label": "Program Duration",
+              "value": "10 hours over 3 months",
+              "required": true
+            },
+            "cohort_size": {
+              "type": "text",
+              "label": "Cohort Size",
+              "value": "3-5 coaches per cohort",
+              "required": true
+            },
+            "session_details": {
+              "type": "text",
+              "label": "Session Details",
+              "value": "7 group sessions (90 minutes each)",
+              "required": true
+            },
+            "includes": {
+              "type": "text",
+              "label": "What's Included",
+              "value": "Includes live coaching practice & feedback",
+              "required": true
+            }
+          }
+        },
+        "individual_coaching": {
+          "label": "Individual Mentor Coaching",
+          "fields": {
+            "individual_heading": {
+              "type": "text",
+              "label": "Individual Coaching Heading",
+              "value": "Individual Mentor Coaching",
+              "required": true
+            },
+            "feature_1": {
+              "type": "text",
+              "label": "Feature 1",
+              "value": "Customized timeline",
+              "required": true
+            },
+            "feature_2": {
+              "type": "text",
+              "label": "Feature 2",
+              "value": "Personalized one-on-one mentoring",
+              "required": true
+            },
+            "feature_3": {
+              "type": "text",
+              "label": "Feature 3",
+              "value": "Targeted skill development",
+              "required": true
+            },
+            "feature_4": {
+              "type": "text",
+              "label": "Feature 4",
+              "value": "Business building strategies",
+              "required": true
+            }
+          }
+        },
+        "core_competencies": {
+          "label": "ICF Core Competencies",
+          "fields": {
+            "competencies_heading": {
+              "type": "text",
+              "label": "Core Competencies Heading",
+              "value": "ICF Core Competencies Developed",
+              "required": true
+            },
+            "foundation": {
+              "type": "text",
+              "label": "Foundation Competencies",
+              "value": "Foundation (Ethics, coaching agreement)",
+              "required": true
+            },
+            "co_creating": {
+              "type": "text",
+              "label": "Co-Creating Competencies",
+              "value": "Co-Creating (Partnership, presence)",
+              "required": true
+            },
+            "communicating": {
+              "type": "text",
+              "label": "Communicating Competencies",
+              "value": "Communicating (Active listening, questioning)",
+              "required": true
+            },
+            "cultivating": {
+              "type": "text",
+              "label": "Cultivating Competencies",
+              "value": "Cultivating (Learning, growth, awareness)",
+              "required": true
+            }
+          }
+        },
+        "professional_stats": {
+          "label": "Professional Statistics",
+          "fields": {
+            "coaches_mentored": {
+              "type": "text",
+              "label": "Coaches Mentored",
+              "value": "100+ Coaches Mentored",
+              "required": true
+            },
+            "years_experience": {
+              "type": "text",
+              "label": "Years Experience",
+              "value": "15+ Years Experience",
+              "required": true
+            },
+            "certification": {
+              "type": "text",
+              "label": "ICF Certification",
+              "value": "ICF PCC Certified",
+              "required": true
+            }
+          }
+        },
+        "cta": {
+          "label": "Call to Action",
+          "fields": {
+            "cta_button": {
+              "type": "text",
+              "label": "CTA Button Text",
+              "value": "Free Mentor Coaching Consultation",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "masterminds": {
+      "label": "Masterminds Page",
+      "route": "/services/masterminds",
+      "sections": {
+        "hero": {
+          "label": "Hero Section",
+          "fields": {
+            "page_title": {
+              "type": "text",
+              "label": "Page Title",
+              "value": "Entrepreneur & Leadership Masterminds",
+              "required": true
+            },
+            "tagline": {
+              "type": "text",
+              "label": "Tagline",
+              "value": "Accelerate Your Success Through the Power of Community",
+              "required": true
+            },
+            "hero_image": {
+              "type": "image",
+              "label": "Hero Image",
+              "value": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600",
+              "required": true
+            }
+          }
+        },
+        "definition": {
+          "label": "Mastermind Definition",
+          "fields": {
+            "definition_text": {
+              "type": "textarea",
+              "label": "Mastermind Definition",
+              "value": "A mastermind brings together a small group of driven individuals who meet regularly to tackle challenges, set ambitious goals, and hold each other accountable.",
+              "required": true
+            },
+            "napoleon_hill_quote": {
+              "type": "textarea",
+              "label": "Napoleon Hill Quote",
+              "value": "No mind is complete by itself. It needs contact and association with other minds to grow and expand.",
+              "required": true
+            },
+            "quote_attribution": {
+              "type": "text",
+              "label": "Quote Attribution",
+              "value": "Napoleon Hill",
+              "required": true
+            }
+          }
+        },
+        "key_benefits": {
+          "label": "Key Benefits",
+          "fields": {
+            "benefits_heading": {
+              "type": "text",
+              "label": "Benefits Heading",
+              "value": "Why Join a Mastermind?",
+              "required": true
+            },
+            "benefit_1": {
+              "type": "text",
+              "label": "Benefit 1",
+              "value": "Accelerated Growth",
+              "required": true
+            },
+            "benefit_2": {
+              "type": "text",
+              "label": "Benefit 2", 
+              "value": "Fresh Perspectives",
+              "required": true
+            },
+            "benefit_3": {
+              "type": "text",
+              "label": "Benefit 3",
+              "value": "Accountability Partners",
+              "required": true
+            },
+            "benefit_4": {
+              "type": "text",
+              "label": "Benefit 4",
+              "value": "Trusted Network",
+              "required": true
+            },
+            "benefit_5": {
+              "type": "text",
+              "label": "Benefit 5",
+              "value": "Expanded Thinking",
+              "required": true
+            },
+            "benefit_6": {
+              "type": "text",
+              "label": "Benefit 6",
+              "value": "Collective Wins",
+              "required": true
+            }
+          }
+        },
+        "program_structure": {
+          "label": "Program Structure",
+          "fields": {
+            "structure_heading": {
+              "type": "text",
+              "label": "Structure Heading",
+              "value": "How It Works",
+              "required": true
+            },
+            "meeting_schedule": {
+              "type": "text",
+              "label": "Meeting Schedule",
+              "value": "Bi-weekly 2-hour virtual Zoom sessions",
+              "required": true
+            },
+            "group_size": {
+              "type": "text",
+              "label": "Group Size",
+              "value": "6-8 members per group",
+              "required": true
+            },
+            "commitment": {
+              "type": "text",
+              "label": "Commitment Period",
+              "value": "6-month commitment",
+              "required": true
+            },
+            "in_person_option": {
+              "type": "text",
+              "label": "In-Person Option",
+              "value": "Optional quarterly in-person intensives",
+              "required": true
+            }
+          }
+        },
+        "included_services": {
+          "label": "What's Included",
+          "fields": {
+            "included_heading": {
+              "type": "text",
+              "label": "Included Services Heading",
+              "value": "What's Included",
+              "required": true
+            },
+            "service_1": {
+              "type": "text",
+              "label": "Expert Facilitation",
+              "value": "Expert facilitation",
+              "required": true
+            },
+            "service_2": {
+              "type": "text",
+              "label": "Private Community",
+              "value": "Private online community",
+              "required": true
+            },
+            "service_3": {
+              "type": "text",
+              "label": "Resource Library",
+              "value": "Resource library",
+              "required": true
+            },
+            "service_4": {
+              "type": "text",
+              "label": "Guest Experts",
+              "value": "Guest expert presentations",
+              "required": true
+            },
+            "service_5": {
+              "type": "text",
+              "label": "Email Support",
+              "value": "Email support",
+              "required": true
+            },
+            "service_6": {
+              "type": "text",
+              "label": "Free Book",
+              "value": "Book: \"Doubtful to Decisive\"",
+              "required": true
+            },
+            "service_7": {
+              "type": "text",
+              "label": "Alumni Network",
+              "value": "Alumni network access",
+              "required": true
+            }
+          }
+        },
+        "testimonials": {
+          "label": "Testimonials",
+          "fields": {
+            "testimonials_heading": {
+              "type": "text",
+              "label": "Testimonials Heading",
+              "value": "Success Stories",
+              "required": true
+            },
+            "testimonial_1": {
+              "type": "textarea",
+              "label": "Testimonial 1",
+              "value": "The mastermind transformed my business approach. Collective wisdom helped me 3x revenue in 6 months.",
+              "required": true
+            },
+            "testimonial_2": {
+              "type": "textarea",
+              "label": "Testimonial 2",
+              "value": "As a solopreneur, this gave me a board of advisors who truly care about my success.",
+              "required": true
+            }
+          }
+        },
+        "next_cohort": {
+          "label": "Next Cohort Information",
+          "fields": {
+            "cohort_heading": {
+              "type": "text",
+              "label": "Next Cohort Heading",
+              "value": "Next Cohort",
+              "required": true
+            },
+            "start_date": {
+              "type": "text",
+              "label": "Start Date",
+              "value": "January 2024",
+              "required": true
+            },
+            "duration": {
+              "type": "text",
+              "label": "Duration",
+              "value": "6 Months",
+              "required": true
+            },
+            "available_spots": {
+              "type": "text",
+              "label": "Available Spots",
+              "value": "4 of 8",
+              "required": true
+            }
+          }
+        },
+        "guarantee": {
+          "label": "Satisfaction Guarantee",
+          "fields": {
+            "guarantee_text": {
+              "type": "textarea",
+              "label": "Guarantee Text",
+              "value": "100% Satisfaction Guarantee. If you attend all sessions and don't see significant progress, we'll work with you until you do.",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "contact": {
+      "label": "Contact Page",
+      "route": "/contact",
+      "sections": {
+        "hero": {
+          "label": "Contact Hero",
+          "fields": {
+            "page_title": {
+              "type": "text",
+              "label": "Page Title",
+              "value": "Let's Connect",
+              "required": true
+            },
+            "tagline": {
+              "type": "textarea",
+              "label": "Tagline",
+              "value": "Certified Life Coach, Author, and Speaker helping you get unstuck and take action.",
+              "required": true
+            }
+          }
+        },
+        "contact_info": {
+          "label": "Contact Information",
+          "fields": {
+            "email": {
+              "type": "text",
+              "label": "Email Address",
+              "value": "monica@monicaleggett.com",
+              "required": true
+            },
+            "location": {
+              "type": "text",
+              "label": "Location",
+              "value": "Connecticut, USA",
+              "required": true
+            },
+            "availability": {
+              "type": "text",
+              "label": "Availability",
+              "value": "Worldwide via Zoom",
+              "required": true
+            }
+          }
+        },
+        "office_hours": {
+          "label": "Office Hours",
+          "fields": {
+            "hours_heading": {
+              "type": "text",
+              "label": "Office Hours Heading",
+              "value": "Office Hours",
+              "required": true
+            },
+            "weekday_hours": {
+              "type": "text",
+              "label": "Weekday Hours",
+              "value": "Monday - Friday: 9:00 AM - 5:00 PM EST",
+              "required": true
+            },
+            "weekend_hours": {
+              "type": "text",
+              "label": "Weekend Hours",
+              "value": "Weekends: By Appointment",
+              "required": true
+            },
+            "evening_note": {
+              "type": "text",
+              "label": "Evening Appointments Note",
+              "value": "Evening appointments available for working professionals",
+              "required": true
+            }
+          }
+        },
+        "contact_form": {
+          "label": "Contact Form",
+          "fields": {
+            "form_heading": {
+              "type": "text",
+              "label": "Form Heading",
+              "value": "Send Me a Message",
+              "required": true
+            },
+            "first_name_label": {
+              "type": "text",
+              "label": "First Name Label",
+              "value": "First Name",
+              "required": true
+            },
+            "first_name_placeholder": {
+              "type": "text",
+              "label": "First Name Placeholder",
+              "value": "Your first name",
+              "required": false
+            },
+            "last_name_label": {
+              "type": "text",
+              "label": "Last Name Label",
+              "value": "Last Name",
+              "required": true
+            },
+            "last_name_placeholder": {
+              "type": "text",
+              "label": "Last Name Placeholder",
+              "value": "Your last name",
+              "required": false
+            },
+            "email_label": {
+              "type": "text",
+              "label": "Email Label",
+              "value": "Email Address",
+              "required": true
+            },
+            "email_placeholder": {
+              "type": "text",
+              "label": "Email Placeholder",
+              "value": "your.email@example.com",
+              "required": false
+            },
+            "phone_label": {
+              "type": "text",
+              "label": "Phone Label",
+              "value": "Phone Number",
+              "required": true
+            },
+            "phone_placeholder": {
+              "type": "text",
+              "label": "Phone Placeholder",
+              "value": "Your phone number",
+              "required": false
+            },
+            "interest_label": {
+              "type": "text",
+              "label": "Interest Label",
+              "value": "I'm Interested In",
+              "required": true
+            },
+            "interest_option_1": {
+              "type": "text",
+              "label": "Interest Option 1",
+              "value": "Personal Coaching",
+              "required": true
+            },
+            "interest_option_2": {
+              "type": "text",
+              "label": "Interest Option 2",
+              "value": "Joining a Mastermind",
+              "required": true
+            },
+            "interest_option_3": {
+              "type": "text",
+              "label": "Interest Option 3",
+              "value": "Mentor Coaching",
+              "required": true
+            },
+            "interest_option_4": {
+              "type": "text",
+              "label": "Interest Option 4",
+              "value": "Speaking Engagement",
+              "required": true
+            },
+            "interest_option_5": {
+              "type": "text",
+              "label": "Interest Option 5",
+              "value": "Ordering Your Book",
+              "required": true
+            },
+            "interest_option_6": {
+              "type": "text",
+              "label": "Interest Option 6",
+              "value": "General Inquiry",
+              "required": true
+            },
+            "goals_label": {
+              "type": "text",
+              "label": "Goals Field Label",
+              "value": "Tell Me About Your Goals",
+              "required": true
+            },
+            "goals_placeholder": {
+              "type": "textarea",
+              "label": "Goals Placeholder",
+              "value": "Share what you'd like to accomplish or any questions you have...",
+              "required": false
+            },
+            "referral_label": {
+              "type": "text",
+              "label": "Referral Label",
+              "value": "How Did You Hear About Me?",
+              "required": true
+            },
+            "referral_placeholder": {
+              "type": "text",
+              "label": "Referral Placeholder",
+              "value": "Google search, referral, social media, etc.",
+              "required": false
+            },
+            "newsletter_label": {
+              "type": "text",
+              "label": "Newsletter Signup Label",
+              "value": "Subscribe to my newsletter for monthly tips and insights",
+              "required": true
+            },
+            "submit_button": {
+              "type": "text",
+              "label": "Submit Button Text",
+              "value": "Send Message",
+              "required": true
+            }
+          }
+        },
+        "faq": {
+          "label": "FAQ Section",
+          "fields": {
+            "faq_heading": {
+              "type": "text",
+              "label": "FAQ Heading",
+              "value": "Frequently Asked Questions",
+              "required": true
+            },
+            "response_time_question": {
+              "type": "text",
+              "label": "Response Time Question",
+              "value": "How quickly do you respond?",
+              "required": true
+            },
+            "response_time_answer": {
+              "type": "textarea",
+              "label": "Response Time Answer",
+              "value": "I typically respond to all inquiries within 24 hours during business days.",
+              "required": true
+            },
+            "coaching_type_question": {
+              "type": "text",
+              "label": "Coaching Type Question", 
+              "value": "Do you offer in-person or virtual coaching?",
+              "required": true
+            },
+            "coaching_type_answer": {
+              "type": "textarea",
+              "label": "Coaching Type Answer",
+              "value": "I offer virtual coaching via Zoom to serve clients worldwide.",
+              "required": true
+            },
+            "consultation_question": {
+              "type": "text",
+              "label": "Consultation Question",
+              "value": "Do you offer a free consultation?",
+              "required": true
+            },
+            "consultation_answer": {
+              "type": "textarea",
+              "label": "Consultation Answer",
+              "value": "Yes, I offer a complimentary 30-minute discovery call to see if we're a good fit.",
+              "required": true
+            },
+            "international_question": {
+              "type": "text",
+              "label": "International Question",
+              "value": "Do you work with international clients?",
+              "required": true
+            },
+            "international_answer": {
+              "type": "textarea",
+              "label": "International Answer",
+              "value": "Absolutely! I work with clients across different time zones worldwide.",
+              "required": true
+            }
+          }
+        },
+        "social_media": {
+          "label": "Social Media Links",
+          "fields": {
+            "social_heading": {
+              "type": "text",
+              "label": "Social Media Heading",
+              "value": "Connect With Me",
+              "required": true
+            },
+            "linkedin_label": {
+              "type": "text",
+              "label": "LinkedIn Label",
+              "value": "LinkedIn",
+              "required": true
+            },
+            "linkedin_url": {
+              "type": "text",
+              "label": "LinkedIn URL",
+              "value": "#",
+              "required": false
+            },
+            "facebook_label": {
+              "type": "text",
+              "label": "Facebook Label",
+              "value": "Facebook",
+              "required": true
+            },
+            "facebook_url": {
+              "type": "text",
+              "label": "Facebook URL",
+              "value": "#",
+              "required": false
+            },
+            "instagram_label": {
+              "type": "text",
+              "label": "Instagram Label",
+              "value": "Instagram",
+              "required": true
+            },
+            "instagram_url": {
+              "type": "text",
+              "label": "Instagram URL",
+              "value": "#",
+              "required": false
+            }
+          }
+        }
+      }
+    },
+    "learning_center": {
+      "label": "Learning Center",
+      "route": "/learning-center",
+      "sections": {
+        "hero": {
+          "label": "Learning Center Hero",
+          "fields": {
+            "page_title": {
+              "type": "text",
+              "label": "Page Title",
+              "value": "Tools to Help You Move Forward with Confidence",
+              "required": true
+            },
+            "page_description": {
+              "type": "textarea",
+              "label": "Page Description",
+              "value": "Here you'll find supportive resources, ideas, and guidance to help you break through self-doubt, clarify your next steps, and feel good doing it.",
+              "required": true
+            }
+          }
+        },
+        "search_filter": {
+          "label": "Search and Filter",
+          "fields": {
+            "search_placeholder": {
+              "type": "text",
+              "label": "Search Placeholder",
+              "value": "Search articles...",
+              "required": true
+            },
+            "filter_all": {
+              "type": "text",
+              "label": "All Articles Filter",
+              "value": "All Articles",
+              "required": true
+            },
+            "filter_business": {
+              "type": "text",
+              "label": "Business Filter",
+              "value": "Business",
+              "required": true
+            },
+            "filter_leadership": {
+              "type": "text",
+              "label": "Leadership Filter",
+              "value": "Leadership",
+              "required": true
+            },
+            "filter_personal": {
+              "type": "text",
+              "label": "Personal Growth Filter",
+              "value": "Personal Growth",
+              "required": true
+            },
+            "filter_framework": {
+              "type": "text",
+              "label": "8-Step Framework Filter",
+              "value": "8-Step Framework",
+              "required": true
+            }
+          }
+        },
+        "article_grid": {
+          "label": "Article Grid Labels",
+          "fields": {
+            "reading_time_label": {
+              "type": "text",
+              "label": "Reading Time Label",
+              "value": "min read",
+              "required": true
+            },
+            "no_results_message": {
+              "type": "text",
+              "label": "No Results Message",
+              "value": "No articles found matching your search.",
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "articles": {
+    "label": "Learning Center Articles",
+    "description": "All articles in the Learning Center - Monica can edit titles, descriptions, and full content",
+    "articles": {
+      "step-1-awareness": {
+        "label": "Step 1: Awareness",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "Step 1: Awareness",
+            "required": true
+          },
+          "description": {
+            "type": "textarea", 
+            "label": "Article Description",
+            "value": "Awareness is the first step to address change.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "8-Step Framework",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 5,
+            "required": true
+          }
+        }
+      },
+      "step-2-acceptance": {
+        "label": "Step 2: Acceptance",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "Step 2: Acceptance",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description", 
+            "value": "When you're feeling stuck, accept that you can move forward one step at a time.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "8-Step Framework",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 4,
+            "required": true
+          }
+        }
+      },
+      "step-3-mindset-matters": {
+        "label": "Step 3: Mindset Matters",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "Step 3: Mindset Matters",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "When you choose the way you think about something, you're really in full charge",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "8-Step Framework",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 6,
+            "required": true
+          }
+        }
+      },
+      "step-4-assess-options": {
+        "label": "Step 4: Assess Your Options",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "Step 4: Assess Your Options",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "Now it's time to ASSESS your options of choice.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category", 
+            "value": "8-Step Framework",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 5,
+            "required": true
+          }
+        }
+      },
+      "step-5-planning": {
+        "label": "Step 5: Planning",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "Step 5: Planning",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "The best plan will begin planning.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "8-Step Framework",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 7,
+            "required": true
+          }
+        }
+      },
+      "step-6-take-action": {
+        "label": "Step 6: Take Action",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title", 
+            "value": "Step 6: Take Action!",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "Be the person who will achieve the goal by taking action.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "8-Step Framework",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 4,
+            "required": true
+          }
+        }
+      },
+      "step-7-completion": {
+        "label": "Step 7: Completion",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "Step 7: Completion",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "Take it to the finish line.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "8-Step Framework",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 5,
+            "required": true
+          }
+        }
+      },
+      "step-8-reflection": {
+        "label": "Step 8: Reflection",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "Step 8: Reflection",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "The tool to propel a done.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "8-Step Framework",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 6,
+            "required": true
+          }
+        }
+      },
+      "winning-strategy": {
+        "label": "A Winning Strategy",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "A Winning Strategy",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "Develop strategies that lead to consistent business success.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "Business",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 6,
+            "required": true
+          }
+        }
+      },
+      "leadership-strengths-weaknesses": {
+        "label": "Leadership Strengths and Weaknesses",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "Leadership Strengths and Weaknesses",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "Understanding your leadership style for maximum impact.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "Leadership",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 7,
+            "required": true
+          }
+        }
+      },
+      "what-makes-business-special": {
+        "label": "What Makes Your Business So Special",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "What Makes Your Business So Special",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "Discover and articulate your unique value proposition.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "Business",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 5,
+            "required": true
+          }
+        }
+      },
+      "never-too-late-pursue-goals": {
+        "label": "It's Never Too Late to Pursue Your Goals",
+        "fields": {
+          "title": {
+            "type": "text",
+            "label": "Article Title",
+            "value": "It's Never Too Late to Pursue Your Goals",
+            "required": true
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Article Description",
+            "value": "Age is just a number when it comes to achieving your dreams.",
+            "required": true
+          },
+          "content": {
+            "type": "markdown",
+            "label": "Article Content",
+            "value": "The complete article content with full markdown formatting support",
+            "required": true
+          },
+          "category": {
+            "type": "text",
+            "label": "Category",
+            "value": "Personal Growth",
+            "required": true
+          },
+          "reading_time": {
+            "type": "number",
+            "label": "Reading Time (minutes)",
+            "value": 4,
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

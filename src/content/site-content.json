@@ -96,6 +96,51 @@
     "calendar_description": "Ready to explore how we can work together? Book a complimentary 30-minute discovery call to discuss your goals and see if we're a good fit.",
     "faq_title": "Frequently Asked Questions"
   },
+  "book_page": {
+    "page_title": "Doubtful to Decisive: Eight Steps to Get Unstuck and Take Action",
+    "subtitle": "Transform Your Life with My Proven 8-Step Framework",
+    "book_image": "/images/doubtful-to-decisive-book.png",
+    "book_description": "This book is your roadmap from feeling stuck and overwhelmed to living with clarity, confidence, and purpose. Based on my 15+ years of coaching experience and the transformation of 500+ clients, this practical guide provides the exact framework you need to break through barriers and achieve your goals.",
+    "amazon_price": "$19.99",
+    "amazon_link": "https://www.amazon.com/doubtful-to-decisive",
+    "eight_steps_title": "The 8-Step Action Cycle",
+    "eight_steps_description": "1. Awareness - Recognize where you are\n2. Acceptance - Embrace your current situation\n3. Mindset - Shift your perspective\n4. Assessment - Evaluate your options\n5. Planning - Create your roadmap\n6. Action - Take decisive steps\n7. Completion - See it through\n8. Reflection - Learn and grow",
+    "target_audience_title": "Who This Book Is For",
+    "target_audience_list": "• Professionals feeling stuck in their careers\n• Aspiring entrepreneurs ready to take the leap\n• Anyone struggling with self-doubt and indecision\n• Leaders wanting to inspire their teams\n• Individuals seeking personal growth and transformation"
+  },
+  "personal_coaching_page": {
+    "page_title": "Personal Coaching - Transform Your Life",
+    "hero_image": "/images/monica-coaching-hero.jpg",
+    "intro_text": "Ready to break through barriers and achieve the success you deserve? My personalized one-on-one coaching provides the support, accountability, and proven strategies you need to transform your life and career.",
+    "services_title": "What We'll Work On Together",
+    "services_list": "• Career transitions and advancement\n• Building confidence and overcoming self-doubt\n• Work-life balance and stress management\n• Goal setting and achievement strategies\n• Communication and relationship skills\n• Leadership development\n• Personal growth and fulfillment",
+    "process_title": "Our Coaching Process",
+    "process_steps": "1. Discovery Call - We'll explore your goals and challenges\n2. Custom Plan - Together we'll create your personalized roadmap\n3. Weekly Sessions - Regular support and accountability\n4. Action Steps - Clear, achievable tasks between sessions\n5. Progress Tracking - Celebrate wins and adjust as needed\n6. Transformation - Achieve lasting, meaningful change",
+    "cta_title": "Ready to Start Your Transformation?",
+    "cta_button": "Book Your Free Discovery Call"
+  },
+  "mentor_coaching_page": {
+    "page_title": "Mentor Coaching for Coaches",
+    "hero_image": "/images/monica-mentor-coaching-hero.jpg",
+    "intro_text": "Fast-track your ICF certification and build a thriving coaching practice with expert guidance. As a PCC and former ICF Chapter President, I provide the mentorship you need to elevate your coaching skills and grow your business.",
+    "icf_support_title": "ICF Certification Support",
+    "icf_support_description": "Whether you're pursuing your ACC, PCC, or MCC credential, I provide comprehensive support including recorded session reviews, competency development, performance evaluations, and exam preparation. My proven approach has helped dozens of coaches achieve their certification goals.",
+    "competencies_title": "Core Competencies We'll Develop",
+    "competencies_list": "• Foundation & Ethical Guidelines\n• Establishing the Coaching Agreement\n• Trust and Intimacy Development\n• Coaching Presence\n• Active Listening\n• Powerful Questioning\n• Direct Communication\n• Creating Awareness\n• Designing Actions\n• Planning and Goal Setting\n• Managing Progress and Accountability",
+    "program_details": "Programs available: 10-hour ICF Mentor Coaching (group or individual), Business Building Bootcamp, Advanced Coaching Skills Workshop. All programs include personalized feedback, practice sessions, and ongoing support."
+  },
+  "masterminds_page": {
+    "page_title": "Join Our Masterminds",
+    "hero_image": "/images/monica-mastermind-hero.jpg",
+    "intro_text": "Accelerate your growth with a supportive community of like-minded professionals. Our masterminds combine group coaching, peer support, and accountability to help you achieve breakthrough results.",
+    "benefits_title": "Mastermind Benefits",
+    "benefits_list": "• Weekly 90-minute group coaching calls\n• Hot seat problem-solving sessions\n• Peer accountability and support\n• Access to exclusive resources and tools\n• Private online community\n• Guest expert sessions\n• Quarterly one-on-one check-ins",
+    "structure_title": "How Our Masterminds Work",
+    "structure_description": "Groups of 8-10 professionals meet weekly via Zoom for 90 minutes. Each session includes wins and celebrations, hot seat coaching for 2-3 members, group discussion and brainstorming, and action commitments for the week ahead.",
+    "next_cohort_date": "Next Cohort Starts: January 15, 2025",
+    "investment": "Investment: $497/month (6-month commitment)",
+    "guarantee": "100% Satisfaction Guarantee: If you're not completely satisfied after your first month, we'll refund your investment in full."
+  },
   "footer": {
     "about_text": "Monica Leggett is a Professional Certified Coach, author, and speaker dedicated to helping professionals move from doubt to decisive action. Transform your life with proven strategies and personalized support.",
     "newsletter_title": "Stay Connected",

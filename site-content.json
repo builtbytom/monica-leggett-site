@@ -1,0 +1,419 @@
+{
+  "navigation": {
+    "logo_text": "Monica Leggett",
+    "menu_items": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About", 
+        "href": "/about"
+      },
+      {
+        "label": "Book",
+        "href": "/book"
+      },
+      {
+        "label": "Services",
+        "href": "#",
+        "submenu": [
+          {
+            "label": "Personal Coaching",
+            "href": "/personal-coaching"
+          },
+          {
+            "label": "Mentor Coaching",
+            "href": "/mentor-coaching"
+          },
+          {
+            "label": "Masterminds",
+            "href": "/masterminds"
+          }
+        ]
+      },
+      {
+        "label": "Learning Center",
+        "href": "/learning-center"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "cta_button": {
+      "text": "Book Consultation",
+      "href": "/contact"
+    }
+  },
+  
+  "hero_carousel": {
+    "slides": [
+      {
+        "id": "book",
+        "title": "Doubtful to Decisive: Eight Steps to Get Unstuck and Take Action",
+        "subtitle": "Transform your life with my bestselling book. Learn the proven framework that's helped thousands move from paralysis to purposeful action.",
+        "cta_text": "Get Your Copy",
+        "cta_link": "/book",
+        "image": "/images/doubtful-to-decisive-book.png"
+      },
+      {
+        "id": "personal_coaching", 
+        "title": "Personal Transformation",
+        "subtitle": "One-on-One Guidance to Unlock Your Potential",
+        "description": "Get personalized coaching tailored to your unique challenges. Together, we'll create breakthrough moments and lasting change in your life.",
+        "cta_text": "Start Your Journey",
+        "cta_link": "/personal-coaching",
+        "image": "/images/monica-coaching-session.jpg"
+      },
+      {
+        "id": "mentor_coaching",
+        "title": "Mentor Coaching for Coaches", 
+        "subtitle": "Elevate Your Coaching Practice to New Heights",
+        "description": "Learn the advanced techniques and business strategies that transformed my practice. Perfect for coaches ready to scale their impact and income.",
+        "cta_text": "Learn More",
+        "cta_link": "/mentor-coaching",
+        "image": "/images/monica-mentor-coaching.jpg"
+      },
+      {
+        "id": "masterminds",
+        "title": "Join a Powerful Mastermind",
+        "subtitle": "Accelerate Your Growth Through Group Dynamics", 
+        "description": "Connect with like-minded individuals in an exclusive mastermind group. Experience the power of collective wisdom and accountability.",
+        "cta_text": "Join Now",
+        "cta_link": "/masterminds",
+        "image": "/images/monica-mastermind-group.jpg"
+      }
+    ],
+    "main_headline": "Dream it, plan it, do it, live it!"
+  },
+
+  "about_homepage": {
+    "title": "Meet Monica",
+    "content": "I'm Monica Leggett, a seasoned expert with years of experience dedicated to transforming lives and accelerating goal achievement.",
+    "cta_text": "Learn More About Monica",
+    "cta_link": "/about",
+    "image": "/images/monica-leggett-portrait.jpg"
+  },
+
+  "services_homepage": {
+    "title": "How I Can Help You",
+    "subtitle": "Choose your path to transformation",
+    "services": [
+      {
+        "id": "book",
+        "title": "Doubtful to Decisive",
+        "subtitle": "Eight Steps to Get Unstuck and Take Action", 
+        "description": "Transform your life with my bestselling book. Learn the proven framework that's helped thousands move from paralysis to purposeful action.",
+        "cta_text": "Get Your Copy",
+        "cta_link": "/book",
+        "image": "/images/doubtful-to-decisive-book.png"
+      },
+      {
+        "id": "personal_coaching",
+        "title": "Personal Transformation",
+        "subtitle": "One-on-One Guidance to Unlock Your Potential",
+        "description": "Get personalized coaching tailored to your unique challenges. Together, we'll create breakthrough moments and lasting change in your life.",
+        "cta_text": "Start Your Journey", 
+        "cta_link": "/personal-coaching",
+        "image": "/images/monica-coaching-session.jpg"
+      },
+      {
+        "id": "mentor_coaching",
+        "title": "Mentor Coaching for Coaches",
+        "subtitle": "Elevate Your Coaching Practice to New Heights",
+        "description": "Learn the advanced techniques and business strategies that transformed my practice. Perfect for coaches ready to scale their impact and income.",
+        "cta_text": "Learn More",
+        "cta_link": "/mentor-coaching", 
+        "image": "/images/monica-mentor-coaching.jpg"
+      },
+      {
+        "id": "masterminds",
+        "title": "Join a Powerful Mastermind",
+        "subtitle": "Accelerate Your Growth Through Group Dynamics",
+        "description": "Connect with like-minded individuals in an exclusive mastermind group. Experience the power of collective wisdom and accountability.",
+        "cta_text": "Join Now",
+        "cta_link": "/masterminds",
+        "image": "/images/monica-mastermind-group.jpg"
+      }
+    ]
+  },
+
+  "testimonials_homepage": {
+    "title": "What Clients Say",
+    "testimonials": [
+      {
+        "id": "sarah_m",
+        "name": "Sarah M.",
+        "role": "Business Owner",
+        "content": "Monica's coaching transformed my approach to decision-making.",
+        "rating": 5
+      },
+      {
+        "id": "michael_r", 
+        "name": "Michael R.",
+        "role": "Entrepreneur",
+        "content": "The mastermind group changed everything for me.",
+        "rating": 5
+      },
+      {
+        "id": "jennifer_k",
+        "name": "Jennifer K.",
+        "role": "Career Changer",
+        "content": "'Doubtful to Decisive' gave me the tools I needed to finally make the career change I'd been dreaming about for years.",
+        "rating": 5
+      }
+    ]
+  },
+
+  "lead_magnet": {
+    "title": "Ready to Take Action?",
+    "subtitle": "Get my FREE Action Guide and start your transformation today",
+    "description": "Download my comprehensive guide that walks you through the first steps of moving from doubt to decisive action.",
+    "form": {
+      "headline": "Download Your Free Action Guide",
+      "email_placeholder": "Enter your email address",
+      "button_text": "Get My Free Guide"
+    }
+  },
+
+  "about_page": {
+    "hero": {
+      "title": "Meet Monica Leggett",
+      "subtitle": "Professional Certified Coach | Author | Speaker",
+      "tagline": "Dream It. Plan It. Do It. Live It!"
+    },
+    "intro": {
+      "content": "For over 15 years, I've been helping individuals, couples, teams, and small business owners shift from struggling to thriving – one strategic step at a time. As a certified Professional Coach (PCC), mentor coach, and author, I'm passionate about helping you break free from doubt, overwhelm, and frustration to find clarity, confidence, and joy.\n\nKnown as the \"conversation whisperer,\" I specialize in helping my clients navigate crucial conversations that build or mend relationships. Whether you're an emerging leader, a small business owner, or someone seeking personal transformation, I provide the strategic guidance and support you need to achieve your goals."
+    },
+    "journey": {
+      "title": "My Journey to Coaching",
+      "sections": [
+        {
+          "title": "Rooted in Connection",
+          "content": "As one of 10 children, I learned early the power of connection, communication, and finding my unique voice"
+        },
+        {
+          "title": "37 Years of Partnership", 
+          "content": "Married to Steve for 37 years, raised three children, now a grandmother"
+        },
+        {
+          "title": "Finding My Purpose",
+          "content": "Founded New Steps Life Coaching in 2007"
+        },
+        {
+          "title": "Author & Thought Leader",
+          "content": "Wrote books \"Doubtful to Decisive\" and \"Break Free from the S.T.O.P. Syndrome\""
+        }
+      ]
+    },
+    "credentials": {
+      "title": "Credentials & Certifications",
+      "items": [
+        "PCC Certified (Professional Certified Coach through International Coaching Federation)",
+        "Mentor Coach",
+        "ICF Chapter President (Connecticut, 2019)",
+        "PeopleMap™ Trainer", 
+        "Positive Intelligence Coach"
+      ]
+    },
+    "philosophy": {
+      "quote": "I believe everyone has the answers within them – sometimes you just need a skilled partner to help you uncover them.",
+      "approach": [
+        "Strategic & Practical",
+        "Compassionate & Direct", 
+        "Holistic & Integrated"
+      ]
+    },
+    "results": {
+      "title": "Client Achievements",
+      "achievements": [
+        "Clarity & Focus",
+        "Confidence & Action",
+        "Work-Life Harmony",
+        "Breakthrough Growth", 
+        "Stronger Relationships",
+        "Business Success"
+      ]
+    }
+  },
+
+  "contact_page": {
+    "hero": {
+      "title": "Let's Start Your Transformation",
+      "subtitle": "Your Journey to Clarity and Confidence Begins Here"
+    },
+    "scheduling": {
+      "title": "Schedule a Free Discovery Call",
+      "description": "Ready to explore how coaching can transform your life? Let's connect and discuss your goals in a complimentary discovery session."
+    },
+    "contact_info": {
+      "title": "Get in Touch",
+      "email": "monica@monicaleggett.com",
+      "location": "Connecticut, USA",
+      "availability": "Available Worldwide via Zoom"
+    },
+    "office_hours": {
+      "title": "Office Hours", 
+      "schedule": [
+        "Monday - Friday: 9:00 AM - 5:00 PM EST",
+        "Weekends: By Appointment",
+        "Evening appointments available for working professionals"
+      ]
+    },
+    "form": {
+      "title": "Send Me a Message",
+      "fields": [
+        {
+          "name": "firstName",
+          "label": "First Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "lastName", 
+          "label": "Last Name",
+          "type": "text", 
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email Address",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone Number", 
+          "type": "tel",
+          "required": false
+        },
+        {
+          "name": "interest",
+          "label": "I'm Interested In",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Personal Coaching",
+            "Mentor Coaching", 
+            "Masterminds",
+            "Speaking Engagement",
+            "Other"
+          ]
+        },
+        {
+          "name": "goals",
+          "label": "Tell Me About Your Goals",
+          "type": "textarea", 
+          "required": true
+        },
+        {
+          "name": "referral",
+          "label": "How Did You Hear About Me?",
+          "type": "text",
+          "required": false
+        }
+      ],
+      "newsletter_opt_in": "Yes, I'd like to receive Monica's monthly newsletter with tips, resources, and inspiration for personal growth",
+      "submit_text": "Send Message"
+    },
+    "location": {
+      "title": "Located in Beautiful Connecticut"
+    },
+    "social": {
+      "title": "Connect on Social",
+      "links": [
+        {
+          "platform": "LinkedIn",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook", 
+          "url": "#"
+        },
+        {
+          "platform": "Instagram",
+          "url": "#"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "question": "How quickly will you respond to my message?",
+          "answer": "I typically respond within 24-48 hours during business days."
+        },
+        {
+          "question": "Do you offer virtual coaching sessions?",
+          "answer": "Yes, I offer both virtual and in-person coaching sessions to accommodate your preferences and schedule."
+        },
+        {
+          "question": "What's the best way to schedule a consultation?",
+          "answer": "The easiest way is to use the scheduling calendar above or send me a message through the contact form."
+        },
+        {
+          "question": "Do you work with international clients?",
+          "answer": "Absolutely! I work with clients worldwide via Zoom and other video platforms."
+        }
+      ]
+    },
+    "coaching_options": [
+      "Virtual Coaching",
+      "In-Person Sessions", 
+      "Flexible Scheduling"
+    ]
+  },
+
+  "footer": {
+    "tagline": "Dream it, plan it, do it, live it!",
+    "quick_links": {
+      "title": "Quick Links",
+      "links": [
+        {
+          "label": "About Monica",
+          "href": "/about"
+        },
+        {
+          "label": "Buy the Book",
+          "href": "/book"
+        },
+        {
+          "label": "Learning Center", 
+          "href": "/learning-center"
+        },
+        {
+          "label": "Free Consultation",
+          "href": "/contact"
+        }
+      ]
+    },
+    "services": {
+      "title": "Services",
+      "links": [
+        {
+          "label": "Personal Coaching",
+          "href": "/personal-coaching"
+        },
+        {
+          "label": "Mentor Coaching",
+          "href": "/mentor-coaching" 
+        },
+        {
+          "label": "Masterminds",
+          "href": "/masterminds"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "monica@monicaleggett.com",
+      "location": "Connecticut, USA"
+    },
+    "copyright": "© 2025 Monica Leggett. All rights reserved.",
+    "credit": {
+      "text": "Website by Craft My Marketing",
+      "url": "https://cmmct.com"
+    }
+  }
+}

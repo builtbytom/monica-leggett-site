@@ -462,6 +462,256 @@
       ]
     },
     {
+      "id": "book_page",
+      "title": "Book Page - Doubtful to Decisive",
+      "type": "single",
+      "fields": [
+        {
+          "id": "page_title",
+          "label": "Page Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "subtitle",
+          "label": "Page Subtitle",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "book_image",
+          "label": "Book Cover Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "book_description",
+          "label": "Book Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "amazon_price",
+          "label": "Amazon Price",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "amazon_link",
+          "label": "Amazon Purchase Link",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "eight_steps_title",
+          "label": "8 Steps Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "eight_steps_description",
+          "label": "8 Steps Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "target_audience_title",
+          "label": "Who This Book Is For - Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "target_audience_list",
+          "label": "Target Audience List",
+          "type": "textarea",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "personal_coaching_page",
+      "title": "Personal Coaching Page",
+      "type": "single",
+      "fields": [
+        {
+          "id": "page_title",
+          "label": "Page Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "hero_image",
+          "label": "Hero Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "intro_text",
+          "label": "Introduction Text",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "services_title",
+          "label": "Services Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "services_list",
+          "label": "Services List",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "process_title",
+          "label": "Process Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "process_steps",
+          "label": "Process Steps",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "cta_title",
+          "label": "Call to Action Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "cta_button",
+          "label": "CTA Button Text",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "mentor_coaching_page",
+      "title": "Mentor Coaching Page",
+      "type": "single",
+      "fields": [
+        {
+          "id": "page_title",
+          "label": "Page Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "hero_image",
+          "label": "Hero Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "intro_text",
+          "label": "Introduction Text",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "icf_support_title",
+          "label": "ICF Support Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "icf_support_description",
+          "label": "ICF Support Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "competencies_title",
+          "label": "Competencies Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "competencies_list",
+          "label": "Core Competencies List",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "program_details",
+          "label": "Program Details",
+          "type": "textarea",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "masterminds_page",
+      "title": "Masterminds Page",
+      "type": "single",
+      "fields": [
+        {
+          "id": "page_title",
+          "label": "Page Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "hero_image",
+          "label": "Hero Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "intro_text",
+          "label": "Introduction Text",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "benefits_title",
+          "label": "Benefits Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "benefits_list",
+          "label": "Benefits List",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "structure_title",
+          "label": "Structure Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "structure_description",
+          "label": "Meeting Structure Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "next_cohort_date",
+          "label": "Next Cohort Start Date",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "investment",
+          "label": "Investment/Pricing",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "guarantee",
+          "label": "Guarantee Text",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    },
+    {
       "id": "footer",
       "title": "Website Footer",
       "type": "single",
