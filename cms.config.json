@@ -1,0 +1,265 @@
+{
+  "siteName": "Monica Leggett - Life Coach",
+  "sections": [
+    {
+      "id": "hero",
+      "title": "Hero Section",
+      "type": "single",
+      "fields": [
+        {
+          "id": "book_title",
+          "label": "Book Slide - Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "book_subtitle",
+          "label": "Book Slide - Subtitle",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "book_description",
+          "label": "Book Slide - Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "book_cta1",
+          "label": "Book Slide - Button 1 Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "book_cta2",
+          "label": "Book Slide - Button 2 Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "coaching_title",
+          "label": "Coaching Slide - Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "coaching_subtitle",
+          "label": "Coaching Slide - Subtitle",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "coaching_description",
+          "label": "Coaching Slide - Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "coaching_cta1",
+          "label": "Coaching Slide - Button 1 Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "coaching_cta2",
+          "label": "Coaching Slide - Button 2 Text",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "About Section",
+      "type": "single",
+      "fields": [
+        {
+          "id": "title",
+          "label": "Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "subtitle",
+          "label": "Section Subtitle",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "description1",
+          "label": "First Paragraph",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "description2",
+          "label": "Second Paragraph",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "cta",
+          "label": "Button Text",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "title": "Services Section",
+      "type": "single",
+      "fields": [
+        {
+          "id": "sectionTitle",
+          "label": "Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "sectionSubtitle",
+          "label": "Section Subtitle",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "book_title",
+          "label": "Book Card - Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "book_description",
+          "label": "Book Card - Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "book_cta",
+          "label": "Book Card - Button Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "coaching_title",
+          "label": "Coaching Card - Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "coaching_description",
+          "label": "Coaching Card - Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "coaching_cta",
+          "label": "Coaching Card - Button Text",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "leadMagnet",
+      "title": "Lead Magnet Section",
+      "type": "single",
+      "fields": [
+        {
+          "id": "title",
+          "label": "Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "description",
+          "label": "Section Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "buttonText",
+          "label": "Button Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "emailPlaceholder",
+          "label": "Email Field Placeholder",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "testimonials",
+      "title": "Testimonials",
+      "type": "repeater",
+      "fields": [
+        {
+          "id": "name",
+          "label": "Client Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "title",
+          "label": "Client Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "quote",
+          "label": "Testimonial Quote",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "rating",
+          "label": "Rating (1-5)",
+          "type": "number",
+          "required": true,
+          "min": 1,
+          "max": 5
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "title": "Footer",
+      "type": "single",
+      "fields": [
+        {
+          "id": "about",
+          "label": "About Text",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "newsletterTitle",
+          "label": "Newsletter Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "newsletterDescription",
+          "label": "Newsletter Description",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "newsletterButton",
+          "label": "Newsletter Button Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "copyright",
+          "label": "Copyright Text",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

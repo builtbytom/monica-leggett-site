@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "book_title": "Doubtful to Decisive:",
+    "book_subtitle": "Transform Your Life in 8 Steps",
+    "book_description": "Discover the proven framework that has helped hundreds of professionals break through self-doubt and take decisive action in their careers and lives.",
+    "book_cta1": "Get Your Copy",
+    "book_cta2": "Read First Chapter Free",
+    "coaching_title": "Transform Your Life",
+    "coaching_subtitle": "Personal Coaching for Professionals",
+    "coaching_description": "Break through barriers, overcome self-doubt, and achieve the success you deserve with personalized one-on-one coaching.",
+    "coaching_cta1": "Book Discovery Call",
+    "coaching_cta2": "Learn More"
+  },
+  "about": {
+    "title": "Meet Monica",
+    "subtitle": "Your Guide to Decisive Action",
+    "description1": "I'm Monica Leggett, a certified life coach, author, and speaker with over 20 years of experience helping professionals transform their lives. My journey from corporate burnout to purposeful living inspired me to help others break free from self-doubt.",
+    "description2": "Through my proven 8-step framework, I've guided hundreds of clients from feeling stuck and overwhelmed to living with clarity, confidence, and purpose. Whether you're seeking personal transformation, building a coaching practice, or looking for community support, I'm here to help you take decisive action.",
+    "cta": "Learn More About Me"
+  },
+  "services": {
+    "sectionTitle": "How Can I Help You?",
+    "sectionSubtitle": "Choose Your Path to Transformation",
+    "book_title": "📚 Get the Book",
+    "book_description": "Start your transformation journey with 'Doubtful to Decisive' - your roadmap to breaking through barriers and achieving your goals.",
+    "book_cta": "Order Now",
+    "coaching_title": "🌟 Personal Coaching",
+    "coaching_description": "Get personalized one-on-one support to overcome challenges, set clear goals, and create lasting change in your life.",
+    "coaching_cta": "Book Discovery Call"
+  },
+  "leadMagnet": {
+    "title": "Ready to Take Action? 🚀",
+    "description": "Download my free Action Guide and start your transformation today!",
+    "buttonText": "Get Your Free Guide",
+    "emailPlaceholder": "Enter your email"
+  },
+  "testimonials": [
+    {
+      "name": "Sarah M.",
+      "title": "Marketing Director",
+      "quote": "Monica's 8-step framework completely transformed how I approach challenges. I went from feeling stuck to landing my dream job!",
+      "rating": 5
+    },
+    {
+      "name": "John D.",
+      "title": "Business Owner",
+      "quote": "The mastermind group gave me the accountability and support I needed to finally launch my business. Monica is an incredible facilitator.",
+      "rating": 5
+    },
+    {
+      "name": "Lisa R.",
+      "title": "ICF Certified Coach",
+      "quote": "Monica's mentor coaching program fast-tracked my certification. Her guidance was invaluable in building my practice.",
+      "rating": 5
+    }
+  ],
+  "footer": {
+    "about": "Monica Leggett is a certified life coach, author, and speaker dedicated to helping professionals move from doubt to decisive action.",
+    "newsletterTitle": "Stay Connected",
+    "newsletterDescription": "Get weekly insights and inspiration delivered to your inbox.",
+    "newsletterButton": "Subscribe",
+    "copyright": "© 2025 Monica Leggett Coaching. All rights reserved."
+  }
+}
