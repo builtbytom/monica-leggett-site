@@ -44,12 +44,16 @@ export const handler: Handler = async (event) => {
     const { owner, repo: repoName } = parseGitHubUrl(repo);
     const url = `https://api.github.com/repos/${owner}/${repoName}/contents/cms.config.json`;
     
-    const response = await fetch(url, {
-      headers: {
-        'Authorization': `Bearer ${GITHUB_TOKEN}`,
-        'Accept': 'application/vnd.github.v3+json',
-      },
-    });
+    const headers: Record<string, string> = {
+      'Accept': 'application/vnd.github.v3+json',
+    };
+    
+    // Only add auth if token is available
+    if (GITHUB_TOKEN) {
+      headers['Authorization'] = `Bearer ${GITHUB_TOKEN}`;
+    }
+
+    const response = await fetch(url, { headers });
 
     if (!response.ok) {
       throw new Error('Failed to fetch CMS config');
