@@ -1,0 +1,404 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CMSContent from '../components/CMSContent.astro';
+---
+
+<BaseLayout title="About Monica">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-monica-bg to-white py-12 lg:py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <!-- Centered Title Section -->
+        <div class="text-center mb-12">
+          <h1 class="text-4xl lg:text-5xl font-serif font-bold text-monica-navy mb-4" data-cms="about-hero-title">
+            Meet Monica Leggett
+          </h1>
+          <p class="text-xl text-monica-teal font-medium mb-2" data-cms="about-hero-subtitle">
+            Professional Certified Coach | Author | Speaker
+          </p>
+          <p class="text-lg text-monica-dark italic" data-cms="about-hero-motto">
+            "Dream It. Plan It. Do It. Live It!"
+          </p>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid lg:grid-cols-3 gap-8 items-start">
+          <!-- Left Column - Image -->
+          <div class="lg:col-span-1">
+            <div class="relative max-w-sm mx-auto lg:mx-0">
+              <div class="absolute inset-0 bg-gradient-to-br from-monica-navy to-monica-teal rounded-lg transform rotate-2"></div>
+              <img 
+                src="/images/monica-leggett-portrait.jpg" 
+                alt="Monica Leggett"
+                class="relative rounded-lg shadow-xl w-full"
+                data-cms-image="about-hero-image"
+              >
+              <div class="mt-4 bg-white rounded-lg shadow-lg p-4">
+                <p class="text-2xl font-serif font-bold text-monica-navy text-center" data-cms="about-hero-stat-title">15+ Years</p>
+                <p class="text-sm text-monica-light text-center" data-cms="about-hero-stat-description">Transforming Lives Through Coaching</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Text Content -->
+          <div class="lg:col-span-2 space-y-6">
+            <div class="prose prose-lg text-monica-light max-w-none" data-cms="about-hero-description" data-cms-type="markdown">
+              <p>
+                For over 15 years, I've been helping individuals, couples, teams, and small business owners shift from struggling to thriving – one strategic step at a time. As a certified Professional Coach (PCC), mentor coach, and author, I'm passionate about helping you break free from doubt, overwhelm, and frustration to find clarity, confidence, and joy.
+              </p>
+              <p>
+                Known as the "conversation whisperer," I specialize in helping my clients navigate crucial conversations that build or mend relationships. Whether you're an emerging leader, a small business owner, or someone seeking personal transformation, I provide the strategic guidance and support you need to achieve your goals.
+              </p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="text-center p-4 bg-white rounded-lg shadow">
+                <p class="text-2xl font-bold text-monica-navy" data-cms="stat-1-number">500+</p>
+                <p class="text-sm text-monica-light" data-cms="stat-1-label">Clients Transformed</p>
+              </div>
+              <div class="text-center p-4 bg-white rounded-lg shadow">
+                <p class="text-2xl font-bold text-monica-navy" data-cms="stat-2-number">2</p>
+                <p class="text-sm text-monica-light" data-cms="stat-2-label">Published Books</p>
+              </div>
+              <div class="text-center p-4 bg-white rounded-lg shadow">
+                <p class="text-2xl font-bold text-monica-navy" data-cms="stat-3-number">37</p>
+                <p class="text-sm text-monica-light" data-cms="stat-3-label">Years Married</p>
+              </div>
+              <div class="text-center p-4 bg-white rounded-lg shadow">
+                <p class="text-2xl font-bold text-monica-navy" data-cms="stat-4-number">2019</p>
+                <p class="text-sm text-monica-light" data-cms="stat-4-label">ICF President</p>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4">
+              <a href="/contact#consultation" class="btn-primary inline-flex items-center">
+                <span>Start Your Journey</span>
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+              <a href="/learning-center" class="btn-secondary inline-flex items-center">
+                <span>Explore Resources</span>
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Story Section -->
+  <section class="py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-12 animate-fade-in" data-cms="story-title">
+          My Journey to Coaching
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-monica-bg rounded-2xl p-8 animate-slide-in-left">
+            <div class="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="story-family-title">
+              Rooted in Connection
+            </h3>
+            <p class="text-monica-light" data-cms="story-family-text">
+              As one of 10 children, I learned early the power of connection, communication, and finding your unique voice in a crowd. These childhood lessons shaped my passion for helping others discover their authentic selves and build meaningful relationships.
+            </p>
+          </div>
+
+          <div class="bg-monica-bg rounded-2xl p-8 animate-slide-in-right">
+            <div class="text-4xl mb-4">💑</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="story-marriage-title">
+              37 Years of Partnership
+            </h3>
+            <p class="text-monica-light" data-cms="story-marriage-text">
+              Married to my husband Steve for 37 years and raising three wonderful children, I understand the beautiful complexity of balancing personal dreams with family life. As a grandmother now, I cherish the wisdom that comes from life's transitions.
+            </p>
+          </div>
+
+          <div class="bg-monica-bg rounded-2xl p-8 animate-slide-in-left">
+            <div class="text-4xl mb-4">🎯</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="story-purpose-title">
+              Finding My Purpose
+            </h3>
+            <p class="text-monica-light" data-cms="story-purpose-text">
+              In 2007, I founded New Steps Life Coaching after recognizing my calling to help others navigate life's challenges. What started as a personal mission has grown into a thriving practice that has transformed hundreds of lives.
+            </p>
+          </div>
+
+          <div class="bg-monica-bg rounded-2xl p-8 animate-slide-in-right">
+            <div class="text-4xl mb-4">📚</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="story-author-title">
+              Author & Thought Leader
+            </h3>
+            <p class="text-monica-light" data-cms="story-author-text">
+              My books "Doubtful to Decisive" and "Break Free from the S.T.O.P. Syndrome" distill years of coaching wisdom into practical, actionable strategies that help readers overcome overwhelm and take confident action.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials Section -->
+  <section class="bg-monica-bg py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl lg:text-4xl font-serif font-bold text-center text-monica-navy mb-12 animate-fade-in" data-cms="credentials-title">
+        Professional Excellence You Can Trust
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="text-center animate-slide-in-left">
+          <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🏆</span>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="credential-1-title">PCC Certified</h3>
+          <p class="text-monica-light" data-cms="credential-1-text">
+            Professional Certified Coach through the International Coaching Federation
+          </p>
+        </div>
+
+        <div class="text-center animate-slide-in-up">
+          <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🎓</span>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="credential-2-title">Mentor Coach</h3>
+          <p class="text-monica-light" data-cms="credential-2-text">
+            Certified to train and develop the next generation of professional coaches
+          </p>
+        </div>
+
+        <div class="text-center animate-slide-in-right">
+          <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🗣️</span>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="credential-3-title">ICF Chapter President</h3>
+          <p class="text-monica-light" data-cms="credential-3-text">
+            Past President of the Connecticut ICF Chapter (2019), leading the coaching community
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mt-12">
+        <div class="text-center animate-slide-in-left">
+          <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🧭</span>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="credential-4-title">PeopleMap™ Trainer</h3>
+          <p class="text-monica-light" data-cms="credential-4-text">
+            Certified in advanced personality assessment and team dynamics
+          </p>
+        </div>
+
+        <div class="text-center animate-slide-in-right">
+          <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🧠</span>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="credential-5-title">Positive Intelligence Coach</h3>
+          <p class="text-monica-light" data-cms="credential-5-text">
+            Specialized in mental fitness and building resilient mindsets
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-12 animate-fade-in" data-cms="philosophy-title">
+          My Coaching Philosophy
+        </h2>
+
+        <div class="bg-gradient-to-br from-monica-bg to-white rounded-2xl p-8 lg:p-12 mb-12 animate-slide-in-up">
+          <blockquote class="text-xl lg:text-2xl font-serif text-monica-navy text-center mb-6" data-cms="philosophy-quote">
+            "I believe everyone has the answers within them – sometimes you just need a skilled partner to help you uncover them."
+          </blockquote>
+          
+          <div class="prose prose-lg max-w-none text-monica-light" data-cms="philosophy-text" data-cms-type="markdown">
+            <p>
+              Known as the "conversation whisperer," I specialize in helping my clients navigate crucial conversations that build or mend relationships. My approach is cooperative and creative, focusing on clarifying issues and generating solutions that align with your authentic self.
+            </p>
+            <p>
+              Whether you're a solo entrepreneur, an emerging leader, or someone seeking personal transformation, I'll help you move from confused, stressed, and overwhelmed to clear, joyful, and at ease. Together, we'll create a strategic plan that turns your dreams into achievable goals.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 animate-slide-in-left">
+            <h3 class="text-lg font-serif font-bold text-monica-navy mb-3" data-cms="approach-1-title">
+              Strategic & Practical
+            </h3>
+            <p class="text-monica-light" data-cms="approach-1-text">
+              Every session focuses on actionable steps that move you closer to your goals
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg p-6 animate-slide-in-up">
+            <h3 class="text-lg font-serif font-bold text-monica-navy mb-3" data-cms="approach-2-title">
+              Compassionate & Direct
+            </h3>
+            <p class="text-monica-light" data-cms="approach-2-text">
+              I balance empathy with honest feedback to accelerate your growth
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg p-6 animate-slide-in-right">
+            <h3 class="text-lg font-serif font-bold text-monica-navy mb-3" data-cms="approach-3-title">
+              Holistic & Integrated
+            </h3>
+            <p class="text-monica-light" data-cms="approach-3-text">
+              We address all aspects of your life to create sustainable transformation
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="bg-monica-bg py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-12 animate-fade-in" data-cms="results-title">
+        What My Clients Achieve
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white rounded-xl p-6 shadow-lg animate-slide-in-up">
+          <span class="text-3xl mb-4 block">💡</span>
+          <h3 class="font-serif font-bold text-monica-navy mb-2" data-cms="result-1-title">Clarity & Focus</h3>
+          <p class="text-monica-light" data-cms="result-1-text">
+            Laser-focused goals and a clear path to achieve them
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg animate-slide-in-up" style="animation-delay: 0.1s">
+          <span class="text-3xl mb-4 block">💪</span>
+          <h3 class="font-serif font-bold text-monica-navy mb-2" data-cms="result-2-title">Confidence & Action</h3>
+          <p class="text-monica-light" data-cms="result-2-text">
+            Empowered mindset and decisive action-taking
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg animate-slide-in-up" style="animation-delay: 0.2s">
+          <span class="text-3xl mb-4 block">⚖️</span>
+          <h3 class="font-serif font-bold text-monica-navy mb-2" data-cms="result-3-title">Work-Life Harmony</h3>
+          <p class="text-monica-light" data-cms="result-3-text">
+            More time for self-care and what matters most
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg animate-slide-in-up" style="animation-delay: 0.3s">
+          <span class="text-3xl mb-4 block">🌟</span>
+          <h3 class="font-serif font-bold text-monica-navy mb-2" data-cms="result-4-title">Breakthrough Growth</h3>
+          <p class="text-monica-light" data-cms="result-4-text">
+            From entry-level to leadership positions
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg animate-slide-in-up" style="animation-delay: 0.4s">
+          <span class="text-3xl mb-4 block">💝</span>
+          <h3 class="font-serif font-bold text-monica-navy mb-2" data-cms="result-5-title">Stronger Relationships</h3>
+          <p class="text-monica-light" data-cms="result-5-text">
+            Deeper connections in personal and professional life
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg animate-slide-in-up" style="animation-delay: 0.5s">
+          <span class="text-3xl mb-4 block">🚀</span>
+          <h3 class="font-serif font-bold text-monica-navy mb-2" data-cms="result-6-title">Business Success</h3>
+          <p class="text-monica-light" data-cms="result-6-text">
+            From solo entrepreneurs to multi-million dollar companies
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-br from-monica-dark to-monica-navy py-16 lg:py-20 text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-serif font-bold text-white mb-6 animate-fade-in drop-shadow-lg" data-cms="cta-title">
+        Ready to Write Your Success Story?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-in-up drop-shadow" data-cms="cta-subtitle">
+        Let's work together to transform your doubts into decisive action and create the life you've been dreaming of.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-up">
+        <a href="/contact#consultation" class="bg-white text-monica-navy px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5">
+          Schedule Your Free Consultation
+        </a>
+        <a href="/services/book" class="bg-monica-teal text-white px-8 py-4 rounded-lg font-bold hover:opacity-90 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5">
+          Get My Book
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-up {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+</style>

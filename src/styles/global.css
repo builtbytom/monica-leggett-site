@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Monica's brand */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-monica-dark;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-monica-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-monica-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-monica-dark transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-monica-teal text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-monica-navy text-monica-navy px-6 py-3 rounded-lg font-semibold hover:bg-monica-navy hover:text-white transition-colors;
+  }
+  
+  .btn-sage {
+    @apply bg-monica-sage text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-colors;
+  }
+}

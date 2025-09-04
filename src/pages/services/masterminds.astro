@@ -1,0 +1,473 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Masterminds">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-monica-bg to-white py-12 lg:py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h1 class="text-4xl lg:text-5xl font-serif font-bold text-monica-navy mb-4" data-cms="mastermind-hero-title">
+            Entrepreneur & Leadership Masterminds
+          </h1>
+          <p class="text-xl text-monica-teal font-medium mb-2" data-cms="mastermind-hero-subtitle">
+            Accelerate Your Success Through the Power of Community
+          </p>
+          <p class="text-lg text-monica-dark max-w-3xl mx-auto" data-cms="mastermind-hero-description">
+            Join a curated group of ambitious professionals and entrepreneurs committed to breakthrough growth. Together, we'll challenge limitations, share wisdom, and achieve extraordinary results.
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact#consultation" class="btn-primary inline-flex items-center justify-center">
+            <span>Apply for Next Cohort</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+          <a href="#how-it-works" class="btn-secondary inline-flex items-center justify-center">
+            <span>Learn More</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is a Mastermind Section -->
+  <section class="py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy mb-6" data-cms="what-is-title">
+              What is a Mastermind?
+            </h2>
+            <div class="prose prose-lg text-monica-light" data-cms="what-is-description" data-cms-type="markdown">
+              <p>
+                A mastermind brings together a small group of driven individuals who meet regularly to tackle challenges, set ambitious goals, and hold each other accountable. It's where your biggest dreams meet strategic action.
+              </p>
+              <p>
+                As your facilitator, I create a safe, dynamic environment where you'll receive honest feedback, fresh perspectives, and unwavering support from peers who understand the unique challenges of leadership and entrepreneurship.
+              </p>
+              <p>
+                This isn't just networking – it's a transformative experience where iron sharpens iron, and collective wisdom accelerates individual success.
+              </p>
+            </div>
+            <div class="mt-6 bg-monica-bg rounded-lg p-6">
+              <p class="text-monica-navy font-serif font-bold mb-2" data-cms="napoleon-hill-quote">
+                "No mind is complete by itself. It needs contact and association with other minds to grow and expand."
+              </p>
+              <p class="text-monica-light text-sm" data-cms="napoleon-hill-attribution">
+                — Napoleon Hill, Think and Grow Rich
+              </p>
+            </div>
+          </div>
+          <div class="relative max-w-md mx-auto">
+            <div class="absolute inset-0 bg-gradient-to-br from-monica-navy to-monica-teal rounded-2xl transform rotate-3"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600"
+              alt="Mastermind group collaboration"
+              class="relative rounded-2xl shadow-xl w-full"
+              data-cms-image="what-is-image"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Power of Masterminds Section -->
+  <section class="py-16 lg:py-20 bg-monica-bg">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-12" data-cms="power-title">
+          The Power of Strategic Collaboration
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">🚀</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="power-1-title">
+              Accelerated Growth
+            </h3>
+            <p class="text-monica-light" data-cms="power-1-text">
+              Learn from others' successes and failures. Why take years to figure something out when someone in your group has already solved it?
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">💡</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="power-2-title">
+              Fresh Perspectives
+            </h3>
+            <p class="text-monica-light" data-cms="power-2-text">
+              Break through blind spots with insights from diverse backgrounds and industries. See your challenges through new lenses.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">🎯</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="power-3-title">
+              Accountability Partners
+            </h3>
+            <p class="text-monica-light" data-cms="power-3-text">
+              Stay on track with peers who care about your success. Regular check-ins ensure you follow through on commitments.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">🤝</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="power-4-title">
+              Trusted Network
+            </h3>
+            <p class="text-monica-light" data-cms="power-4-text">
+              Build deep relationships with ambitious peers who become your personal board of advisors and lifelong connections.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">⚡</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="power-5-title">
+              Expanded Thinking
+            </h3>
+            <p class="text-monica-light" data-cms="power-5-text">
+              Challenge limiting beliefs and think bigger. Your group will push you beyond what you thought possible.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">🏆</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="power-6-title">
+              Collective Wins
+            </h3>
+            <p class="text-monica-light" data-cms="power-6-text">
+              Celebrate victories together and leverage group resources, connections, and expertise for everyone's benefit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-4" data-cms="how-title">
+          How Our Masterminds Work
+        </h2>
+        <p class="text-xl text-monica-light text-center mb-12 max-w-3xl mx-auto" data-cms="how-subtitle">
+          A proven structure designed for maximum impact and lasting transformation
+        </p>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Format Details -->
+          <div class="space-y-6">
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+              <h3 class="text-lg font-serif font-bold text-monica-navy mb-3" data-cms="format-title">
+                Meeting Format
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-monica-teal mr-2">•</span>
+                  <span class="text-monica-light" data-cms="format-1">Bi-weekly 2-hour virtual sessions via Zoom</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-monica-teal mr-2">•</span>
+                  <span class="text-monica-light" data-cms="format-2">6-8 carefully selected members per group</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-monica-teal mr-2">•</span>
+                  <span class="text-monica-light" data-cms="format-3">6-month commitment for deep transformation</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-monica-teal mr-2">•</span>
+                  <span class="text-monica-light" data-cms="format-4">Optional quarterly in-person intensives</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+              <h3 class="text-lg font-serif font-bold text-monica-navy mb-3" data-cms="structure-title">
+                Session Structure
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-monica-teal mr-2">•</span>
+                  <span class="text-monica-light" data-cms="structure-1">Opening wins and accountability check-ins</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-monica-teal mr-2">•</span>
+                  <span class="text-monica-light" data-cms="structure-2">Hot seat problem-solving sessions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-monica-teal mr-2">•</span>
+                  <span class="text-monica-light" data-cms="structure-3">Strategic planning and goal setting</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-monica-teal mr-2">•</span>
+                  <span class="text-monica-light" data-cms="structure-4">Commitment declarations and next steps</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- What's Included -->
+          <div class="space-y-6">
+            <div class="bg-gradient-to-br from-monica-navy to-monica-teal text-white rounded-xl p-6">
+              <h3 class="text-lg font-serif font-bold mb-3" data-cms="included-title">
+                What's Included
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-white mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span data-cms="included-1">Expert facilitation by Monica</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-white mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span data-cms="included-2">Private online community platform</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-white mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span data-cms="included-3">Resource library and tools</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-white mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span data-cms="included-4">Guest expert presentations</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-white mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span data-cms="included-5">Email support between sessions</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-white mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span data-cms="included-6">Copy of "Doubtful to Decisive"</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-white mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span data-cms="included-7">Lifetime alumni network access</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-monica-bg rounded-xl p-6">
+              <h3 class="text-lg font-serif font-bold text-monica-navy mb-3" data-cms="investment-title">
+                Your Investment
+              </h3>
+              <p class="text-monica-light mb-4" data-cms="investment-text">
+                Mastermind groups are an investment in your future success. Each cohort is carefully curated to ensure the right mix of experience, ambition, and commitment.
+              </p>
+              <a href="/contact#consultation" class="inline-block bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition-all">
+                Schedule a Discovery Call
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Should Join Section -->
+  <section class="py-16 lg:py-20 bg-monica-bg">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-12" data-cms="who-should-join-title">
+          Is This Mastermind Right For You?
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-4" data-cms="ideal-for-title">
+              Ideal For You If...
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-monica-teal mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-monica-light" data-cms="ideal-1">You're an entrepreneur or business owner ready to scale</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-monica-teal mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-monica-light" data-cms="ideal-2">You're in a leadership role seeking greater impact</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-monica-teal mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-monica-light" data-cms="ideal-3">You value collaboration over competition</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-monica-teal mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-monica-light" data-cms="ideal-4">You're committed to consistent growth and action</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-monica-teal mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 001.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-monica-light" data-cms="ideal-5">You're ready to both give and receive support</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-4" data-cms="not-ready-title">
+              Not Ready Yet If...
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-red-500 mr-3">✗</span>
+                <span class="text-monica-light" data-cms="not-ready-1">You're looking for quick fixes or magic bullets</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-3">✗</span>
+                <span class="text-monica-light" data-cms="not-ready-2">You can't commit to bi-weekly meetings</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-3">✗</span>
+                <span class="text-monica-light" data-cms="not-ready-3">You're not willing to be vulnerable and share openly</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-3">✗</span>
+                <span class="text-monica-light" data-cms="not-ready-4">You prefer to work alone without input</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-3">✗</span>
+                <span class="text-monica-light" data-cms="not-ready-5">You're not ready to invest in your growth</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-12" data-cms="testimonials-title">
+          Mastermind Success Stories
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-monica-bg rounded-xl p-8">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <blockquote class="text-monica-light mb-4" data-cms="testimonial-1-quote">
+              "The mastermind completely transformed how I approach my business. The collective wisdom and accountability helped me 3x my revenue in just 6 months. The relationships I've built are invaluable."
+            </blockquote>
+            <cite class="text-monica-navy font-semibold" data-cms="testimonial-1-author">
+              — Rachel K., Digital Marketing Agency Owner
+            </cite>
+          </div>
+
+          <div class="bg-monica-bg rounded-xl p-8">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <blockquote class="text-monica-light mb-4" data-cms="testimonial-2-quote">
+              "I was feeling isolated as a solopreneur. This mastermind gave me a board of advisors who truly care about my success. Monica's facilitation is masterful – she knows exactly how to draw out breakthrough insights."
+            </blockquote>
+            <cite class="text-monica-navy font-semibold" data-cms="testimonial-2-author">
+              — James T., Consultant
+            </cite>
+          </div>
+
+          <div class="bg-monica-bg rounded-xl p-8">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <blockquote class="text-monica-light mb-4" data-cms="testimonial-3-quote">
+              "The hot seat sessions alone are worth the investment. Having brilliant minds focused on solving your biggest challenges is game-changing. I've made lifelong friends and business partners."
+            </blockquote>
+            <cite class="text-monica-navy font-semibold" data-cms="testimonial-3-author">
+              — Lisa M., E-commerce Entrepreneur
+            </cite>
+          </div>
+
+          <div class="bg-monica-bg rounded-xl p-8">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <blockquote class="text-monica-light mb-4" data-cms="testimonial-4-quote">
+              "As a corporate executive transitioning to entrepreneurship, the mastermind provided exactly the support I needed. The group's diverse perspectives helped me avoid costly mistakes and accelerate my launch."
+            </blockquote>
+            <cite class="text-monica-navy font-semibold" data-cms="testimonial-4-author">
+              — Marcus B., Former VP turned Founder
+            </cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-monica-dark to-monica-navy text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-white mb-6 drop-shadow-lg" data-cms="final-cta-title">
+          Your Breakthrough Awaits
+        </h2>
+        <p class="text-xl text-white/90 mb-8 drop-shadow" data-cms="final-cta-subtitle">
+          Join a select group of ambitious professionals committed to exponential growth. Applications are now open for our next cohort.
+        </p>
+        
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-8 mb-8 border border-white/20">
+          <h3 class="text-2xl font-serif font-bold text-white mb-4 drop-shadow" data-cms="next-cohort-title">
+            Next Mastermind Cohort
+          </h3>
+          <div class="grid md:grid-cols-3 gap-4 mb-6">
+            <div>
+              <p class="text-white font-bold" data-cms="cohort-start-label">Start Date</p>
+              <p class="text-white/80" data-cms="cohort-start-date">January 2024</p>
+            </div>
+            <div>
+              <p class="text-white font-bold" data-cms="cohort-duration-label">Duration</p>
+              <p class="text-white/80" data-cms="cohort-duration">6 Months</p>
+            </div>
+            <div>
+              <p class="text-white font-bold" data-cms="cohort-spots-label">Spots Available</p>
+              <p class="text-white/80" data-cms="cohort-spots">4 of 8</p>
+            </div>
+          </div>
+          <p class="text-white/90 mb-6" data-cms="application-note">
+            Applications are reviewed on a rolling basis. Schedule a discovery call to discuss your goals and ensure mutual fit.
+          </p>
+          <a href="/contact#consultation" 
+             class="inline-block bg-white text-monica-navy px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5">
+            Apply Now
+          </a>
+        </div>
+
+        <p class="text-white/70 text-sm" data-cms="guarantee-text">
+          100% Satisfaction Guarantee. If you attend all sessions and don't see significant progress, we'll work with you until you do.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

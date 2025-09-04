@@ -1,0 +1,421 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Personal Coaching">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-monica-bg to-white py-12 lg:py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h1 class="text-4xl lg:text-5xl font-serif font-bold text-monica-navy mb-4" data-cms="coaching-hero-title">
+            Transform Your Life with Personal Coaching
+          </h1>
+          <p class="text-xl text-monica-teal font-medium mb-2" data-cms="coaching-hero-subtitle">
+            From Doubtful & Uncertain to Decisive & Crystal Clear
+          </p>
+          <p class="text-lg text-monica-dark max-w-3xl mx-auto" data-cms="coaching-hero-description">
+            Ready to break free from what's holding you back? Together, we'll create a strategic roadmap to help you shift from struggling to thriving – one powerful conversation at a time.
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact#consultation" class="btn-primary inline-flex items-center justify-center">
+            <span>Schedule Your Free Discovery Call</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+          <a href="/services/book" class="btn-secondary inline-flex items-center justify-center">
+            <span>Get My Book</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is Personal Coaching Section -->
+  <section class="py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy mb-6" data-cms="what-is-title">
+              What is Personal Coaching?
+            </h2>
+            <div class="prose prose-lg text-monica-light" data-cms="what-is-description" data-cms-type="markdown">
+              <p>
+                Personal coaching is a powerful partnership designed to help you bridge the gap between where you are and where you want to be. As your coach, I provide the structure, accountability, and strategic guidance you need to achieve breakthrough results.
+              </p>
+              <p>
+                Through our work together, you'll gain clarity on your true desires, overcome limiting beliefs, and develop the confidence to take decisive action. This isn't therapy – it's a results-focused process that propels you forward.
+              </p>
+              <p>
+                Whether you're navigating a career transition, seeking better work-life balance, or ready to finally pursue that dream you've been putting off, coaching gives you the tools and support to make it happen.
+              </p>
+            </div>
+          </div>
+          <div class="relative max-w-md mx-auto">
+            <div class="absolute inset-0 bg-gradient-to-br from-monica-navy to-monica-teal rounded-2xl transform rotate-3"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600"
+              alt="Professional coaching session"
+              class="relative rounded-2xl shadow-xl w-full"
+              data-cms-image="what-is-image"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Is This For Section -->
+  <section class="py-16 lg:py-20 bg-monica-bg">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-12" data-cms="who-for-title">
+          Is Personal Coaching Right For You?
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">🎯</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="who-1-title">
+              Ambitious Professionals
+            </h3>
+            <p class="text-monica-light" data-cms="who-1-text">
+              You're successful but feeling stuck. Ready to level up your career, leadership skills, or transition to something more fulfilling.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">💡</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="who-2-title">
+              Aspiring Entrepreneurs
+            </h3>
+            <p class="text-monica-light" data-cms="who-2-text">
+              You have a vision but need clarity and confidence to turn your ideas into reality. Let's build your roadmap to success.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">🌱</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="who-3-title">
+              Life Transitions
+            </h3>
+            <p class="text-monica-light" data-cms="who-3-text">
+              Facing a major change? Whether it's career, relationships, or personal growth, navigate transitions with confidence and clarity.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">⚖️</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="who-4-title">
+              Overwhelmed Achievers
+            </h3>
+            <p class="text-monica-light" data-cms="who-4-text">
+              Success came with a price. Learn to manage stress, set boundaries, and create sustainable work-life harmony.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">💑</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="who-5-title">
+              Couples & Partners
+            </h3>
+            <p class="text-monica-light" data-cms="who-5-text">
+              Strengthen your relationship, improve communication, and align on shared goals for your future together.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-3xl mb-4">🚀</div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="who-6-title">
+              Emerging Leaders
+            </h3>
+            <p class="text-monica-light" data-cms="who-6-text">
+              Step into your leadership potential with confidence. Develop the skills and mindset to inspire and influence others.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Coaching Process Section -->
+  <section class="py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-4" data-cms="process-title">
+          Your Transformation Journey
+        </h2>
+        <p class="text-xl text-monica-light text-center mb-12 max-w-3xl mx-auto" data-cms="process-subtitle">
+          A proven process that takes you from stuck to unstoppable
+        </p>
+
+        <div class="space-y-8">
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-monica-navy to-monica-teal rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                1
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="process-1-title">
+                Discovery & Assessment
+              </h3>
+              <p class="text-monica-light" data-cms="process-1-text">
+                We begin with a deep dive into your current situation, challenges, and aspirations. Using proven assessment tools, we'll uncover your strengths, values, and what's truly important to you.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-monica-navy to-monica-teal rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                2
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="process-2-title">
+                Vision & Goal Setting
+              </h3>
+              <p class="text-monica-light" data-cms="process-2-text">
+                Together, we'll create a compelling vision for your future and break it down into achievable, measurable goals. You'll gain crystal clarity on exactly what you want to accomplish.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-monica-navy to-monica-teal rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                3
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="process-3-title">
+                Strategic Action Planning
+              </h3>
+              <p class="text-monica-light" data-cms="process-3-text">
+                We'll develop a customized action plan with specific steps, timelines, and milestones. No more overwhelm – just a clear path forward with built-in accountability.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-monica-navy to-monica-teal rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                4
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="process-4-title">
+                Implementation & Support
+              </h3>
+              <p class="text-monica-light" data-cms="process-4-text">
+                As you take action, I'll be your guide, cheerleader, and accountability partner. We'll navigate obstacles, celebrate wins, and adjust strategies to ensure continuous progress.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-monica-navy to-monica-teal rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                5
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-bold text-monica-navy mb-2" data-cms="process-5-title">
+                Integration & Growth
+              </h3>
+              <p class="text-monica-light" data-cms="process-5-text">
+                As you achieve your goals, we'll integrate new habits and mindsets to ensure lasting change. You'll develop the tools and confidence to continue growing long after our work together.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Achieve Section -->
+  <section class="py-16 lg:py-20 bg-monica-bg">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-12" data-cms="achieve-title">
+          What You'll Achieve Through Coaching
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl">🎯</span>
+            </div>
+            <h3 class="text-xl font-bold text-monica-navy mb-2" data-cms="achieve-1-title">Crystal Clear Vision</h3>
+            <p class="text-monica-light" data-cms="achieve-1-text">
+              Know exactly what you want and have a strategic plan to get there
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl">💪</span>
+            </div>
+            <h3 class="text-xl font-bold text-monica-navy mb-2" data-cms="achieve-2-title">Unshakeable Confidence</h3>
+            <p class="text-monica-light" data-cms="achieve-2-text">
+              Trust yourself to make decisions and take bold action
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl">⚡</span>
+            </div>
+            <h3 class="text-xl font-bold text-monica-navy mb-2" data-cms="achieve-3-title">Breakthrough Results</h3>
+            <p class="text-monica-light" data-cms="achieve-3-text">
+              Achieve goals you once thought were out of reach
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl">🧠</span>
+            </div>
+            <h3 class="text-xl font-bold text-monica-navy mb-2" data-cms="achieve-4-title">Mental Fitness</h3>
+            <p class="text-monica-light" data-cms="achieve-4-text">
+              Develop resilience and a positive mindset that serves you
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl">🌟</span>
+            </div>
+            <h3 class="text-xl font-bold text-monica-navy mb-2" data-cms="achieve-5-title">Authentic Success</h3>
+            <p class="text-monica-light" data-cms="achieve-5-text">
+              Create success that aligns with your values and brings fulfillment
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-gradient-to-br from-monica-navy to-monica-teal rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl">⚖️</span>
+            </div>
+            <h3 class="text-xl font-bold text-monica-navy mb-2" data-cms="achieve-6-title">Life Balance</h3>
+            <p class="text-monica-light" data-cms="achieve-6-text">
+              Master the art of juggling priorities without dropping the ball
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials Section -->
+  <section class="py-16 lg:py-20 bg-monica-bg">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-monica-navy text-center mb-12" data-cms="testimonials-title">
+          Success Stories
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <blockquote class="text-monica-light mb-4" data-cms="testimonial-1-quote">
+              "Monica helped me transition from a corporate job I hated to launching my own successful consulting business. Her strategic guidance and unwavering support made all the difference. I'm now living my dream and earning more than I ever did in corporate!"
+            </blockquote>
+            <cite class="text-monica-navy font-semibold" data-cms="testimonial-1-author">
+              — Sarah M., Business Owner
+            </cite>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <blockquote class="text-monica-light mb-4" data-cms="testimonial-2-quote">
+              "I came to Monica feeling completely overwhelmed and stuck in my career. Through our work together, I gained clarity on my values, rebuilt my confidence, and landed a leadership role that aligns perfectly with who I am. Life-changing!"
+            </blockquote>
+            <cite class="text-monica-navy font-semibold" data-cms="testimonial-2-author">
+              — Michael T., Director of Operations
+            </cite>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <blockquote class="text-monica-light mb-4" data-cms="testimonial-3-quote">
+              "As a couple, we were struggling to communicate and align on our future goals. Monica's coaching helped us reconnect, improve our communication, and create a shared vision. Our relationship is stronger than ever!"
+            </blockquote>
+            <cite class="text-monica-navy font-semibold" data-cms="testimonial-3-author">
+              — Jennifer & Mark, Coaching Clients
+            </cite>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <blockquote class="text-monica-light mb-4" data-cms="testimonial-4-quote">
+              "Monica's Mental Fitness coaching transformed how I handle stress and challenges. I've developed resilience I never knew I had and am performing at my peak both personally and professionally."
+            </blockquote>
+            <cite class="text-monica-navy font-semibold" data-cms="testimonial-4-author">
+              — David R., Tech Executive
+            </cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-monica-dark to-monica-navy text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-white mb-6 drop-shadow-lg" data-cms="final-cta-title">
+          Ready to Transform Your Life?
+        </h2>
+        <p class="text-xl text-white/90 mb-8 drop-shadow" data-cms="final-cta-subtitle">
+          Take the first step toward the life you've been dreaming of. Your breakthrough is waiting.
+        </p>
+        
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-8 mb-8 border border-white/20">
+          <h3 class="text-2xl font-serif font-bold text-white mb-4 drop-shadow" data-cms="consultation-title">
+            Free 30-Minute Discovery Call
+          </h3>
+          <p class="text-white/90 mb-6 drop-shadow" data-cms="consultation-description">
+            Let's explore how coaching can help you achieve your goals. No pressure, just a conversation about your dreams and how to make them reality.
+          </p>
+          <a href="/contact#consultation" 
+             class="inline-block bg-white text-monica-navy px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5">
+            Schedule Your Free Call
+          </a>
+        </div>
+
+        <div class="flex justify-center gap-8 text-white/80">
+          <div>
+            <p class="text-3xl font-bold text-white" data-cms="stat-1">15+</p>
+            <p class="text-sm" data-cms="stat-1-label">Years Experience</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold text-white" data-cms="stat-2">500+</p>
+            <p class="text-sm" data-cms="stat-2-label">Lives Transformed</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold text-white" data-cms="stat-3">98%</p>
+            <p class="text-sm" data-cms="stat-3-label">Client Success Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

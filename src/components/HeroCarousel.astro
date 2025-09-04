@@ -1,0 +1,465 @@
+---
+// Hero carousel component that rotates through Monica's services
+// CMS-ready: All text content can be edited via the portal
+---
+
+<section class="relative bg-gradient-to-br from-monica-navy/20 via-monica-teal/15 to-monica-sage/10 py-20 overflow-hidden">
+  <!-- Decorative Background Elements -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-10 left-10 w-32 h-32 rounded-full bg-monica-teal"></div>
+    <div class="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-monica-sage"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 rotate-45 bg-monica-navy"></div>
+    <div class="absolute bottom-10 left-1/3 w-20 h-20 rounded-full bg-monica-teal"></div>
+  </div>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Carousel Container -->
+    <div id="hero-carousel" class="relative">
+      
+      <!-- Slide 1: Book / Main -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <!-- Logo and Tagline -->
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 mr-4 flex items-center justify-center bg-monica-navy/10 rounded-full">
+                <svg class="w-8 h-8 text-monica-navy" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-monica-navy" data-cms="hero-monica-name">Monica Leggett</div>
+                <div class="text-xs text-monica-teal italic" data-cms="hero-tagline">Dream it, plan it, do it, live it!</div>
+              </div>
+            </div>
+
+
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4" data-cms="hero-book-title">
+              <span class="text-monica-dark">Doubtful to</span>
+              <span class="text-monica-teal block text-5xl md:text-7xl">Decisive:</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl font-serif text-monica-navy mb-6 leading-relaxed" data-cms="hero-book-subtitle">
+              Eight Steps to Get Unstuck and Take Action
+            </h2>
+            <p class="text-lg text-monica-light mb-8 leading-relaxed" data-cms="hero-book-description">
+              Transform your life with my bestselling book. Learn the proven framework that's helped thousands move from paralysis to purposeful action.
+            </p>
+            
+            <!-- Enhanced CTAs -->
+            <div class="flex flex-wrap gap-4">
+              <a href="/services/book" class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" data-cms="hero-book-cta1">
+                📖 Get the Book
+              </a>
+              <a href="/events" class="bg-white text-monica-navy px-8 py-4 rounded-lg font-semibold text-lg border-2 border-monica-navy hover:bg-monica-navy hover:text-white transition-all duration-300 shadow-lg" data-cms="hero-book-cta2">
+                🎁 Free Action Guide
+              </a>
+            </div>
+          </div>
+          
+          <!-- Enhanced Book Presentation -->
+          <div class="relative flex items-center justify-center">
+            <!-- Decorative circles behind book -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-96 h-96 rounded-full bg-gradient-to-br from-monica-teal/20 to-monica-sage/20 animate-pulse"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-80 h-80 rounded-full bg-gradient-to-br from-monica-navy/10 to-monica-teal/10"></div>
+            </div>
+            
+            <!-- Book with enhanced presentation -->
+            <div class="relative transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/images/doubtful-to-decisive-book.png" 
+                alt="Doubtful to Decisive book cover"
+                class="w-auto h-[500px] drop-shadow-2xl relative z-10"
+                data-cms-image="hero-book-image"
+              >
+              <!-- Floating testimonial quote -->
+              <div class="absolute -left-12 top-16 bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-xl max-w-40 transform -rotate-6 z-20">
+                <p class="text-xs text-monica-dark font-medium">"This book changed my life!"</p>
+                <div class="flex text-yellow-400 text-xs mt-1">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2: Personal Coaching -->
+      <div class="hero-slide" data-slide="1">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <!-- Logo and Tagline -->
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 mr-4 flex items-center justify-center bg-monica-teal/10 rounded-full">
+                <svg class="w-8 h-8 text-monica-teal" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-monica-teal" data-cms="hero-monica-name-2">Monica Leggett</div>
+                <div class="text-xs text-monica-navy italic" data-cms="hero-tagline-2">Certified Life Coach</div>
+              </div>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4" data-cms="hero-coaching-title">
+              <span class="text-monica-dark">Personal</span>
+              <span class="text-monica-teal block text-5xl md:text-7xl">Transformation</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl font-serif text-monica-navy mb-6 leading-relaxed" data-cms="hero-coaching-subtitle">
+              One-on-One Guidance to Unlock Your Potential
+            </h2>
+            <p class="text-lg text-monica-light mb-8 leading-relaxed" data-cms="hero-coaching-description">
+              Get personalized coaching tailored to your unique challenges. Together, we'll create breakthrough moments and lasting change in your life.
+            </p>
+            
+            <!-- Enhanced CTAs -->
+            <div class="flex flex-wrap gap-4">
+              <a href="/services/personal-coaching" class="bg-gradient-to-r from-monica-teal to-monica-sage text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" data-cms="hero-coaching-cta1">
+                💬 Explore Coaching
+              </a>
+              <a href="/contact#consultation" class="bg-white text-monica-teal px-8 py-4 rounded-lg font-semibold text-lg border-2 border-monica-teal hover:bg-monica-teal hover:text-white transition-all duration-300 shadow-lg" data-cms="hero-coaching-cta2">
+                📞 Free Consultation
+              </a>
+            </div>
+          </div>
+          
+          <!-- Enhanced Image Presentation -->
+          <div class="relative flex items-center justify-center">
+            <!-- Decorative circles behind image -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-96 h-96 rounded-full bg-gradient-to-br from-monica-navy/20 to-monica-teal/20 animate-pulse"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-80 h-80 rounded-full bg-gradient-to-br from-monica-teal/10 to-monica-sage/10"></div>
+            </div>
+            
+            <!-- Image with enhanced presentation -->
+            <div class="relative transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/images/monica-coaching-session.jpg" 
+                alt="Monica in a coaching session"
+                class="w-auto h-[400px] rounded-lg shadow-2xl object-cover relative z-10"
+                data-cms-image="hero-coaching-image"
+              >
+              <!-- Floating success badge -->
+              <div class="absolute -right-8 bottom-8 bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-xl max-w-40 transform rotate-3 z-20">
+                <p class="text-xs text-monica-dark font-medium">✨ Transform Your Life</p>
+                <div class="text-monica-teal text-xs mt-1 font-semibold">1-on-1 Sessions</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 3: Mentor Coaching -->
+      <div class="hero-slide" data-slide="2">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <!-- Logo and Tagline -->
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 mr-4 flex items-center justify-center bg-monica-sage/10 rounded-full">
+                <svg class="w-8 h-8 text-monica-sage" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7l2-7z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-monica-sage" data-cms="hero-monica-name-3">Monica Leggett</div>
+                <div class="text-xs text-monica-navy italic" data-cms="hero-tagline-3">Master Mentor Coach</div>
+              </div>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4" data-cms="hero-mentor-title">
+              <span class="text-monica-dark">Mentor Coaching</span>
+              <span class="text-monica-sage block text-4xl md:text-6xl">for Coaches</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl font-serif text-monica-navy mb-6 leading-relaxed" data-cms="hero-mentor-subtitle">
+              Elevate Your Coaching Practice to New Heights
+            </h2>
+            <p class="text-lg text-monica-light mb-8 leading-relaxed" data-cms="hero-mentor-description">
+              Learn the advanced techniques and business strategies that transformed my practice. Perfect for coaches ready to scale their impact and income.
+            </p>
+            
+            <!-- Enhanced CTAs -->
+            <div class="flex flex-wrap gap-4">
+              <a href="/services/mentor-coaching" class="bg-gradient-to-r from-monica-sage to-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" data-cms="hero-mentor-cta1">
+                🚀 Level Up Your Practice
+              </a>
+              <a href="/contact#consultation" class="bg-white text-monica-sage px-8 py-4 rounded-lg font-semibold text-lg border-2 border-monica-sage hover:bg-monica-sage hover:text-white transition-all duration-300 shadow-lg" data-cms="hero-mentor-cta2">
+                📅 Discovery Call
+              </a>
+            </div>
+          </div>
+          
+          <!-- Enhanced Image Presentation -->
+          <div class="relative flex items-center justify-center">
+            <!-- Decorative circles behind image -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-96 h-96 rounded-full bg-gradient-to-br from-monica-sage/20 to-green-400/20 animate-pulse"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-80 h-80 rounded-full bg-gradient-to-br from-monica-navy/10 to-monica-sage/10"></div>
+            </div>
+            
+            <!-- Image with enhanced presentation -->
+            <div class="relative transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/images/monica-mentor-coaching.jpg" 
+                alt="Monica mentoring other coaches"
+                class="w-auto h-[400px] rounded-lg shadow-2xl object-cover relative z-10"
+                data-cms-image="hero-mentor-image"
+              >
+              <!-- Floating expertise badge -->
+              <div class="absolute -left-8 top-12 bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-xl max-w-40 transform -rotate-6 z-20">
+                <p class="text-xs text-monica-dark font-medium">🎯 Expert Training</p>
+                <div class="text-monica-sage text-xs mt-1 font-semibold">Scale Your Impact</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 4: Masterminds -->
+      <div class="hero-slide" data-slide="3">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <!-- Logo and Tagline -->
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 mr-4 flex items-center justify-center bg-monica-navy/10 rounded-full">
+                <svg class="w-8 h-8 text-monica-navy" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S12 9.67 12 10.5V18h2v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S22 9.67 22 10.5V18h2v2H0v-2h4z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-monica-navy" data-cms="hero-monica-name-4">Monica Leggett</div>
+                <div class="text-xs text-monica-teal italic" data-cms="hero-tagline-4">Mastermind Facilitator</div>
+              </div>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4" data-cms="hero-mastermind-title">
+              <span class="text-monica-dark">Join a Powerful</span>
+              <span class="text-monica-navy block text-5xl md:text-7xl">Mastermind</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl font-serif text-monica-teal mb-6 leading-relaxed" data-cms="hero-mastermind-subtitle">
+              Accelerate Your Growth Through Group Dynamics
+            </h2>
+            <p class="text-lg text-monica-light mb-8 leading-relaxed" data-cms="hero-mastermind-description">
+              Connect with like-minded individuals in an exclusive mastermind group. Experience the power of collective wisdom and accountability.
+            </p>
+            
+            <!-- Enhanced CTAs -->
+            <div class="flex flex-wrap gap-4">
+              <a href="/services/masterminds" class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" data-cms="hero-mastermind-cta1">
+                🤝 Join Next Cohort
+              </a>
+              <a href="/events" class="bg-white text-monica-navy px-8 py-4 rounded-lg font-semibold text-lg border-2 border-monica-navy hover:bg-monica-navy hover:text-white transition-all duration-300 shadow-lg" data-cms="hero-mastermind-cta2">
+                🎯 Free Workshop
+              </a>
+            </div>
+          </div>
+          
+          <!-- Enhanced Image Presentation -->
+          <div class="relative flex items-center justify-center">
+            <!-- Decorative circles behind image -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-96 h-96 rounded-full bg-gradient-to-br from-monica-navy/20 to-monica-teal/20 animate-pulse"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-80 h-80 rounded-full bg-gradient-to-br from-monica-teal/10 to-monica-navy/10"></div>
+            </div>
+            
+            <!-- Image with enhanced presentation -->
+            <div class="relative transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/images/monica-mastermind-group.jpg" 
+                alt="Mastermind group session"
+                class="w-auto h-[400px] rounded-lg shadow-2xl object-cover relative z-10"
+                data-cms-image="hero-mastermind-image"
+              >
+              <!-- Floating group power badge -->
+              <div class="absolute -right-8 top-8 bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-xl max-w-40 transform rotate-6 z-20">
+                <p class="text-xs text-monica-dark font-medium">💡 Collective Wisdom</p>
+                <div class="text-monica-navy text-xs mt-1 font-semibold">Group Power</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation Dots -->
+      <div class="flex justify-center mt-8 space-x-2">
+        <button class="carousel-dot active" data-slide="0" aria-label="Go to slide 1">
+          <span class="sr-only">Book</span>
+        </button>
+        <button class="carousel-dot" data-slide="1" aria-label="Go to slide 2">
+          <span class="sr-only">Personal Coaching</span>
+        </button>
+        <button class="carousel-dot" data-slide="2" aria-label="Go to slide 3">
+          <span class="sr-only">Mentor Coaching</span>
+        </button>
+        <button class="carousel-dot" data-slide="3" aria-label="Go to slide 4">
+          <span class="sr-only">Masterminds</span>
+        </button>
+      </div>
+      
+      <!-- Service Labels (visible on desktop) -->
+      <div class="hidden md:flex justify-center mt-4 space-x-6 text-sm">
+        <button class="service-label active" data-slide="0">
+          <span class="font-semibold">Book</span>
+        </button>
+        <span class="text-monica-light">•</span>
+        <button class="service-label" data-slide="1">
+          <span class="font-semibold">Personal Coaching</span>
+        </button>
+        <span class="text-monica-light">•</span>
+        <button class="service-label" data-slide="2">
+          <span class="font-semibold">Mentor Coaching</span>
+        </button>
+        <span class="text-monica-light">•</span>
+        <button class="service-label" data-slide="3">
+          <span class="font-semibold">Masterminds</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-slide {
+    display: none;
+  }
+  
+  .hero-slide.active {
+    display: block;
+  }
+  
+  .carousel-dot {
+    @apply w-3 h-3 rounded-full bg-monica-light/30 transition-all duration-300;
+  }
+  
+  .carousel-dot.active {
+    @apply bg-monica-navy w-8;
+  }
+  
+  .carousel-dot:hover:not(.active) {
+    @apply bg-monica-light/50;
+  }
+  
+  .service-label {
+    @apply text-monica-light hover:text-monica-navy transition-colors;
+  }
+  
+  .service-label.active {
+    @apply text-monica-navy;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.getElementById('hero-carousel');
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const labels = document.querySelectorAll('.service-label');
+    let currentSlide = 0;
+    let interval: number;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    function showSlide(index: number) {
+      // Hide all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      labels.forEach(label => label.classList.remove('active'));
+      
+      // Show selected slide
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      if (labels[index]) {
+        labels[index].classList.add('active');
+      }
+      
+      currentSlide = index;
+    }
+    
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+    
+    function prevSlide() {
+      const prev = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+      showSlide(prev);
+    }
+    
+    function startCarousel() {
+      interval = setInterval(nextSlide, 7000); // Change slide every 7 seconds
+    }
+    
+    function stopCarousel() {
+      clearInterval(interval);
+    }
+    
+    // Start auto-rotation
+    startCarousel();
+    
+    // Handle dot clicks
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        stopCarousel();
+        showSlide(index);
+        startCarousel();
+      });
+    });
+    
+    // Handle label clicks
+    labels.forEach((label, index) => {
+      label.addEventListener('click', () => {
+        stopCarousel();
+        showSlide(index);
+        startCarousel();
+      });
+    });
+    
+    // Pause on hover (desktop)
+    carousel?.addEventListener('mouseenter', stopCarousel);
+    carousel?.addEventListener('mouseleave', startCarousel);
+    
+    // Touch support for mobile
+    carousel?.addEventListener('touchstart', (e: TouchEvent) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopCarousel();
+    });
+    
+    carousel?.addEventListener('touchend', (e: TouchEvent) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      startCarousel();
+    });
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          // Swipe left - next slide
+          nextSlide();
+        } else {
+          // Swipe right - previous slide
+          prevSlide();
+        }
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        stopCarousel();
+        prevSlide();
+        startCarousel();
+      } else if (e.key === 'ArrowRight') {
+        stopCarousel();
+        nextSlide();
+        startCarousel();
+      }
+    });
+  });
+</script>

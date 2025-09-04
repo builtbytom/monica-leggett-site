@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('learning-center');
+  
+  return articles.map(article => ({
+    params: { slug: article.slug },
+    props: { article }
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+
+// Get all articles for the "More Articles" section
+const allArticles = await getCollection('learning-center');
+const relatedArticles = allArticles
+  .filter(a => a.slug !== article.slug)
+  .filter(a => a.data.category === article.data.category)
+  .slice(0, 3);
+---
+
+<BaseLayout title={article.data.title}>
+  <!-- Article Header -->
+  <section class="bg-gradient-to-br from-monica-navy/10 via-monica-teal/5 to-monica-sage/10 py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Category Badge -->
+        <div class="inline-block mb-4">
+          {article.data.step ? (
+            <span class="bg-gradient-to-r from-monica-teal to-monica-sage text-white text-sm font-bold px-4 py-2 rounded-full">
+              Step {article.data.step}: {article.data.category}
+            </span>
+          ) : (
+            <span class="bg-monica-navy/10 text-monica-navy text-sm font-semibold px-4 py-2 rounded-full">
+              {article.data.category}
+            </span>
+          )}
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-monica-dark mb-4" data-cms={`article-title-${article.slug}`}>
+          {article.data.title}
+        </h1>
+        
+        <p class="text-xl text-monica-light mb-6" data-cms={`article-description-${article.slug}`}>
+          {article.data.description}
+        </p>
+        
+        <div class="flex items-center justify-center gap-6 text-sm text-gray-600">
+          <span>📅 {article.data.publishedDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+          <span>⏱️ {article.data.readTime} min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <div class="prose prose-lg prose-monica max-w-none" data-cms={`article-content-${article.slug}`} data-cms-type="markdown">
+          <Content />
+        </div>
+        
+        <!-- Back to Learning Center -->
+        <div class="mt-12 pt-8 border-t">
+          <a href="/learning-center" class="inline-flex items-center text-monica-teal hover:text-teal-700 font-semibold">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to Learning Center
+          </a>
+        </div>
+        
+        <!-- Navigation Between Steps (if applicable) -->
+        {article.data.step && (
+          <div class="mt-8 flex justify-between">
+            {article.data.step > 1 && (
+              <a href={`/learning-center/step-${article.data.step - 1}-${allArticles.find(a => a.data.step === article.data.step - 1)?.slug.split('-').slice(2).join('-')}`} 
+                 class="inline-flex items-center text-monica-teal hover:text-teal-700 font-semibold">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Previous Step
+              </a>
+            )}
+            {article.data.step < 8 && (
+              <a href={`/learning-center/step-${article.data.step + 1}-${allArticles.find(a => a.data.step === article.data.step + 1)?.slug.split('-').slice(2).join('-')}`} 
+                 class="inline-flex items-center text-monica-teal hover:text-teal-700 font-semibold ml-auto">
+                Next Step
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Articles -->
+  {relatedArticles.length > 0 && (
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-serif font-bold text-monica-dark mb-8 text-center">
+          More in {article.data.category}
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {relatedArticles.map(related => (
+            <article class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div class="p-6">
+                {related.data.step && (
+                  <div class="inline-block bg-gradient-to-r from-monica-teal to-monica-sage text-white text-sm font-bold px-3 py-1 rounded-full mb-3">
+                    Step {related.data.step}
+                  </div>
+                )}
+                
+                <h3 class="text-xl font-serif font-bold text-monica-dark mb-3">
+                  {related.data.title}
+                </h3>
+                
+                <p class="text-monica-light mb-4 line-clamp-3">
+                  {related.data.description}
+                </p>
+                
+                <a href={`/learning-center/${related.slug}`} class="text-monica-teal font-semibold hover:text-teal-700 flex items-center">
+                  Read More
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-monica-teal to-monica-sage">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+        Ready to Take the Next Step?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Transform your doubts into decisive action with personalized coaching
+      </p>
+      <a href="/contact#consultation" class="inline-flex items-center bg-white text-monica-teal px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+        Explore Coaching Options
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose-monica {
+    @apply prose-headings:text-monica-dark prose-headings:font-serif;
+    @apply prose-p:text-monica-light prose-p:leading-relaxed;
+    @apply prose-a:text-monica-teal prose-a:no-underline hover:prose-a:underline;
+    @apply prose-strong:text-monica-dark;
+    @apply prose-ul:text-monica-light prose-ol:text-monica-light;
+    @apply prose-blockquote:text-monica-dark prose-blockquote:border-monica-teal;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

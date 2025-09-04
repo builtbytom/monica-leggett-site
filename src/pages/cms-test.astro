@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="CMS Integration Test">
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-12">CMS Integration Test Page</h1>
+    
+    <div class="max-w-2xl mx-auto space-y-8">
+      <!-- Test Edit Mode Detection -->
+      <div class="bg-white rounded-lg p-6 shadow">
+        <h2 class="text-2xl font-bold mb-4">Edit Mode Status</h2>
+        <p id="edit-status" class="text-lg">Checking...</p>
+      </div>
+
+      <!-- Test Editable Fields -->
+      <div class="bg-white rounded-lg p-6 shadow">
+        <h2 class="text-2xl font-bold mb-4">Sample Editable Content</h2>
+        
+        <h3 data-cms="test-heading" class="text-xl font-bold mb-2">
+          This heading is editable
+        </h3>
+        
+        <p data-cms="test-paragraph" class="mb-4">
+          This paragraph can be edited by Monica. Shift+click when in edit mode.
+        </p>
+        
+        <button data-cms="test-button" class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-3 rounded-lg">
+          Editable Button Text
+        </button>
+      </div>
+
+      <!-- Instructions for Monica -->
+      <div class="bg-monica-bg rounded-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">How to Test CMS Editing</h2>
+        <ol class="list-decimal list-inside space-y-2">
+          <li>Add <code class="bg-gray-200 px-2 py-1 rounded">?edit=true</code> to the URL</li>
+          <li>You should see "Edit Mode Active" message</li>
+          <li>Hover over any text - it should outline</li>
+          <li>Shift+Click any text to open editor</li>
+        </ol>
+      </div>
+
+      <!-- Portal Connection Test -->
+      <div class="bg-white rounded-lg p-6 shadow">
+        <h2 class="text-2xl font-bold mb-4">Portal Connection</h2>
+        <button onclick="testPortalConnection()" class="bg-monica-blue text-white px-6 py-3 rounded-lg">
+          Test Portal Connection
+        </button>
+        <p id="connection-result" class="mt-4"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Check edit mode
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const isEditMode = urlParams.get('edit') === 'true' || document.cookie.includes('portal_session=');
+      
+      const statusEl = document.getElementById('edit-status');
+      if (isEditMode) {
+        statusEl.textContent = '✅ Edit Mode is ACTIVE - You can edit content';
+        statusEl.className = 'text-lg text-green-600 font-bold';
+      } else {
+        statusEl.textContent = '❌ Edit Mode is INACTIVE - Add ?edit=true to URL';
+        statusEl.className = 'text-lg text-red-600';
+      }
+    });
+
+    // Test portal connection
+    async function testPortalConnection() {
+      const resultEl = document.getElementById('connection-result');
+      resultEl.textContent = 'Testing connection...';
+      
+      try {
+        // This would normally connect to your portal
+        // For now, we'll simulate the test
+        const portalUrl = 'https://ibuildcalm.com/portal/api/test';
+        
+        // Simulated response
+        setTimeout(() => {
+          resultEl.innerHTML = `
+            <div class="text-green-600">
+              <strong>✅ Portal Connection Test:</strong><br>
+              Portal URL: ${portalUrl}<br>
+              Site ID: monica-leggett<br>
+              Status: Ready for configuration
+            </div>
+          `;
+        }, 1000);
+      } catch (error) {
+        resultEl.innerHTML = `<div class="text-red-600">❌ Connection failed: ${error.message}</div>`;
+      }
+    }
+  </script>
+</BaseLayout>

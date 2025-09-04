@@ -1,0 +1,319 @@
+---
+// Portal page for Monica to edit content
+// This connects to Tom's CMS system
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monica Leggett - Content Editor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <div id="app" class="min-h-screen">
+    <!-- Loading State -->
+    <div id="loading" class="flex items-center justify-center min-h-screen">
+      <div class="text-center">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-monica-navy mx-auto"></div>
+        <p class="mt-4 text-gray-600">Loading editor...</p>
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login" class="hidden flex items-center justify-center min-h-screen">
+      <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-6">Monica's Content Editor</h1>
+        <form id="loginForm">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+            <input type="email" id="email" class="w-full px-3 py-2 border rounded-lg" required>
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+            <input type="password" id="password" class="w-full px-3 py-2 border rounded-lg" required>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-[#1A3C5D] to-[#209697] text-white py-2 rounded-lg">
+            Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Editor Interface -->
+    <div id="editor" class="hidden">
+      <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 class="text-2xl font-bold text-gray-900">Monica's Content Editor</h1>
+          <button onclick="logout()" class="text-sm text-gray-600 hover:text-gray-900">Logout</button>
+        </div>
+      </header>
+
+      <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Section Tabs -->
+        <div class="border-b mb-8">
+          <nav class="-mb-px flex space-x-8">
+            <button onclick="showSection('homepage')" class="tab-btn border-b-2 border-[#1A3C5D] py-2 px-1 text-sm font-medium">
+              Homepage
+            </button>
+            <button onclick="showSection('about')" class="tab-btn py-2 px-1 text-sm font-medium text-gray-500">
+              About Page
+            </button>
+            <button onclick="showSection('contact')" class="tab-btn py-2 px-1 text-sm font-medium text-gray-500">
+              Contact Page
+            </button>
+            <button onclick="showSection('blog')" class="tab-btn py-2 px-1 text-sm font-medium text-gray-500">
+              Blog Posts
+            </button>
+          </nav>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="content-area" class="bg-white rounded-lg shadow p-6">
+          <!-- Content will be loaded here -->
+        </div>
+
+        <!-- Save Button -->
+        <div class="mt-6 flex justify-end">
+          <button onclick="saveContent()" class="bg-gradient-to-r from-[#1A3C5D] to-[#209697] text-white px-8 py-3 rounded-lg text-lg font-medium">
+            Save Changes
+          </button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    let currentSection = 'homepage';
+    let contentData = {};
+    let hasChanges = false;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Check if logged in
+      const token = localStorage.getItem('cms_token');
+      if (token) {
+        showEditor();
+        await loadContent();
+      } else {
+        showLogin();
+      }
+    });
+
+    // Show/Hide sections
+    function showLogin() {
+      document.getElementById('loading').classList.add('hidden');
+      document.getElementById('login').classList.remove('hidden');
+      document.getElementById('editor').classList.add('hidden');
+    }
+
+    function showEditor() {
+      document.getElementById('loading').classList.add('hidden');
+      document.getElementById('login').classList.add('hidden');
+      document.getElementById('editor').classList.remove('hidden');
+    }
+
+    // Login
+    document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch('/.netlify/functions/auth-simple', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          localStorage.setItem('cms_token', data.token);
+          showEditor();
+          await loadContent();
+        } else {
+          alert('Invalid email or password');
+        }
+      } catch (error) {
+        alert('Login failed. Please try again.');
+      }
+    });
+
+    // Load content
+    async function loadContent() {
+      try {
+        const response = await fetch('/.netlify/functions/cms-content');
+        if (response.ok) {
+          const data = await response.json();
+          contentData = data.content;
+          showSection('homepage');
+        }
+      } catch (error) {
+        console.error('Failed to load content:', error);
+      }
+    }
+
+    // Show section
+    function showSection(section) {
+      currentSection = section;
+      
+      // Update tabs
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-b-2', 'border-[#1A3C5D]', 'text-gray-900');
+        btn.classList.add('text-gray-500');
+      });
+      event.target.classList.add('border-b-2', 'border-[#1A3C5D]', 'text-gray-900');
+      event.target.classList.remove('text-gray-500');
+
+      // Load section content
+      const contentArea = document.getElementById('content-area');
+      
+      if (section === 'homepage') {
+        contentArea.innerHTML = `
+          <h2 class="text-xl font-bold mb-6">Homepage Content</h2>
+          
+          <div class="space-y-6">
+            <!-- Hero Section -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Hero Carousel - Book Slide</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                  <input type="text" class="w-full px-3 py-2 border rounded-lg" 
+                         data-path="homepage.hero.book.title" 
+                         value="${contentData.homepage?.hero?.book?.title || ''}">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Subtitle</label>
+                  <input type="text" class="w-full px-3 py-2 border rounded-lg" 
+                         data-path="homepage.hero.book.subtitle" 
+                         value="${contentData.homepage?.hero?.book?.subtitle || ''}">
+                </div>
+              </div>
+              <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                <textarea class="w-full px-3 py-2 border rounded-lg" rows="3" 
+                          data-path="homepage.hero.book.description">${contentData.homepage?.hero?.book?.description || ''}</textarea>
+              </div>
+              <div class="grid grid-cols-2 gap-4 mt-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Button 1 Text</label>
+                  <input type="text" class="w-full px-3 py-2 border rounded-lg" 
+                         data-path="homepage.hero.book.cta1" 
+                         value="${contentData.homepage?.hero?.book?.cta1 || ''}">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Button 2 Text</label>
+                  <input type="text" class="w-full px-3 py-2 border rounded-lg" 
+                         data-path="homepage.hero.book.cta2" 
+                         value="${contentData.homepage?.hero?.book?.cta2 || ''}">
+                </div>
+              </div>
+            </div>
+
+            <!-- About Section -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4">About Section</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                  <input type="text" class="w-full px-3 py-2 border rounded-lg" 
+                         data-path="homepage.about.title" 
+                         value="${contentData.homepage?.about?.title || ''}">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Subtitle</label>
+                  <input type="text" class="w-full px-3 py-2 border rounded-lg" 
+                         data-path="homepage.about.subtitle" 
+                         value="${contentData.homepage?.about?.subtitle || ''}">
+                </div>
+              </div>
+              <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Paragraph 1</label>
+                <textarea class="w-full px-3 py-2 border rounded-lg" rows="3" 
+                          data-path="homepage.about.description1">${contentData.homepage?.about?.description1 || ''}</textarea>
+              </div>
+              <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Paragraph 2</label>
+                <textarea class="w-full px-3 py-2 border rounded-lg" rows="3" 
+                          data-path="homepage.about.description2">${contentData.homepage?.about?.description2 || ''}</textarea>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (section === 'blog') {
+        contentArea.innerHTML = `
+          <h2 class="text-xl font-bold mb-6">Blog Posts</h2>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <p class="text-blue-800">Blog post editing will be available soon. For now, you can edit homepage, about, and contact page content.</p>
+          </div>
+        `;
+      } else {
+        contentArea.innerHTML = `
+          <h2 class="text-xl font-bold mb-6">${section.charAt(0).toUpperCase() + section.slice(1)} Page</h2>
+          <p class="text-gray-600">Content editing for this section coming soon.</p>
+        `;
+      }
+
+      // Add change listeners
+      contentArea.querySelectorAll('input, textarea').forEach(field => {
+        field.addEventListener('input', () => {
+          hasChanges = true;
+        });
+      });
+    }
+
+    // Save content
+    async function saveContent() {
+      if (!hasChanges) {
+        alert('No changes to save');
+        return;
+      }
+
+      // Collect all changed values
+      const updates = [];
+      document.querySelectorAll('[data-path]').forEach(field => {
+        const path = field.getAttribute('data-path');
+        const value = field.value;
+        updates.push({ path, value });
+      });
+
+      // Save each update
+      for (const update of updates) {
+        try {
+          await fetch('/.netlify/functions/cms-content', {
+            method: 'POST',
+            headers: { 
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem('cms_token')}`
+            },
+            body: JSON.stringify(update)
+          });
+        } catch (error) {
+          console.error('Failed to save:', error);
+        }
+      }
+
+      hasChanges = false;
+      alert('Content saved successfully!');
+    }
+
+    // Logout
+    function logout() {
+      localStorage.removeItem('cms_token');
+      showLogin();
+    }
+
+    // Auto-save reminder
+    setInterval(() => {
+      if (hasChanges) {
+        const save = confirm('You have unsaved changes. Would you like to save now?');
+        if (save) {
+          saveContent();
+        }
+      }
+    }, 300000); // Every 5 minutes
+  </script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-monica-bg to-white py-12 lg:py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-5xl font-serif font-bold text-monica-navy mb-4" data-cms="contact-hero-title">
+          Let's Start Your Transformation
+        </h1>
+        <p class="text-xl text-monica-teal font-medium mb-2" data-cms="contact-hero-subtitle">
+          Your Journey to Clarity and Confidence Begins Here
+        </p>
+        <p class="text-lg text-monica-dark max-w-3xl mx-auto" data-cms="contact-hero-description">
+          Whether you're ready to work together or just exploring your options, I'm here to help. Choose the best way to connect below.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Contact Section -->
+  <section class="py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-8">
+          
+          <!-- Left Column - Quick Contact Options -->
+          <div class="lg:col-span-1 space-y-6">
+            <!-- Schedule a Call Card -->
+            <div id="consultation" class="bg-white rounded-xl p-6 shadow-xl border-2 border-monica-teal">
+              <div class="text-3xl mb-3">📅</div>
+              <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="schedule-title">
+                Schedule a Free Discovery Call
+              </h3>
+              <p class="text-monica-light mb-4" data-cms="schedule-description">
+                30-minute no-pressure conversation about your goals
+              </p>
+              <button 
+                onclick="openCalendarModal()"
+                class="w-full bg-gradient-to-r from-monica-navy to-monica-teal text-white py-3 rounded-lg font-bold hover:shadow-lg transition-all">
+                Book Your Call
+              </button>
+            </div>
+
+            <!-- Contact Info Card -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+              <h3 class="text-xl font-serif font-bold text-monica-navy mb-4" data-cms="contact-info-title">
+                Get in Touch
+              </h3>
+              
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-monica-teal mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                  </svg>
+                  <div>
+                    <p class="text-sm text-monica-light">Email</p>
+                    <a href="mailto:monica@monicaleggett.com" class="text-monica-navy hover:text-monica-teal" data-cms="contact-email">
+                      monica@monicaleggett.com
+                    </a>
+                  </div>
+                </div>
+
+
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-monica-teal mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <div>
+                    <p class="text-sm text-monica-light">Location</p>
+                    <p class="text-monica-navy" data-cms="contact-location">
+                      Connecticut, USA<br>
+                      <span class="text-sm text-monica-light" data-cms="contact-availability">Available Worldwide via Zoom</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links Card -->
+            <div class="bg-monica-bg rounded-xl p-6">
+              <h3 class="text-xl font-serif font-bold text-monica-navy mb-4" data-cms="social-title">
+                Connect on Social
+              </h3>
+              <div class="flex space-x-4">
+                <a href="https://www.linkedin.com/in/monicaleggett" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-12 h-12 bg-monica-navy text-white rounded-full flex items-center justify-center hover:bg-monica-teal transition-colors"
+                   data-cms="social-linkedin">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+                <a href="https://www.facebook.com/NewStepsLifeCoaching" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-12 h-12 bg-monica-navy text-white rounded-full flex items-center justify-center hover:bg-monica-teal transition-colors"
+                   data-cms="social-facebook">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a href="https://www.instagram.com/monicaleggett" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-12 h-12 bg-monica-navy text-white rounded-full flex items-center justify-center hover:bg-monica-teal transition-colors"
+                   data-cms="social-instagram">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Office Hours -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+              <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="hours-title">
+                Office Hours
+              </h3>
+              <div class="space-y-2 text-monica-light">
+                <p data-cms="hours-weekdays"><span class="font-semibold">Monday - Friday:</span> 9:00 AM - 5:00 PM EST</p>
+                <p data-cms="hours-weekends"><span class="font-semibold">Weekends:</span> By Appointment</p>
+                <p class="text-sm italic mt-3" data-cms="hours-note">
+                  Evening appointments available for working professionals
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Contact Form -->
+          <div class="lg:col-span-2">
+            <div class="bg-white rounded-xl shadow-xl p-8">
+              <h2 class="text-2xl font-serif font-bold text-monica-navy mb-2" data-cms="form-title">
+                Send Me a Message
+              </h2>
+              <p class="text-monica-light mb-6" data-cms="form-subtitle">
+                Have a question or ready to start working together? Fill out the form below and I'll get back to you within 24 hours.
+              </p>
+
+              <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hidden">
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field">
+                  </label>
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="first-name" class="block text-sm font-medium text-monica-dark mb-2">
+                      First Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="first-name"
+                      name="first-name"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-monica-teal focus:border-transparent transition-all"
+                      placeholder="Monica"
+                    >
+                  </div>
+                  <div>
+                    <label for="last-name" class="block text-sm font-medium text-monica-dark mb-2">
+                      Last Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="last-name"
+                      name="last-name"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-monica-teal focus:border-transparent transition-all"
+                      placeholder="Leggett"
+                    >
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-monica-dark mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-monica-teal focus:border-transparent transition-all"
+                      placeholder="you@example.com"
+                    >
+                  </div>
+                  <div>
+                    <label for="phone" class="block text-sm font-medium text-monica-dark mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-monica-teal focus:border-transparent transition-all"
+                      placeholder="(555) 123-4567"
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label for="interest" class="block text-sm font-medium text-monica-dark mb-2">
+                    I'm Interested In *
+                  </label>
+                  <select
+                    id="interest"
+                    name="interest"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-monica-teal focus:border-transparent transition-all"
+                  >
+                    <option value="">Select an option...</option>
+                    <option value="personal-coaching">Personal Coaching</option>
+                    <option value="masterminds">Joining a Mastermind</option>
+                    <option value="mentor-coaching">Mentor Coaching</option>
+                    <option value="speaking">Speaking Engagement</option>
+                    <option value="book">Ordering Your Book</option>
+                    <option value="general">General Inquiry</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-medium text-monica-dark mb-2">
+                    Tell Me About Your Goals *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-monica-teal focus:border-transparent transition-all"
+                    placeholder="Share what you're looking to achieve and how I can help you get there..."
+                  ></textarea>
+                </div>
+
+                <div>
+                  <label for="referral" class="block text-sm font-medium text-monica-dark mb-2">
+                    How Did You Hear About Me?
+                  </label>
+                  <input
+                    type="text"
+                    id="referral"
+                    name="referral"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-monica-teal focus:border-transparent transition-all"
+                    placeholder="LinkedIn, Google, Referral, etc."
+                  >
+                </div>
+
+                <div class="flex items-start">
+                  <input
+                    type="checkbox"
+                    id="newsletter"
+                    name="newsletter"
+                    class="mt-1 mr-3"
+                  >
+                  <label for="newsletter" class="text-sm text-monica-light">
+                    Yes, I'd like to receive Monica's monthly newsletter with tips, resources, and inspiration for personal growth
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-gradient-to-r from-monica-navy to-monica-teal text-white py-4 rounded-lg font-bold hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="py-16 lg:py-20 bg-monica-bg">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+          <div class="grid lg:grid-cols-2">
+            <div class="p-8 lg:p-12">
+              <h2 class="text-2xl font-serif font-bold text-monica-navy mb-4" data-cms="location-title">
+                Located in Beautiful Connecticut
+              </h2>
+              <p class="text-monica-light mb-6" data-cms="location-description">
+                While I work with clients worldwide via Zoom, I'm proud to call Connecticut home. For local clients, in-person sessions can be arranged.
+              </p>
+              
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-monica-teal/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <svg class="w-6 h-6 text-monica-teal" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-monica-navy mb-1" data-cms="virtual-title">Virtual Coaching</h3>
+                    <p class="text-monica-light text-sm" data-cms="virtual-text">
+                      Connect from anywhere in the world via secure video conferencing
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-monica-teal/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <svg class="w-6 h-6 text-monica-teal" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                      <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-monica-navy mb-1" data-cms="inperson-title">In-Person Sessions</h3>
+                    <p class="text-monica-light text-sm" data-cms="inperson-text">
+                      Available for Connecticut-based clients at select locations
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-monica-teal/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <svg class="w-6 h-6 text-monica-teal" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-monica-navy mb-1" data-cms="flexible-title">Flexible Scheduling</h3>
+                    <p class="text-monica-light text-sm" data-cms="flexible-text">
+                      Evening and weekend appointments available to fit your schedule
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Map Placeholder -->
+            <div class="bg-monica-bg h-96 lg:h-auto relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                  <svg class="w-16 h-16 text-monica-navy mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <p class="text-monica-navy font-serif font-bold">Connecticut, USA</p>
+                  <p class="text-monica-light text-sm">Serving clients globally</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-serif font-bold text-monica-navy text-center mb-12" data-cms="faq-title">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-monica-navy mb-2" data-cms="faq-1-question">
+              How quickly will you respond to my message?
+            </h3>
+            <p class="text-monica-light" data-cms="faq-1-answer">
+              I typically respond to all inquiries within 24 hours during business days. If you need immediate assistance, feel free to call during office hours.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-monica-navy mb-2" data-cms="faq-2-question">
+              Do you offer virtual coaching sessions?
+            </h3>
+            <p class="text-monica-light" data-cms="faq-2-answer">
+              Yes! Most of my coaching is conducted via Zoom, allowing me to work with clients worldwide. Virtual sessions are just as effective as in-person meetings.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-monica-navy mb-2" data-cms="faq-3-question">
+              What's the best way to schedule a consultation?
+            </h3>
+            <p class="text-monica-light" data-cms="faq-3-answer">
+              Click the "Book Your Call" button above to access my calendar and schedule a free 30-minute discovery call at a time that works for you.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-monica-navy mb-2" data-cms="faq-4-question">
+              Do you work with international clients?
+            </h3>
+            <p class="text-monica-light" data-cms="faq-4-answer">
+              Absolutely! I work with clients across different time zones and countries. We'll find a meeting time that works for both of us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- Google Calendar Modal -->
+<div id="calendar-modal" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black/50" onclick="closeCalendarModal()"></div>
+  <div class="absolute inset-0 flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+      <div class="bg-gradient-to-r from-monica-navy to-monica-teal text-white p-6">
+        <div class="flex justify-between items-center">
+          <h3 class="text-2xl font-serif font-bold">Schedule Your Free Discovery Call</h3>
+          <button onclick="closeCalendarModal()" class="text-white/80 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="p-6">
+        <!-- Google Calendar Appointment Scheduling iframe will go here -->
+        <!-- Monica can paste her Google Calendar scheduling link -->
+        <div id="calendar-embed" class="w-full h-[600px] bg-monica-bg rounded-lg flex items-center justify-center">
+          <div class="text-center">
+            <svg class="w-16 h-16 text-monica-navy mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+            </svg>
+            <p class="text-monica-navy font-semibold mb-2">Calendar Integration Ready</p>
+            <p class="text-monica-light text-sm" data-cms="calendar-placeholder">
+              Google Calendar scheduling will appear here once configured
+            </p>
+            <!-- Hidden input for Monica to add her Google Calendar ID via CMS -->
+            <input type="hidden" id="google-calendar-id" data-cms="google-calendar-id" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openCalendarModal() {
+    const modal = document.getElementById('calendar-modal');
+    const calendarId = document.getElementById('google-calendar-id')?.value;
+    
+    if (calendarId) {
+      // If Monica has added her Google Calendar ID, load the scheduling widget
+      const embedDiv = document.getElementById('calendar-embed');
+      // This is where we'd integrate with Google Calendar API
+      // For now, it's a placeholder that Monica can configure
+      embedDiv.innerHTML = `
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/${calendarId}" 
+                style="border: 0" 
+                width="100%" 
+                height="600" 
+                frameborder="0"></iframe>
+      `;
+    }
+    
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCalendarModal() {
+    const modal = document.getElementById('calendar-modal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Close modal on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeCalendarModal();
+    }
+  });
+</script>
+
+<style>
+  /* Custom styles for the calendar modal */
+  #calendar-modal {
+    backdrop-filter: blur(4px);
+  }
+</style>
