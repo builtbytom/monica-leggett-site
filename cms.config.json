@@ -2,8 +2,45 @@
   "siteName": "Monica Leggett - Life Coach",
   "sections": [
     {
-      "id": "hero",
-      "title": "Hero Section",
+      "id": "navigation",
+      "title": "Website Navigation",
+      "type": "single",
+      "fields": [
+        {
+          "id": "logo_text",
+          "label": "Logo Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "home_link",
+          "label": "Home Menu Label",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "about_link",
+          "label": "About Menu Label",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "learning_center_link",
+          "label": "Learning Center Menu Label",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "services_link",
+          "label": "Services Menu Label",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "hero_carousel",
+      "title": "Homepage Hero Carousel",
       "type": "single",
       "fields": [
         {
@@ -25,14 +62,20 @@
           "required": true
         },
         {
+          "id": "book_image",
+          "label": "Book Cover Image",
+          "type": "image",
+          "required": true
+        },
+        {
           "id": "book_cta1",
-          "label": "Book Slide - Button 1 Text",
+          "label": "Book Button 1 Text",
           "type": "text",
           "required": true
         },
         {
           "id": "book_cta2",
-          "label": "Book Slide - Button 2 Text",
+          "label": "Book Button 2 Text",
           "type": "text",
           "required": true
         },
@@ -55,34 +98,118 @@
           "required": true
         },
         {
+          "id": "coaching_image",
+          "label": "Coaching Session Image",
+          "type": "image",
+          "required": true
+        },
+        {
           "id": "coaching_cta1",
-          "label": "Coaching Slide - Button 1 Text",
+          "label": "Coaching Button 1 Text",
           "type": "text",
           "required": true
         },
         {
           "id": "coaching_cta2",
-          "label": "Coaching Slide - Button 2 Text",
+          "label": "Coaching Button 2 Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "mentor_title",
+          "label": "Mentor Coaching Slide - Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "mentor_subtitle",
+          "label": "Mentor Coaching Slide - Subtitle",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "mentor_description",
+          "label": "Mentor Coaching Slide - Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "mentor_image",
+          "label": "Mentor Coaching Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "mentor_cta1",
+          "label": "Mentor Coaching Button 1 Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "mentor_cta2",
+          "label": "Mentor Coaching Button 2 Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "mastermind_title",
+          "label": "Mastermind Slide - Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "mastermind_subtitle",
+          "label": "Mastermind Slide - Subtitle",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "mastermind_description",
+          "label": "Mastermind Slide - Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "mastermind_image",
+          "label": "Mastermind Group Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "mastermind_cta1",
+          "label": "Mastermind Button 1 Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "mastermind_cta2",
+          "label": "Mastermind Button 2 Text",
           "type": "text",
           "required": true
         }
       ]
     },
     {
-      "id": "about",
-      "title": "About Section",
+      "id": "about_homepage",
+      "title": "Homepage About Section",
       "type": "single",
       "fields": [
         {
-          "id": "title",
+          "id": "section_title",
           "label": "Section Title",
           "type": "text",
           "required": true
         },
         {
-          "id": "subtitle",
+          "id": "section_subtitle",
           "label": "Section Subtitle",
           "type": "text",
+          "required": true
+        },
+        {
+          "id": "monica_portrait",
+          "label": "Monica's Portrait Image",
+          "type": "image",
           "required": true
         },
         {
@@ -98,7 +225,7 @@
           "required": true
         },
         {
-          "id": "cta",
+          "id": "cta_button",
           "label": "Button Text",
           "type": "text",
           "required": true
@@ -106,94 +233,63 @@
       ]
     },
     {
-      "id": "services",
-      "title": "Services Section",
+      "id": "services_homepage",
+      "title": "Homepage Services Section",
       "type": "single",
       "fields": [
         {
-          "id": "sectionTitle",
+          "id": "section_title",
           "label": "Section Title",
           "type": "text",
           "required": true
         },
         {
-          "id": "sectionSubtitle",
+          "id": "section_subtitle",
           "label": "Section Subtitle",
           "type": "text",
           "required": true
         },
         {
           "id": "book_title",
-          "label": "Book Card - Title",
+          "label": "Book Card Title",
           "type": "text",
           "required": true
         },
         {
           "id": "book_description",
-          "label": "Book Card - Description",
+          "label": "Book Card Description",
           "type": "textarea",
           "required": true
         },
         {
           "id": "book_cta",
-          "label": "Book Card - Button Text",
+          "label": "Book Card Button",
           "type": "text",
           "required": true
         },
         {
           "id": "coaching_title",
-          "label": "Coaching Card - Title",
+          "label": "Coaching Card Title",
           "type": "text",
           "required": true
         },
         {
           "id": "coaching_description",
-          "label": "Coaching Card - Description",
+          "label": "Coaching Card Description",
           "type": "textarea",
           "required": true
         },
         {
           "id": "coaching_cta",
-          "label": "Coaching Card - Button Text",
+          "label": "Coaching Card Button",
           "type": "text",
           "required": true
         }
       ]
     },
     {
-      "id": "leadMagnet",
-      "title": "Lead Magnet Section",
-      "type": "single",
-      "fields": [
-        {
-          "id": "title",
-          "label": "Section Title",
-          "type": "text",
-          "required": true
-        },
-        {
-          "id": "description",
-          "label": "Section Description",
-          "type": "textarea",
-          "required": true
-        },
-        {
-          "id": "buttonText",
-          "label": "Button Text",
-          "type": "text",
-          "required": true
-        },
-        {
-          "id": "emailPlaceholder",
-          "label": "Email Field Placeholder",
-          "type": "text",
-          "required": true
-        }
-      ]
-    },
-    {
-      "id": "testimonials",
-      "title": "Testimonials",
+      "id": "testimonials_homepage",
+      "title": "Homepage Testimonials",
       "type": "repeater",
       "fields": [
         {
@@ -225,30 +321,171 @@
       ]
     },
     {
-      "id": "footer",
-      "title": "Footer",
+      "id": "lead_magnet",
+      "title": "Action Guide Lead Magnet",
       "type": "single",
       "fields": [
         {
-          "id": "about",
+          "id": "title",
+          "label": "Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "description",
+          "label": "Section Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "button_text",
+          "label": "Button Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "email_placeholder",
+          "label": "Email Field Placeholder",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "about_page",
+      "title": "About Page Content",
+      "type": "single",
+      "fields": [
+        {
+          "id": "page_title",
+          "label": "Page Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "hero_image",
+          "label": "Hero Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "intro_text",
+          "label": "Introduction Text",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "credentials_title",
+          "label": "Credentials Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "credentials_list",
+          "label": "Credentials List",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "philosophy_title",
+          "label": "Philosophy Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "philosophy_quote",
+          "label": "Philosophy Quote",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "personal_story",
+          "label": "Personal Story",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "family_image",
+          "label": "Family/Personal Image",
+          "type": "image",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "contact_page",
+      "title": "Contact Page Content",
+      "type": "single",
+      "fields": [
+        {
+          "id": "page_title",
+          "label": "Page Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "contact_intro",
+          "label": "Contact Introduction",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "office_hours_title",
+          "label": "Office Hours Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "office_hours",
+          "label": "Office Hours",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "calendar_title",
+          "label": "Calendar Section Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "calendar_description",
+          "label": "Calendar Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "faq_title",
+          "label": "FAQ Section Title",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "title": "Website Footer",
+      "type": "single",
+      "fields": [
+        {
+          "id": "about_text",
           "label": "About Text",
           "type": "textarea",
           "required": true
         },
         {
-          "id": "newsletterTitle",
+          "id": "newsletter_title",
           "label": "Newsletter Title",
           "type": "text",
           "required": true
         },
         {
-          "id": "newsletterDescription",
+          "id": "newsletter_description",
           "label": "Newsletter Description",
           "type": "text",
           "required": true
         },
         {
-          "id": "newsletterButton",
+          "id": "newsletter_button",
           "label": "Newsletter Button Text",
           "type": "text",
           "required": true

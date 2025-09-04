@@ -1,26 +1,48 @@
 {
-  "hero": {
+  "navigation": {
+    "logo_text": "Monica Leggett",
+    "home_link": "Home",
+    "about_link": "About",
+    "learning_center_link": "Learning Center",
+    "services_link": "Services"
+  },
+  "hero_carousel": {
     "book_title": "Doubtful to Decisive:",
     "book_subtitle": "Transform Your Life in 8 Steps",
     "book_description": "Discover the proven framework that has helped hundreds of professionals break through self-doubt and take decisive action in their careers and lives.",
+    "book_image": "/images/doubtful-to-decisive-book.png",
     "book_cta1": "Get Your Copy",
     "book_cta2": "Read First Chapter Free",
     "coaching_title": "Transform Your Life",
     "coaching_subtitle": "Personal Coaching for Professionals",
     "coaching_description": "Break through barriers, overcome self-doubt, and achieve the success you deserve with personalized one-on-one coaching.",
+    "coaching_image": "/images/monica-coaching-session.jpg",
     "coaching_cta1": "Book Discovery Call",
-    "coaching_cta2": "Learn More"
+    "coaching_cta2": "Learn More",
+    "mentor_title": "Mentor Coaching for Coaches",
+    "mentor_subtitle": "Elevate Your Coaching Practice to New Heights",
+    "mentor_description": "Fast-track your ICF certification and build a thriving coaching practice with expert guidance and proven systems.",
+    "mentor_image": "/images/monica-mentor-coaching.jpg",
+    "mentor_cta1": "Level Up Your Practice",
+    "mentor_cta2": "Discovery Call",
+    "mastermind_title": "Join Our Masterminds",
+    "mastermind_subtitle": "Accelerate Your Growth with Like-Minded Professionals",
+    "mastermind_description": "Connect with ambitious professionals, share challenges, and achieve breakthrough results in our supportive mastermind community.",
+    "mastermind_image": "/images/monica-mastermind-group.jpg",
+    "mastermind_cta1": "Join Next Cohort",
+    "mastermind_cta2": "Learn More"
   },
-  "about": {
-    "title": "Meet Monica",
-    "subtitle": "Your Guide to Decisive Action",
-    "description1": "I'm Monica Leggett, a certified life coach, author, and speaker with over 20 years of experience helping professionals transform their lives. My journey from corporate burnout to purposeful living inspired me to help others break free from self-doubt.",
-    "description2": "Through my proven 8-step framework, I've guided hundreds of clients from feeling stuck and overwhelmed to living with clarity, confidence, and purpose. Whether you're seeking personal transformation, building a coaching practice, or looking for community support, I'm here to help you take decisive action.",
-    "cta": "Learn More About Me"
+  "about_homepage": {
+    "section_title": "Meet Monica",
+    "section_subtitle": "Your Guide to Decisive Action",
+    "monica_portrait": "/images/monica-leggett-portrait.jpg",
+    "description1": "I'm Monica Leggett, a Professional Certified Coach (PCC) with over 15 years of experience helping individuals and businesses transform their lives. My journey from self-doubt to confidence inspired me to help others break free from limiting beliefs.",
+    "description2": "Through my proven 8-step framework, I've guided 500+ clients from feeling stuck and overwhelmed to living with clarity, confidence, and purpose. Whether you're seeking personal transformation, building a coaching practice, or looking for community support, I'm here to help you take decisive action.",
+    "cta_button": "Learn More About Me"
   },
-  "services": {
-    "sectionTitle": "How Can I Help You?",
-    "sectionSubtitle": "Choose Your Path to Transformation",
+  "services_homepage": {
+    "section_title": "How Can I Help You?",
+    "section_subtitle": "Choose Your Path to Transformation",
     "book_title": "📚 Get the Book",
     "book_description": "Start your transformation journey with 'Doubtful to Decisive' - your roadmap to breaking through barriers and achieving your goals.",
     "book_cta": "Order Now",
@@ -28,13 +50,7 @@
     "coaching_description": "Get personalized one-on-one support to overcome challenges, set clear goals, and create lasting change in your life.",
     "coaching_cta": "Book Discovery Call"
   },
-  "leadMagnet": {
-    "title": "Ready to Take Action? 🚀",
-    "description": "Download my free Action Guide and start your transformation today!",
-    "buttonText": "Get Your Free Guide",
-    "emailPlaceholder": "Enter your email"
-  },
-  "testimonials": [
+  "testimonials_homepage": [
     {
       "name": "Sarah M.",
       "title": "Marketing Director",
@@ -54,11 +70,37 @@
       "rating": 5
     }
   ],
+  "lead_magnet": {
+    "title": "Ready to Take Action? 🚀",
+    "description": "Download my free Action Guide and start your transformation today! Get the first 3 steps of my proven framework.",
+    "button_text": "Get Your Free Guide",
+    "email_placeholder": "Enter your email address"
+  },
+  "about_page": {
+    "page_title": "About Monica Leggett",
+    "hero_image": "/images/monica-hero-about.jpg",
+    "intro_text": "Professional Certified Coach (PCC) with 15+ years of experience helping individuals and businesses transform their lives. Past ICF Chapter President (2019) and author of 'Doubtful to Decisive'.",
+    "credentials_title": "My Credentials & Experience",
+    "credentials_list": "• Professional Certified Coach (PCC) through ICF\n• ICF Connecticut Chapter President (2019)\n• Author of 'Doubtful to Decisive: Eight Steps to Get Unstuck and Take Action'\n• 500+ clients transformed\n• 15+ years coaching experience\n• Certified in PeopleMap™ and Positive Intelligence coaching\n• Founded New Steps Life Coaching in 2007",
+    "philosophy_title": "My Coaching Philosophy",
+    "philosophy_quote": "I believe everyone has the answers within them – sometimes you just need a skilled partner to help you uncover them.",
+    "personal_story": "One of 10 children, I learned early how to communicate effectively and help others find their voice. Married for 37 years, I'm a mother and grandmother who understands the challenges of balancing personal and professional growth. My own journey from corporate burnout to purposeful living inspired me to help others make similar transformations.",
+    "family_image": "/images/monica-family.jpg"
+  },
+  "contact_page": {
+    "page_title": "Let's Connect",
+    "contact_intro": "Ready to take the next step in your transformation journey? I'd love to hear from you. Whether you're interested in coaching, have questions about my book, or want to explore working together, don't hesitate to reach out.",
+    "office_hours_title": "Office Hours",
+    "office_hours": "Monday - Thursday: 9:00 AM - 5:00 PM EST\nFriday: 9:00 AM - 3:00 PM EST\nWeekends: By appointment only",
+    "calendar_title": "Schedule Your Free Discovery Call",
+    "calendar_description": "Ready to explore how we can work together? Book a complimentary 30-minute discovery call to discuss your goals and see if we're a good fit.",
+    "faq_title": "Frequently Asked Questions"
+  },
   "footer": {
-    "about": "Monica Leggett is a certified life coach, author, and speaker dedicated to helping professionals move from doubt to decisive action.",
-    "newsletterTitle": "Stay Connected",
-    "newsletterDescription": "Get weekly insights and inspiration delivered to your inbox.",
-    "newsletterButton": "Subscribe",
-    "copyright": "© 2025 Monica Leggett Coaching. All rights reserved."
+    "about_text": "Monica Leggett is a Professional Certified Coach, author, and speaker dedicated to helping professionals move from doubt to decisive action. Transform your life with proven strategies and personalized support.",
+    "newsletter_title": "Stay Connected",
+    "newsletter_description": "Get weekly insights, coaching tips, and inspiration delivered to your inbox.",
+    "newsletter_button": "Subscribe Now",
+    "copyright": "© 2025 Monica Leggett Coaching. All rights reserved. Built by iBuild Calm."
   }
 }
