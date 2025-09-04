@@ -42,14 +42,10 @@ exports.handler = async (event) => {
     const { owner, repo: repoName } = parseGitHubUrl(repo);
     const url = `https://api.github.com/repos/${owner}/${repoName}/contents/cms.config.json`;
     
+    // For public repos, don't use auth token to avoid 401 errors
     const requestHeaders = {
       'Accept': 'application/vnd.github.v3+json',
     };
-    
-    // Only add auth if token is available
-    if (GITHUB_TOKEN) {
-      requestHeaders['Authorization'] = `Bearer ${GITHUB_TOKEN}`;
-    }
 
     const response = await fetch(url, { headers: requestHeaders });
 
