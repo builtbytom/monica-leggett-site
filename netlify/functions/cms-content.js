@@ -1,5 +1,3 @@
-const { Octokit } = require('@octokit/rest');
-
 exports.handler = async (event) => {
   // Enable CORS for your portal
   const headers = {
@@ -28,11 +26,13 @@ exports.handler = async (event) => {
     };
   }
 
-  const octokit = new Octokit({
-    auth: GITHUB_TOKEN,
-  });
-
   try {
+    // Dynamic import of Octokit for ES module compatibility
+    const { Octokit } = await import('@octokit/rest');
+    const octokit = new Octokit({
+      auth: GITHUB_TOKEN,
+    });
+
     if (event.httpMethod === 'GET') {
       // Fetch the current content.json from GitHub
       const response = await octokit.rest.repos.getContent({
