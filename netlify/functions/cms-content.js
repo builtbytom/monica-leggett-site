@@ -1,3 +1,5 @@
+const { Octokit } = require('@octokit/rest');
+
 exports.handler = async (event) => {
   // Enable CORS for your portal
   const headers = {
@@ -12,43 +14,83 @@ exports.handler = async (event) => {
     return { statusCode: 200, headers, body: '' };
   }
 
+  // GitHub configuration
+  const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+  const owner = 'builtbytom';
+  const repo = 'monica-leggett-site';
+  const path = 'content.json';
+
+  if (!GITHUB_TOKEN) {
+    return {
+      statusCode: 500,
+      headers,
+      body: JSON.stringify({ error: 'GitHub token not configured' }),
+    };
+  }
+
+  const octokit = new Octokit({
+    auth: GITHUB_TOKEN,
+  });
+
   try {
     if (event.httpMethod === 'GET') {
-      // Return the current content directly (matches content.json)
-      const content = {
-        "about_monica": {
-          "heading_line1": "Meet",
-          "heading_line2": "Monica Leggett [PORTAL TEST]",
-          "subtitle": "⭐ Certified Coach, Author, and Speaker",
-          "bio_paragraph1": "I'm Monica Leggett, a seasoned expert with years of experience dedicated to transforming lives and accelerating goal achievement. With proven methods, endless energy, and infectious enthusiasm, my passion lies in helping individuals navigate both career and personal journeys, whether you're climbing the corporate ladder or seeking to enhance your personal and professional journey.",
-          "bio_paragraph2": "My approach isn't just about reaching goals; it's about the journey, the growth, and the insights you gain along the way. Together, we'll unlock your potential and create a life filled with purpose and fulfillment.",
-          "cta_button_text": "✨ Learn More About Monica"
-        },
-        "services_section": {
-          "book_title": "Doubtful to Decisive", 
-          "book_description": "Start your transformation journey with my book. Eight proven steps to overcome doubt and take decisive action in your life."
-        }
-      };
+      // Fetch the current content.json from GitHub
+      const response = await octokit.rest.repos.getContent({
+        owner,
+        repo,
+        path,
+      });
+
+      const content = Buffer.from(response.data.content, 'base64').toString();
       
       return {
         statusCode: 200,
         headers,
         body: JSON.stringify({
           success: true,
-          content: content,
+          content: JSON.parse(content),
+          sha: response.data.sha, // Need this for updates
         }),
       };
     } 
     
     else if (event.httpMethod === 'POST') {
-      // For now, just return success for POST requests
-      // In production, this would update GitHub via API
+      const body = JSON.parse(event.body);
+      
+      if (!body.content) {
+        return {
+          statusCode: 400,
+          headers,
+          body: JSON.stringify({ error: 'No content provided' }),
+        };
+      }
+
+      // Get current file to get its SHA
+      const currentFile = await octokit.rest.repos.getContent({
+        owner,
+        repo,
+        path,
+      });
+
+      // Update the content.json file
+      const updatedContent = JSON.stringify(body.content, null, 2);
+      const encodedContent = Buffer.from(updatedContent).toString('base64');
+
+      await octokit.rest.repos.createOrUpdateFileContents({
+        owner,
+        repo,
+        path,
+        message: '🎨 Update content via CMS portal',
+        content: encodedContent,
+        sha: currentFile.data.sha,
+      });
+
       return {
         statusCode: 200,
         headers,
         body: JSON.stringify({ 
           success: true, 
-          message: 'Content updated successfully (simulated for testing)' 
+          message: 'Content updated successfully! Site will rebuild in ~2 minutes.' 
         }),
       };
     }
@@ -67,7 +109,7 @@ exports.handler = async (event) => {
       headers,
       body: JSON.stringify({ 
         error: error.message || 'Failed to process request',
-        stack: error.stack
+        details: error.response?.data || error.stack
       }),
     };
   }
