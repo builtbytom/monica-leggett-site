@@ -10,5 +10,62 @@
   "services_section": {
     "book_title": "Doubtful to Decisive", 
     "book_description": "Start your transformation journey with my book. Eight proven steps to overcome doubt and take decisive action in your life."
+  },
+  "navigation": {
+    "logo_text": "Monica Leggett",
+    "home_link": "Home",
+    "about_link": "About",
+    "learning_center_link": "Learning Center",
+    "services_link": "Services"
+  },
+  "hero_carousel": {
+    "book_title": "Doubtful to Decisive",
+    "book_subtitle": "Eight Steps to Get Unstuck and Take Action",
+    "book_description": "Transform your life with proven strategies for overcoming doubt and making decisive choices.",
+    "book_image": "/images/doubtful-to-decisive-book.png",
+    "book_cta1": "📖 Get the Book",
+    "book_cta2": "📚 Learn More",
+    "coaching_title": "Personal Coaching",
+    "coaching_subtitle": "One-on-One Transformation",
+    "coaching_description": "Personalized coaching sessions to unlock your potential and achieve your goals.",
+    "coaching_image": "/images/monica-coaching-session.jpg",
+    "coaching_cta1": "💬 Start Coaching",
+    "coaching_cta2": "🔍 Learn More",
+    "mentor_title": "Mentor Coaching",
+    "mentor_subtitle": "For Aspiring Coaches",
+    "mentor_description": "ICF-certified training and support for coaches looking to elevate their practice.",
+    "mentor_image": "/images/monica-mentor-coaching.jpg",
+    "mentor_cta1": "🚀 Get Certified",
+    "mentor_cta2": "📋 Learn More",
+    "mastermind_title": "Masterminds",
+    "mastermind_subtitle": "Group Transformation",
+    "mastermind_description": "Join a supportive community of like-minded individuals accelerating their growth.",
+    "mastermind_image": "/images/monica-mastermind-group.jpg",
+    "mastermind_cta1": "🤝 Join Us",
+    "mastermind_cta2": "📅 Next Cohort"
+  },
+  "about_homepage": {
+    "section_title": "Meet",
+    "section_subtitle": "Monica Leggett",
+    "monica_portrait": "/images/monica-leggett-portrait.jpg",
+    "description1": "I'm Monica Leggett, a seasoned expert with years of experience dedicated to transforming lives and accelerating goal achievement.",
+    "description2": "My approach isn't just about reaching goals; it's about the journey, the growth, and the insights you gain along the way.",
+    "cta_button": "✨ Learn More About Monica"
+  },
+  "services_homepage": {
+    "section_title": "How I Can Help You",
+    "section_subtitle": "Transform",
+    "book_title": "Doubtful to Decisive",
+    "book_description": "Start your transformation journey with my book. Eight proven steps to overcome doubt and take decisive action in your life.",
+    "book_cta": "📖 Get the Book",
+    "coaching_title": "Personal Coaching",
+    "coaching_description": "One-on-one coaching tailored to your unique challenges. Get personalized guidance to unlock your full potential.",
+    "coaching_cta": "💬 Explore Coaching"
+  },
+  "lead_magnet": {
+    "title": "Ready to Take Action?",
+    "description": "Download your free Action Guide and start your transformation journey today. Eight practical exercises to help you move from doubtful to decisive.",
+    "button_text": "Get Your Free Guide",
+    "email_placeholder": "Enter your email"
   }
 }
