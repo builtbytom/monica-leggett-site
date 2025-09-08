@@ -12,36 +12,37 @@ exports.handler = async (event) => {
     return { statusCode: 200, headers, body: '' };
   }
 
-  // GitHub configuration
-  const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-  const owner = 'builtbytom';
-  const repo = 'monica-leggett-site';
-  const path = 'content.json';
-
-  if (!GITHUB_TOKEN) {
-    return {
-      statusCode: 500,
-      headers,
-      body: JSON.stringify({ error: 'GitHub token not configured' }),
-    };
-  }
-
   try {
-    // Dynamic import of Octokit for ES module compatibility
-    const { Octokit } = await import('@octokit/rest');
-    const octokit = new Octokit({
-      auth: GITHUB_TOKEN,
-    });
+    // GitHub configuration
+    const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+    const owner = 'builtbytom';
+    const repo = 'monica-leggett-site';
+    const filePath = 'content.json';
+
+    if (!GITHUB_TOKEN) {
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({ error: 'GitHub token not configured' }),
+      };
+    }
 
     if (event.httpMethod === 'GET') {
-      // Fetch the current content.json from GitHub
-      const response = await octokit.rest.repos.getContent({
-        owner,
-        repo,
-        path,
+      // Use GitHub API with fetch instead of Octokit
+      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`, {
+        headers: {
+          'Authorization': `Bearer ${GITHUB_TOKEN}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'User-Agent': 'Monica-CMS/1.0'
+        }
       });
 
-      const content = Buffer.from(response.data.content, 'base64').toString();
+      if (!response.ok) {
+        throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      const content = Buffer.from(data.content, 'base64').toString();
       
       return {
         statusCode: 200,
@@ -49,7 +50,7 @@ exports.handler = async (event) => {
         body: JSON.stringify({
           success: true,
           content: JSON.parse(content),
-          sha: response.data.sha, // Need this for updates
+          sha: data.sha, // Need this for updates
         }),
       };
     } 
@@ -65,25 +66,44 @@ exports.handler = async (event) => {
         };
       }
 
-      // Get current file to get its SHA
-      const currentFile = await octokit.rest.repos.getContent({
-        owner,
-        repo,
-        path,
+      // Get current file SHA first
+      const getCurrentFile = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`, {
+        headers: {
+          'Authorization': `Bearer ${GITHUB_TOKEN}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'User-Agent': 'Monica-CMS/1.0'
+        }
       });
+
+      if (!getCurrentFile.ok) {
+        throw new Error(`Failed to get current file: ${getCurrentFile.status}`);
+      }
+
+      const currentData = await getCurrentFile.json();
 
       // Update the content.json file
       const updatedContent = JSON.stringify(body.content, null, 2);
       const encodedContent = Buffer.from(updatedContent).toString('base64');
 
-      await octokit.rest.repos.createOrUpdateFileContents({
-        owner,
-        repo,
-        path,
-        message: '🎨 Update content via CMS portal',
-        content: encodedContent,
-        sha: currentFile.data.sha,
+      const updateResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${GITHUB_TOKEN}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+          'User-Agent': 'Monica-CMS/1.0'
+        },
+        body: JSON.stringify({
+          message: '🎨 Update content via CMS portal',
+          content: encodedContent,
+          sha: currentData.sha,
+        })
       });
+
+      if (!updateResponse.ok) {
+        const errorData = await updateResponse.json().catch(() => ({}));
+        throw new Error(`Failed to update file: ${updateResponse.status} ${JSON.stringify(errorData)}`);
+      }
 
       return {
         statusCode: 200,
@@ -109,7 +129,7 @@ exports.handler = async (event) => {
       headers,
       body: JSON.stringify({ 
         error: error.message || 'Failed to process request',
-        details: error.response?.data || error.stack
+        stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
       }),
     };
   }
