@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
+
+// Simulate fetching content from CMS (in real implementation, this would be an API call)
+import fs from 'fs';
+import path from 'path';
+
+const contentPath = path.join(process.cwd(), 'content-data.json');
+const contentData = JSON.parse(fs.readFileSync(contentPath, 'utf-8'));
+const homepage = contentData.homepage;
+---
+
+<BaseLayout title="Home">
+  <!-- Hero Carousel -->
+  <HeroCarousel />
+  
+  <!-- Meet Monica Section -->
+  <section class="py-20 bg-white scroll-animate">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <img 
+            src={homepage.about_monica.portrait_image}
+            alt="Monica Leggett holding her book Doubtful to Decisive"
+            class="rounded-2xl w-full max-w-md mx-auto shadow-xl"
+            data-cms-image="monica-about-portrait"
+          >
+        </div>
+        <div class="order-1 md:order-2">
+          <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4">
+            <span class="text-monica-dark" data-cms="about-heading-line1">{homepage.about_monica.heading_line1}</span>
+            <span class="text-monica-teal block" data-cms="about-heading-line2">{homepage.about_monica.heading_line2}</span>
+          </h2>
+          <h3 class="text-xl text-monica-navy mb-6 font-semibold" data-cms="about-subtitle">
+            {homepage.about_monica.subtitle}
+          </h3>
+          <p class="text-lg text-monica-light mb-6" data-cms="about-bio-p1">
+            {homepage.about_monica.bio_paragraph1}
+          </p>
+          <p class="text-lg text-monica-light mb-8" data-cms="about-bio-p2">
+            {homepage.about_monica.bio_paragraph2}
+          </p>
+          <a href="/about" class="bg-gradient-to-r from-monica-teal to-monica-sage text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center" data-cms="about-cta-button">
+            {homepage.about_monica.cta_button_text}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Four Service Pillars -->
+  <section class="py-20 bg-gray-50 scroll-animate">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4">
+          <span class="text-monica-dark" data-cms="services-heading-line1">{homepage.services_section.heading_line1}</span>
+          <span class="text-monica-navy block" data-cms="services-heading-line2">{homepage.services_section.heading_line2}</span>
+        </h2>
+        <p class="text-xl text-monica-light max-w-3xl mx-auto" data-cms="services-subtitle">
+          {homepage.services_section.subtitle}
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Book Pillar -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow flex flex-col">
+          <div class="w-16 h-16 bg-monica-navy/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-monica-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-monica-dark mb-3" data-cms="book-title">
+            {homepage.services_section.book_pillar.title}
+          </h3>
+          <p class="text-monica-light mb-4 flex-grow" data-cms="book-description">
+            {homepage.services_section.book_pillar.description}
+          </p>
+          <a href={homepage.services_section.book_pillar.link} class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center mt-auto" data-cms="book-cta">
+            {homepage.services_section.book_pillar.cta_text}
+          </a>
+        </div>
+        
+        <!-- Personal Coaching Pillar -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow flex flex-col">
+          <div class="w-16 h-16 bg-monica-teal/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-monica-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-monica-dark mb-3" data-cms="personal-coaching-title">
+            {homepage.services_section.personal_coaching_pillar.title}
+          </h3>
+          <p class="text-monica-light mb-4 flex-grow" data-cms="personal-coaching-description">
+            {homepage.services_section.personal_coaching_pillar.description}
+          </p>
+          <a href={homepage.services_section.personal_coaching_pillar.link} class="bg-gradient-to-r from-monica-teal to-monica-sage text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center mt-auto" data-cms="personal-coaching-cta">
+            {homepage.services_section.personal_coaching_pillar.cta_text}
+          </a>
+        </div>
+        
+        <!-- Mentor Coaching Pillar -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow flex flex-col">
+          <div class="w-16 h-16 bg-monica-sage/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-monica-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-monica-dark mb-3" data-cms="mentor-coaching-title">
+            {homepage.services_section.mentor_coaching_pillar.title}
+          </h3>
+          <p class="text-monica-light mb-4 flex-grow" data-cms="mentor-coaching-description">
+            {homepage.services_section.mentor_coaching_pillar.description}
+          </p>
+          <a href={homepage.services_section.mentor_coaching_pillar.link} class="bg-gradient-to-r from-monica-sage to-green-600 text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center mt-auto" data-cms="mentor-coaching-cta">
+            {homepage.services_section.mentor_coaching_pillar.cta_text}
+          </a>
+        </div>
+        
+        <!-- Masterminds Pillar -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow flex flex-col">
+          <div class="w-16 h-16 bg-monica-navy/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-monica-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-monica-dark mb-3" data-cms="masterminds-title">
+            {homepage.services_section.masterminds_pillar.title}
+          </h3>
+          <p class="text-monica-light mb-4 flex-grow" data-cms="masterminds-description">
+            {homepage.services_section.masterminds_pillar.description}
+          </p>
+          <a href={homepage.services_section.masterminds_pillar.link} class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center mt-auto" data-cms="masterminds-cta">
+            {homepage.services_section.masterminds_pillar.cta_text}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Lead Magnet CTA -->
+  <section class="py-16 bg-gradient-to-br from-monica-teal to-monica-sage">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 text-white drop-shadow-lg" data-cms="lead-magnet-heading">
+        {homepage.lead_magnet.heading}
+      </h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto text-white/95 drop-shadow" data-cms="lead-magnet-description">
+        {homepage.lead_magnet.description}
+      </p>
+      <form class="max-w-lg mx-auto">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input 
+            type="email" 
+            placeholder={homepage.lead_magnet.email_placeholder}
+            class="flex-1 px-5 py-3 rounded-lg text-monica-dark placeholder:text-gray-500 shadow-md"
+            required
+            data-cms="lead-magnet-email-placeholder"
+          >
+          <button 
+            type="submit" 
+            class="bg-white text-monica-teal px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-gray-50 transform hover:-translate-y-1 transition-all duration-300"
+            data-cms="lead-magnet-button"
+          >
+            {homepage.lead_magnet.button_text}
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-white scroll-animate">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4">
+          <span class="text-monica-dark">What Clients Say</span>
+        </h2>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              ★★★★★
+            </div>
+          </div>
+          <p class="text-monica-light italic mb-4">
+            "Monica's coaching completely transformed my approach to challenges. I went from feeling overwhelmed to having a clear action plan."
+          </p>
+          <div class="font-bold text-monica-dark">
+            Sarah M., Marketing Director
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              ★★★★★
+            </div>
+          </div>
+          <p class="text-monica-light italic mb-4">
+            "The 8-step framework gave me the structure I needed to finally launch my business. Monica's guidance was invaluable."
+          </p>
+          <div class="font-bold text-monica-dark">
+            Michael R., Entrepreneur
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              ★★★★★
+            </div>
+          </div>
+          <p class="text-monica-light italic mb-4">
+            "Monica helped me gain clarity on my career path and gave me the confidence to make a major life change successfully."
+          </p>
+          <div class="font-bold text-monica-dark">
+            Jennifer K., Career Transition
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .scroll-animate:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .scroll-animate:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+</style>

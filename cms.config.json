@@ -2,6 +2,68 @@
   "siteName": "Monica Leggett - Life Coach",
   "sections": [
     {
+      "id": "about_monica",
+      "title": "Meet Monica Section",
+      "type": "single",
+      "fields": [
+        {
+          "id": "heading_line1",
+          "label": "Heading Line 1",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "heading_line2", 
+          "label": "Heading Line 2",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "subtitle",
+          "label": "Subtitle",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "bio_paragraph1",
+          "label": "Bio Paragraph 1",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "bio_paragraph2",
+          "label": "Bio Paragraph 2", 
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "cta_button_text",
+          "label": "CTA Button Text",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "services_section",
+      "title": "Services Section",
+      "type": "single", 
+      "fields": [
+        {
+          "id": "book_title",
+          "label": "Book Service Title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "book_description",
+          "label": "Book Service Description", 
+          "type": "richtext",
+          "required": true
+        }
+      ]
+    },
+    {
       "id": "navigation",
       "title": "Website Navigation",
       "type": "single",
@@ -487,8 +549,9 @@
         {
           "id": "book_description",
           "label": "Book Description",
-          "type": "textarea",
-          "required": true
+          "type": "richtext",
+          "required": true,
+          "placeholder": "Enter the book description with rich formatting..."
         },
         {
           "id": "amazon_price",
