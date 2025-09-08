@@ -1,13 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroCarousel from '../components/HeroCarousel.astro';
-
-// Fetch content from CMS (content.json that portal edits)
-import fs from 'fs';
-import path from 'path';
-
-const contentPath = path.join(process.cwd(), 'content.json');
-const cmsContent = JSON.parse(fs.readFileSync(contentPath, 'utf-8'));
 ---
 
 <BaseLayout title="Home">
@@ -28,20 +21,20 @@ const cmsContent = JSON.parse(fs.readFileSync(contentPath, 'utf-8'));
         </div>
         <div class="order-1 md:order-2">
           <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4">
-            <span class="text-monica-dark" data-cms="about-heading-line1">{cmsContent.about_monica.heading_line1}</span>
-            <span class="text-monica-teal block" data-cms="about-heading-line2">{cmsContent.about_monica.heading_line2}</span>
+            <span class="text-monica-dark">Meet</span>
+            <span class="text-monica-teal block">Monica Leggett</span>
           </h2>
-          <h3 class="text-xl text-monica-navy mb-6 font-semibold" data-cms="about-subtitle">
-            {cmsContent.about_monica.subtitle}
+          <h3 class="text-xl text-monica-navy mb-6 font-semibold">
+            ⭐ Certified Coach, Author, and Speaker
           </h3>
-          <p class="text-lg text-monica-light mb-6" data-cms="about-bio-p1">
-            {cmsContent.about_monica.bio_paragraph1}
+          <p class="text-lg text-monica-light mb-6">
+            I'm Monica Leggett, a seasoned expert with years of experience dedicated to transforming lives and accelerating goal achievement. With proven methods, endless energy, and infectious enthusiasm, my passion lies in helping individuals navigate both career and personal journeys, whether you're climbing the corporate ladder or seeking to enhance your personal and professional journey.
           </p>
-          <p class="text-lg text-monica-light mb-8" data-cms="about-bio-p2">
-            {cmsContent.about_monica.bio_paragraph2}
+          <p class="text-lg text-monica-light mb-8">
+            My approach isn't just about reaching goals; it's about the journey, the growth, and the insights you gain along the way. Together, we'll unlock your potential and create a life filled with purpose and fulfillment.
           </p>
-          <a href="/about" class="bg-gradient-to-r from-monica-teal to-monica-sage text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center" data-cms="about-cta-button">
-            {cmsContent.about_monica.cta_button_text}
+          <a href="/about" class="bg-gradient-to-r from-monica-teal to-monica-sage text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center">
+            ✨ Learn More About Monica
           </a>
         </div>
       </div>
@@ -69,12 +62,12 @@ const cmsContent = JSON.parse(fs.readFileSync(contentPath, 'utf-8'));
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-serif font-bold text-monica-dark mb-3" data-cms="book-title">
-            {cmsContent.services_section.book_title}
+          <h3 class="text-xl font-serif font-bold text-monica-dark mb-3">
+            Doubtful to Decisive
           </h3>
-          <div class="text-monica-light mb-4 flex-grow" data-cms="book-description">
-            <Fragment set:html={cmsContent.services_section.book_description} />
-          </div>
+          <p class="text-monica-light mb-4 flex-grow">
+            Start your transformation journey with my book. Eight proven steps to overcome doubt and take decisive action in your life.
+          </p>
           <a href="/services/book" class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center mt-auto">
             📖 Get the Book
           </a>

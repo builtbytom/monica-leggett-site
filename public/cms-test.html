@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Endpoint Test</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .test-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    button {
+      background: #116DFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    button:hover {
+      background: #0950d0;
+    }
+    .success {
+      color: green;
+      margin-top: 10px;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>CMS Endpoint Test</h1>
+  
+  <div class="test-section">
+    <h2>Test Configuration</h2>
+    <p><strong>Endpoint:</strong> <span id="endpoint"></span></p>
+    <p><strong>Auth Token:</strong> monica-site-2025</p>
+  </div>
+
+  <div class="test-section">
+    <h2>1. Test READ (GET)</h2>
+    <button onclick="testRead()">Test Read Content</button>
+    <div id="readResult"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>2. Test WRITE (POST)</h2>
+    <button onclick="testWrite()">Test Write Content</button>
+    <div id="writeResult"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>Current Content</h2>
+    <pre id="contentDisplay">Click "Test Read Content" to load</pre>
+  </div>
+
+  <script>
+    // Set endpoint based on current location
+    const endpoint = window.location.hostname === 'localhost' 
+      ? 'http://localhost:8888/.netlify/functions/cms-content'
+      : `${window.location.origin}/.netlify/functions/cms-content`;
+    
+    document.getElementById('endpoint').textContent = endpoint;
+
+    async function testRead() {
+      const resultDiv = document.getElementById('readResult');
+      const contentDiv = document.getElementById('contentDisplay');
+      
+      try {
+        resultDiv.innerHTML = '<div class="success">Testing...</div>';
+        
+        const response = await fetch(endpoint, {
+          method: 'GET',
+          headers: {
+            'Authorization': 'Bearer monica-site-2025',
+            'Content-Type': 'application/json'
+          }
+        });
+
+        const data = await response.json();
+        
+        if (response.ok) {
+          resultDiv.innerHTML = '<div class="success">✅ Read successful!</div>';
+          contentDiv.textContent = JSON.stringify(data.content, null, 2);
+        } else {
+          resultDiv.innerHTML = `<div class="error">❌ Error: ${data.error}</div>`;
+        }
+      } catch (error) {
+        resultDiv.innerHTML = `<div class="error">❌ Network error: ${error.message}</div>`;
+      }
+    }
+
+    async function testWrite() {
+      const resultDiv = document.getElementById('writeResult');
+      
+      try {
+        resultDiv.innerHTML = '<div class="success">Testing...</div>';
+        
+        // First read current content
+        const readResponse = await fetch(endpoint, {
+          method: 'GET',
+          headers: {
+            'Authorization': 'Bearer monica-site-2025',
+            'Content-Type': 'application/json'
+          }
+        });
+
+        const currentData = await readResponse.json();
+        const content = currentData.content || {};
+        
+        // Add a test timestamp
+        content.lastTestUpdate = new Date().toISOString();
+        content.testMessage = "CMS Write Test Successful!";
+        
+        // Write updated content
+        const writeResponse = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer monica-site-2025',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ content })
+        });
+
+        const writeData = await writeResponse.json();
+        
+        if (writeResponse.ok) {
+          resultDiv.innerHTML = '<div class="success">✅ Write successful! Refresh to see changes.</div>';
+          // Re-read to show updated content
+          testRead();
+        } else {
+          resultDiv.innerHTML = `<div class="error">❌ Error: ${writeData.error}</div>`;
+        }
+      } catch (error) {
+        resultDiv.innerHTML = `<div class="error">❌ Network error: ${error.message}</div>`;
+      }
+    }
+  </script>
+</body>
+</html>
