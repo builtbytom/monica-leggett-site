@@ -2,6 +2,180 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 
+// Schema for Learning Center Articles
+const learningCenterArticle = {
+  name: 'learningCenterArticle',
+  title: 'Learning Center Articles',
+  type: 'document',
+  fields: [
+    {
+      name: 'title',
+      title: 'Article Title',
+      type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'slug',
+      title: 'URL Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'description',
+      title: 'Article Description',
+      type: 'text',
+      rows: 3,
+      description: 'Brief summary that appears in search results and article listings'
+    },
+    {
+      name: 'content',
+      title: 'Article Content',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          title: 'Content Block',
+          styles: [
+            {title: 'Normal', value: 'normal'},
+            {title: 'H2', value: 'h2'},
+            {title: 'H3', value: 'h3'},
+            {title: 'H4', value: 'h4'},
+            {title: 'Quote', value: 'blockquote'}
+          ],
+          lists: [
+            {title: 'Bullet', value: 'bullet'},
+            {title: 'Number', value: 'number'}
+          ],
+          marks: {
+            decorators: [
+              {title: 'Strong', value: 'strong'},
+              {title: 'Emphasis', value: 'em'},
+              {title: 'Underline', value: 'underline'},
+              {title: 'Strike', value: 'strike-through'}
+            ],
+            annotations: [
+              {
+                title: 'URL',
+                name: 'link',
+                type: 'object',
+                fields: [
+                  {
+                    title: 'URL',
+                    name: 'href',
+                    type: 'url'
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          type: 'image',
+          title: 'Image',
+          options: {
+            hotspot: true
+          },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+              description: 'Important for SEO and accessibility'
+            }
+          ]
+        }
+      ],
+      description: 'Main article content with rich text formatting'
+    },
+    {
+      name: 'publishedDate',
+      title: 'Published Date',
+      type: 'date',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: [
+          {title: '8-Step Framework', value: '8-Step Framework'},
+          {title: 'Business', value: 'Business'},
+          {title: 'Leadership', value: 'Leadership'},
+          {title: 'Personal Growth', value: 'Personal Growth'}
+        ]
+      },
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'step',
+      title: 'Step Number (for 8-Step Framework only)',
+      type: 'number',
+      description: 'Only fill this in for 8-Step Framework articles (1-8)'
+    },
+    {
+      name: 'readTime',
+      title: 'Reading Time (minutes)',
+      type: 'number',
+      validation: Rule => Rule.required().min(1).max(30)
+    },
+    {
+      name: 'featured',
+      title: 'Featured Article',
+      type: 'boolean',
+      description: 'Featured articles appear prominently in listings'
+    },
+    {
+      name: 'metaDescription',
+      title: 'SEO Meta Description',
+      type: 'text',
+      rows: 2,
+      description: 'Optional custom meta description for search engines'
+    }
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      category: 'category',
+      step: 'step'
+    },
+    prepare(selection) {
+      const {title, category, step} = selection
+      return {
+        title: title,
+        subtitle: step ? `${category} - Step ${step}` : category
+      }
+    }
+  },
+  orderings: [
+    {
+      title: 'Published Date, New',
+      name: 'publishedDateDesc',
+      by: [
+        {field: 'publishedDate', direction: 'desc'}
+      ]
+    },
+    {
+      title: 'Published Date, Old',
+      name: 'publishedDateAsc', 
+      by: [
+        {field: 'publishedDate', direction: 'asc'}
+      ]
+    },
+    {
+      title: 'Step Number',
+      name: 'stepNumberAsc',
+      by: [
+        {field: 'step', direction: 'asc'}
+      ]
+    }
+  ]
+}
+
 // Schema for Contact Page
 const contactPageSettings = {
   name: 'contactPageSettings',
@@ -513,12 +687,55 @@ export default defineConfig({
                   .schemaType('contactPageSettings')
                   .documentId('contact-page-settings')
                   .title('Edit Contact Page')
+              ),
+            S.listItem()
+              .title('Learning Center Articles')
+              .icon(() => '📚')
+              .child(
+                S.list()
+                  .title('Learning Center')
+                  .items([
+                    S.listItem()
+                      .title('All Articles')
+                      .child(
+                        S.documentTypeList('learningCenterArticle')
+                          .title('All Learning Center Articles')
+                      ),
+                    S.listItem()
+                      .title('8-Step Framework Articles')
+                      .child(
+                        S.documentTypeList('learningCenterArticle')
+                          .filter('_type == "learningCenterArticle" && category == "8-Step Framework"')
+                          .title('8-Step Framework Articles')
+                      ),
+                    S.listItem()
+                      .title('Business Articles')
+                      .child(
+                        S.documentTypeList('learningCenterArticle')
+                          .filter('_type == "learningCenterArticle" && category == "Business"')
+                          .title('Business Articles')
+                      ),
+                    S.listItem()
+                      .title('Leadership Articles')
+                      .child(
+                        S.documentTypeList('learningCenterArticle')
+                          .filter('_type == "learningCenterArticle" && category == "Leadership"')
+                          .title('Leadership Articles')
+                      ),
+                    S.listItem()
+                      .title('Personal Growth Articles')
+                      .child(
+                        S.documentTypeList('learningCenterArticle')
+                          .filter('_type == "learningCenterArticle" && category == "Personal Growth"')
+                          .title('Personal Growth Articles')
+                      )
+                  ])
               )
           ])
     }),
     visionTool()
   ],
   schema: {
-    types: [homepageSettings, aboutPageSettings, servicePageSettings, contactPageSettings]
+    types: [homepageSettings, aboutPageSettings, servicePageSettings, contactPageSettings, learningCenterArticle]
   }
 })

@@ -1,24 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getLearningCenterArticles } from '../lib/sanity.js';
 
 let articles = [];
 try {
-  articles = await getCollection('learning-center');
+  articles = await getLearningCenterArticles();
 } catch (error) {
-  console.error('Error loading learning-center content:', error);
+  console.error('Error loading Learning Center articles from Sanity:', error);
 }
 
 const sortedArticles = articles.sort((a, b) => {
   // First sort by step number if it exists
-  if (a.data.step && b.data.step) {
-    return a.data.step - b.data.step;
+  if (a.step && b.step) {
+    return a.step - b.step;
   }
   // Then by date
-  return b.data.publishedDate.getTime() - a.data.publishedDate.getTime();
+  return new Date(b.publishedDate) - new Date(a.publishedDate);
 });
 
-const categories = [...new Set(articles.map(article => article.data.category))];
+const categories = [...new Set(articles.map(article => article.category))];
 ---
 
 <BaseLayout title="Learning Center">
@@ -82,38 +82,38 @@ const categories = [...new Set(articles.map(article => article.data.category))];
       )}
       
       <!-- 8-Step Framework Section -->
-      {sortedArticles.filter(article => article.data.step).length > 0 && (
+      {sortedArticles.filter(article => article.step).length > 0 && (
       <div class="mb-12">
         <h2 class="text-3xl font-serif font-bold text-monica-dark mb-6 text-center">
           The 8-Step Framework
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {sortedArticles.filter(article => article.data.step).map(article => (
+          {sortedArticles.filter(article => article.step).map(article => (
             <article 
               class="article-card bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-              data-category={article.data.category}
-              data-title={article.data.title.toLowerCase()}
+              data-category={article.category}
+              data-title={article.title.toLowerCase()}
             >
               <div class="p-6">
                 <!-- Step Number Badge -->
                 <div class="inline-block bg-gradient-to-r from-monica-teal to-monica-sage text-white text-sm font-bold px-3 py-1 rounded-full mb-3">
-                  Step {article.data.step}
+                  Step {article.step}
                 </div>
                 
                 <h3 class="text-xl font-serif font-bold text-monica-dark mb-3 line-clamp-2">
-                  {article.data.title}
+                  {article.title}
                 </h3>
                 
                 <p class="text-monica-light mb-4 line-clamp-3">
-                  {article.data.description}
+                  {article.description}
                 </p>
                 
                 <div class="flex items-center justify-between">
                   <span class="text-sm text-gray-500">
-                    {article.data.readTime} min read
+                    {article.readTime} min read
                   </span>
                   <a 
-                    href={`/learning-center/${article.slug}`} 
+                    href={`/learning-center/${article.slug.current}`} 
                     class="text-monica-teal font-semibold hover:text-teal-700 flex items-center"
                   >
                     Read More 
@@ -130,37 +130,37 @@ const categories = [...new Set(articles.map(article => article.data.category))];
       )}
 
       <!-- Other Articles -->
-      {sortedArticles.filter(article => !article.data.step).length > 0 && (
+      {sortedArticles.filter(article => !article.step).length > 0 && (
       <div>
         <h2 class="text-3xl font-serif font-bold text-monica-dark mb-8 text-center">
           Additional Resources
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sortedArticles.filter(article => !article.data.step).map(article => (
+          {sortedArticles.filter(article => !article.step).map(article => (
             <article 
               class="article-card bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-              data-category={article.data.category}
-              data-title={article.data.title.toLowerCase()}
+              data-category={article.category}
+              data-title={article.title.toLowerCase()}
             >
               <div class="p-6">
                 <div class="inline-block bg-monica-navy/10 text-monica-navy text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                  {article.data.category}
+                  {article.category}
                 </div>
                 
                 <h3 class="text-xl font-serif font-bold text-monica-dark mb-3 line-clamp-2">
-                  {article.data.title}
+                  {article.title}
                 </h3>
                 
                 <p class="text-monica-light mb-4 line-clamp-3">
-                  {article.data.description}
+                  {article.description}
                 </p>
                 
                 <div class="flex items-center justify-between">
                   <span class="text-sm text-gray-500">
-                    {article.data.readTime} min read
+                    {article.readTime} min read
                   </span>
                   <a 
-                    href={`/learning-center/${article.slug}`} 
+                    href={`/learning-center/${article.slug.current}`} 
                     class="text-monica-blue font-semibold hover:text-blue-700 flex items-center"
                   >
                     Read More 

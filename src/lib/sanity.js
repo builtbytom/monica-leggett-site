@@ -197,6 +197,77 @@ export async function getCategories() {
   return await client.fetch(query);
 }
 
+// Helper function to fetch Learning Center articles
+export async function getLearningCenterArticles(category = null) {
+  const categoryFilter = category ? ` && category == "${category}"` : '';
+  const query = `*[_type == "learningCenterArticle"${categoryFilter}] | order(publishedDate desc) {
+    _id,
+    title,
+    slug,
+    description,
+    publishedDate,
+    category,
+    step,
+    readTime,
+    featured,
+    metaDescription
+  }`;
+  
+  return await client.fetch(query);
+}
+
+// Helper function to fetch a single Learning Center article by slug
+export async function getLearningCenterArticle(slug) {
+  const query = `*[_type == "learningCenterArticle" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    description,
+    content,
+    publishedDate,
+    category,
+    step,
+    readTime,
+    featured,
+    metaDescription
+  }`;
+  
+  return await client.fetch(query, { slug });
+}
+
+// Helper function to get featured Learning Center articles
+export async function getFeaturedLearningCenterArticles(limit = 3) {
+  const query = `*[_type == "learningCenterArticle" && featured == true] | order(publishedDate desc)[0...${limit}] {
+    _id,
+    title,
+    slug,
+    description,
+    publishedDate,
+    category,
+    step,
+    readTime,
+    featured
+  }`;
+  
+  return await client.fetch(query);
+}
+
+// Helper function to get related Learning Center articles
+export async function getRelatedLearningCenterArticles(currentSlug, category, limit = 3) {
+  const query = `*[_type == "learningCenterArticle" && slug.current != $currentSlug && category == $category] | order(publishedDate desc)[0...${limit}] {
+    _id,
+    title,
+    slug,
+    description,
+    publishedDate,
+    category,
+    step,
+    readTime
+  }`;
+  
+  return await client.fetch(query, { currentSlug, category });
+}
+
 // Helper function to fetch homepage content from proper Sanity fields
 export async function getHomepageContent() {
   const query = `*[_type == "homepageSettings" && _id == "homepage-settings"][0] {
