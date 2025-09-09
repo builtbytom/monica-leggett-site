@@ -379,7 +379,7 @@ const homepageData = await getHomepageContent();
           <p class="text-monica-light mb-4 flex-grow">
             Start your transformation journey with my book. Eight proven steps to overcome doubt and take decisive action in your life.
           </p>
-          <a href="/services/book" class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center mt-auto">
+          <a href="/services/book" class="service-card-button bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 mt-auto">
             📖 Get the Book
           </a>
         </div>
@@ -397,7 +397,7 @@ const homepageData = await getHomepageContent();
           <p class="text-monica-light mb-4 flex-grow">
             One-on-one coaching tailored to your unique challenges. Get personalized guidance to unlock your full potential.
           </p>
-          <a href="/services/personal-coaching" class="bg-gradient-to-r from-monica-teal to-monica-sage text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center mt-auto">
+          <a href="/services/personal-coaching" class="service-card-button bg-gradient-to-r from-monica-teal to-monica-sage text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 mt-auto">
             💬 Explore Coaching
           </a>
         </div>
@@ -415,7 +415,7 @@ const homepageData = await getHomepageContent();
           <p class="text-monica-light mb-4 flex-grow">
             For coaches ready to elevate their practice. Learn proven methods to transform your coaching business.
           </p>
-          <a href="/services/mentor-coaching" class="bg-gradient-to-r from-monica-sage to-green-600 text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center mt-auto">
+          <a href="/services/mentor-coaching" class="service-card-button bg-gradient-to-r from-monica-sage to-green-600 text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 mt-auto">
             🚀 Level Up Your Coaching
           </a>
         </div>
@@ -433,7 +433,7 @@ const homepageData = await getHomepageContent();
           <p class="text-monica-light mb-4 flex-grow">
             Join a supportive community of like-minded individuals. Accelerate your growth through group dynamics.
           </p>
-          <a href="/services/masterminds" class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center mt-auto">
+          <a href="/services/masterminds" class="service-card-button bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 mt-auto">
             🤝 Join a Mastermind
           </a>
         </div>
@@ -511,6 +511,16 @@ const homepageData = await getHomepageContent();
   
   .hero-slide .grid {
     min-height: 600px;
+  }
+  
+  /* Service card button consistency */
+  .service-card-button {
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
   }
   
   .carousel-dot {
