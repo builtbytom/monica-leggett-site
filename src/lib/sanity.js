@@ -46,7 +46,6 @@ export async function getAboutPageContent() {
     heroTitle,
     heroSubtitle,
     heroMotto,
-    heroImage,
     heroStatTitle,
     heroStatDescription,
     heroDescription,
@@ -68,7 +67,6 @@ export async function getAboutPageContent() {
       heroTitle: "Meet Monica Leggett",
       heroSubtitle: "Professional Certified Coach | Author | Speaker",
       heroMotto: '"Dream It. Plan It. Do It. Live It!"',
-      heroImage: null,
       heroStatTitle: "15+ Years",
       heroStatDescription: "Transforming Lives Through Coaching",
       heroDescription: "For over 15 years, I've been helping individuals, couples, teams, and small business owners shift from struggling to thriving – one strategic step at a time. As a certified Professional Coach (PCC), mentor coach, and author, I'm passionate about helping you break free from doubt, overwhelm, and frustration to find clarity, confidence, and joy.\n\nKnown as the \"conversation whisperer,\" I specialize in helping my clients navigate crucial conversations that build or mend relationships. Whether you're an emerging leader, a small business owner, or someone seeking personal transformation, I provide the strategic guidance and support you need to achieve your goals.",
@@ -94,7 +92,6 @@ export async function getServicePageContent(serviceType) {
     heroTitle,
     heroSubtitle,
     heroDescription,
-    heroImage,
     mainContent,
     ctaText,
     ctaLink

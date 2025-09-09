@@ -72,21 +72,6 @@ const learningCenterArticle = {
               }
             ]
           }
-        },
-        {
-          type: 'image',
-          title: 'Image',
-          options: {
-            hotspot: true
-          },
-          fields: [
-            {
-              name: 'alt',
-              title: 'Alt Text',
-              type: 'string',
-              description: 'Important for SEO and accessibility'
-            }
-          ]
         }
       ],
       description: 'Main article content with rich text formatting'
@@ -300,15 +285,6 @@ const servicePageSettings = {
       description: 'Opening paragraph that describes the service'
     },
     {
-      name: 'heroImage',
-      title: 'Hero Image',
-      type: 'image',
-      description: 'Main image for this service',
-      options: {
-        hotspot: true
-      }
-    },
-    {
       name: 'mainContent',
       title: 'Main Content',
       type: 'array',
@@ -375,15 +351,6 @@ const aboutPageSettings = {
       title: 'Personal Motto',
       type: 'string',
       description: 'Inspirational quote or motto'
-    },
-    {
-      name: 'heroImage',
-      title: 'Profile Photo',
-      type: 'image',
-      description: 'Main profile photo',
-      options: {
-        hotspot: true
-      }
     },
     {
       name: 'heroStatTitle',
@@ -528,35 +495,6 @@ const homepageSettings = {
       name: 'aboutCTALink',
       title: 'About Button Link',
       type: 'string'
-    },
-    
-    // Images
-    {
-      name: 'heroImage',
-      title: 'Hero Background Image',
-      type: 'image',
-      description: 'Background image for the hero section',
-      options: {
-        hotspot: true
-      }
-    },
-    {
-      name: 'aboutImage',
-      title: 'Monica\'s Photo',
-      type: 'image',
-      description: 'Professional photo of Monica',
-      options: {
-        hotspot: true
-      }
-    },
-    {
-      name: 'bookImage',
-      title: 'Book Cover Image',
-      type: 'image',
-      description: 'Cover image of "Doubtful to Decisive"',
-      options: {
-        hotspot: true
-      }
     },
     {
       name: 'testimonial1Quote',
@@ -728,6 +666,13 @@ export default defineConfig({
                         S.documentTypeList('learningCenterArticle')
                           .filter('_type == "learningCenterArticle" && category == "Personal Growth"')
                           .title('Personal Growth Articles')
+                      ),
+                    S.divider(),
+                    S.listItem()
+                      .title('⚙️ Manage Articles (Delete/Edit)')
+                      .child(
+                        S.documentTypeList('learningCenterArticle')
+                          .title('Full Article Management - Create, Edit, Delete')
                       )
                   ])
               )

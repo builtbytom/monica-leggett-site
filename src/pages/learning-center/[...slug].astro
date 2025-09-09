@@ -62,20 +62,7 @@ const relatedArticles = await getRelatedLearningCenterArticles(slug, article.cat
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <div class="prose prose-lg prose-monica max-w-none" data-cms={`article-content-${article.slug.current}`} data-cms-type="portabletext">
-          <PortableText 
-            value={article.content}
-            components={{
-              types: {
-                image: ({ value }) => {
-                  // Parse Sanity image reference: image-{hash}-{width}x{height}-{format}
-                  const ref = value.asset._ref;
-                  const [, hash, dimensions, format] = ref.match(/image-([a-f0-9]+)-(\d+x\d+)-(\w+)/) || [];
-                  const imageUrl = `https://cdn.sanity.io/images/li2bkslz/production/${hash}-${dimensions}.${format}`;
-                  return `<img src="${imageUrl}" alt="${value.alt || ''}" class="rounded-lg shadow-lg my-6 max-w-full h-auto" />`;
-                }
-              }
-            }}
-          />
+          <PortableText value={article.content} />
         </div>
         
         <!-- Back to Learning Center -->
