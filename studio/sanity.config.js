@@ -2,6 +2,97 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 
+// Schema for Service Pages (Book, Coaching, Masterminds, etc.)
+const servicePageSettings = {
+  name: 'servicePageSettings',
+  title: 'Service Pages',
+  type: 'document',
+  fields: [
+    {
+      name: 'serviceType',
+      title: 'Service Type',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Book - Doubtful to Decisive', value: 'book'},
+          {title: 'Personal Coaching', value: 'personal-coaching'},
+          {title: 'Mentor Coaching', value: 'mentor-coaching'},
+          {title: 'Masterminds', value: 'masterminds'}
+        ]
+      },
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'heroTitle',
+      title: 'Page Title',
+      type: 'string',
+      description: 'Main headline for the service page'
+    },
+    {
+      name: 'heroSubtitle',
+      title: 'Page Subtitle',
+      type: 'string',
+      description: 'Supporting text under the title'
+    },
+    {
+      name: 'heroDescription',
+      title: 'Introduction Text',
+      type: 'text',
+      rows: 4,
+      description: 'Opening paragraph that describes the service'
+    },
+    {
+      name: 'heroImage',
+      title: 'Hero Image',
+      type: 'image',
+      description: 'Main image for this service',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'mainContent',
+      title: 'Main Content',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          title: 'Content Block',
+          styles: [
+            {title: 'Normal', value: 'normal'},
+            {title: 'H2', value: 'h2'},
+            {title: 'H3', value: 'h3'},
+            {title: 'Quote', value: 'blockquote'}
+          ],
+          lists: [
+            {title: 'Bullet', value: 'bullet'},
+            {title: 'Number', value: 'number'}
+          ],
+          marks: {
+            decorators: [
+              {title: 'Strong', value: 'strong'},
+              {title: 'Emphasis', value: 'em'}
+            ]
+          }
+        }
+      ],
+      description: 'Rich text content for the service details'
+    },
+    {
+      name: 'ctaText',
+      title: 'Call to Action Text',
+      type: 'string',
+      description: 'Button text for the main CTA'
+    },
+    {
+      name: 'ctaLink',
+      title: 'Call to Action Link',
+      type: 'string',
+      description: 'Where the CTA button should link to'
+    }
+  ]
+}
+
 // Schema for Monica's About page content
 const aboutPageSettings = {
   name: 'aboutPageSettings',
@@ -288,12 +379,53 @@ export default defineConfig({
                   .schemaType('aboutPageSettings')
                   .documentId('about-page-settings')
                   .title('Edit About Page')
+              ),
+            S.listItem()
+              .title('Service Pages')
+              .icon(() => '🎯')
+              .child(
+                S.list()
+                  .title('Service Pages')
+                  .items([
+                    S.listItem()
+                      .title('Book - Doubtful to Decisive')
+                      .child(
+                        S.document()
+                          .schemaType('servicePageSettings')
+                          .documentId('service-book')
+                          .title('Edit Book Page')
+                      ),
+                    S.listItem()
+                      .title('Personal Coaching')
+                      .child(
+                        S.document()
+                          .schemaType('servicePageSettings')
+                          .documentId('service-personal-coaching')
+                          .title('Edit Personal Coaching Page')
+                      ),
+                    S.listItem()
+                      .title('Mentor Coaching')
+                      .child(
+                        S.document()
+                          .schemaType('servicePageSettings')
+                          .documentId('service-mentor-coaching')
+                          .title('Edit Mentor Coaching Page')
+                      ),
+                    S.listItem()
+                      .title('Masterminds')
+                      .child(
+                        S.document()
+                          .schemaType('servicePageSettings')
+                          .documentId('service-masterminds')
+                          .title('Edit Masterminds Page')
+                      )
+                  ])
               )
           ])
     }),
     visionTool()
   ],
   schema: {
-    types: [homepageSettings, aboutPageSettings]
+    types: [homepageSettings, aboutPageSettings, servicePageSettings]
   }
 })

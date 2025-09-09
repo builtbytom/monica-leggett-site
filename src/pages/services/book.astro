@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getServicePageContent } from '../../lib/sanity.js';
+
+const serviceData = await getServicePageContent('book');
 ---
 
 <BaseLayout title="Doubtful to Decisive - Book">
@@ -21,9 +24,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <!-- Purchase Buttons -->
             <div class="mt-8 space-y-3">
-              <a href="https://www.amazon.com/dp/B0CR5MX15D" target="_blank" rel="noopener noreferrer" 
+              <a href={serviceData.ctaLink} target="_blank" rel="noopener noreferrer" 
                  class="block w-full max-w-sm mx-auto bg-gradient-to-r from-monica-navy to-monica-teal text-white px-6 py-4 rounded-lg font-bold text-center hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
-                Buy on Amazon - $19.99
+                {serviceData.ctaText}
               </a>
               <a href="/contact#consultation" 
                  class="block w-full max-w-sm mx-auto bg-white border-2 border-monica-teal text-monica-teal px-6 py-4 rounded-lg font-bold text-center hover:bg-monica-teal hover:text-white transition-all">
@@ -39,15 +42,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 New Release 2023
               </span>
             </div>
-            <h1 class="text-4xl lg:text-5xl font-serif font-bold text-monica-navy mb-4" data-cms="book-title">
-              Doubtful to Decisive
+            <h1 class="text-4xl lg:text-5xl font-serif font-bold text-monica-navy mb-4">
+              {serviceData.heroTitle}
             </h1>
-            <h2 class="text-xl lg:text-2xl text-monica-teal font-medium mb-6" data-cms="book-subtitle">
-              Eight Steps to Get Unstuck and Take Action
+            <h2 class="text-xl lg:text-2xl text-monica-teal font-medium mb-6">
+              {serviceData.heroSubtitle}
             </h2>
-            <div class="prose prose-lg text-monica-light max-w-none" data-cms="book-description" data-cms-type="markdown">
+            <div class="prose prose-lg text-monica-light max-w-none">
               <p>
-                Are you tired of feeling stuck, overwhelmed, or paralyzed by doubt? In this transformative guide, I'll equip you with the tools and strategies to cultivate an empowered mindset, declare your aspirations, and chart a clear path to achieve them.
+                {serviceData.heroDescription}
               </p>
               <p>
                 Drawing from over 15 years of coaching experience with hundreds of clients, this book reveals my proven eight-step Action Cycle – your roadmap to confront any issue head-on, shift from doubt to decisiveness, take action, and ensure continuous progress.

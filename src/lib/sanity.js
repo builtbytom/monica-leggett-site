@@ -86,6 +86,65 @@ export async function getAboutPageContent() {
   return result;
 }
 
+// Helper function to fetch service page content
+export async function getServicePageContent(serviceType) {
+  const query = `*[_type == "servicePageSettings" && serviceType == $serviceType][0] {
+    _id,
+    serviceType,
+    heroTitle,
+    heroSubtitle,
+    heroDescription,
+    heroImage,
+    mainContent,
+    ctaText,
+    ctaLink
+  }`;
+  
+  const result = await client.fetch(query, { serviceType });
+  
+  // If no service content exists, return default structure
+  if (!result) {
+    const defaults = {
+      'book': {
+        heroTitle: 'Doubtful to Decisive',
+        heroSubtitle: 'Eight Steps to Get Unstuck and Take Action',
+        heroDescription: 'Transform your life with my bestselling book that has helped thousands move from paralysis to purposeful action.',
+        mainContent: [],
+        ctaText: 'Get Your Copy Today',
+        ctaLink: 'https://www.amazon.com/dp/your-book-link'
+      },
+      'personal-coaching': {
+        heroTitle: 'Personal Coaching',
+        heroSubtitle: 'Transform Your Life, One Step at a Time',
+        heroDescription: 'Personalized one-on-one coaching to help you overcome obstacles and achieve your goals.',
+        mainContent: [],
+        ctaText: 'Schedule a Discovery Call',
+        ctaLink: '/contact'
+      },
+      'mentor-coaching': {
+        heroTitle: 'Mentor Coaching',
+        heroSubtitle: 'Elevate Your Coaching Practice',
+        heroDescription: 'For coaches seeking ICF certification or looking to enhance their skills.',
+        mainContent: [],
+        ctaText: 'Learn More',
+        ctaLink: '/contact'
+      },
+      'masterminds': {
+        heroTitle: 'Masterminds',
+        heroSubtitle: 'The Power of Collective Wisdom',
+        heroDescription: 'Join a supportive community of like-minded individuals committed to growth.',
+        mainContent: [],
+        ctaText: 'Apply Now',
+        ctaLink: '/contact'
+      }
+    };
+    
+    return defaults[serviceType] || defaults['book'];
+  }
+  
+  return result;
+}
+
 // Helper function to fetch categories
 export async function getCategories() {
   const query = `*[_type == "category"] {
