@@ -67,8 +67,11 @@ const relatedArticles = await getRelatedLearningCenterArticles(slug, article.cat
             components={{
               types: {
                 image: ({ value }) => {
-                  const imageUrl = `https://cdn.sanity.io/images/li2bkslz/production/${value.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png').replace('-webp', '.webp')}`;
-                  return `<img src="${imageUrl}" alt="${value.alt || ''}" class="rounded-lg shadow-lg my-6" />`;
+                  // Parse Sanity image reference: image-{hash}-{width}x{height}-{format}
+                  const ref = value.asset._ref;
+                  const [, hash, dimensions, format] = ref.match(/image-([a-f0-9]+)-(\d+x\d+)-(\w+)/) || [];
+                  const imageUrl = `https://cdn.sanity.io/images/li2bkslz/production/${hash}-${dimensions}.${format}`;
+                  return `<img src="${imageUrl}" alt="${value.alt || ''}" class="rounded-lg shadow-lg my-6 max-w-full h-auto" />`;
                 }
               }
             }}
