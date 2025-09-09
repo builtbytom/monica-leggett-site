@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPosts, getCategories } from '../lib/sanity.js';
+
+const posts = await getPosts();
+const categories = await getCategories();
+---
+
+<BaseLayout title="Learning Center - Powered by Sanity">
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-serif font-bold text-monica-navy mb-4">
+          Learning Center
+        </h1>
+        <p class="text-xl text-monica-teal font-medium mb-2">
+          Powered by Sanity CMS
+        </p>
+        <p class="text-lg text-monica-dark">
+          Articles and insights to help you transform your life
+        </p>
+      </div>
+
+      <!-- Categories -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Categories</h2>
+        <div class="flex flex-wrap gap-3">
+          {categories.map(category => (
+            <span class="px-4 py-2 bg-monica-teal/10 text-monica-teal rounded-full text-sm font-medium">
+              {category.title}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Posts Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map(post => (
+          <article class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div class="mb-4">
+              <div class="flex flex-wrap gap-2 mb-2">
+                {post.categories && post.categories.map(category => (
+                  <span class="px-3 py-1 bg-monica-navy/10 text-monica-navy rounded-full text-xs font-medium">
+                    {category}
+                  </span>
+                ))}
+              </div>
+              <h3 class="text-xl font-serif font-bold text-monica-dark mb-2">
+                {post.title}
+              </h3>
+              <p class="text-monica-light mb-4">
+                {post.excerpt}
+              </p>
+              <div class="text-sm text-monica-light mb-4">
+                By {post.author} • {new Date(post.publishedAt).toLocaleDateString()}
+              </div>
+            </div>
+            <a 
+              href={`/learning-center/${post.slug.current}`}
+              class="bg-gradient-to-r from-monica-teal to-monica-sage text-white px-6 py-3 rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center"
+            >
+              Read Article →
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <!-- CMS Info -->
+      <div class="mt-12 p-6 bg-monica-teal/10 rounded-lg">
+        <h3 class="text-xl font-bold text-monica-navy mb-4">✨ Content Management</h3>
+        <p class="text-monica-dark mb-4">
+          This content is dynamically loaded from Sanity CMS. Monica can edit all articles, add new ones, and manage categories through the Sanity Studio interface.
+        </p>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <strong>Total Articles:</strong> {posts.length}
+          </div>
+          <div>
+            <strong>Categories:</strong> {categories.length}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Scroll animation observer
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with scroll-animate class
+  document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = document.querySelectorAll('.scroll-animate');
+    animateElements.forEach(el => observer.observe(el));
+  });
+</script>

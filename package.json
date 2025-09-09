@@ -11,8 +11,17 @@
   "dependencies": {
     "@netlify/blobs": "^10.0.10",
     "@netlify/functions": "^4.2.5",
+    "@sanity/astro": "^3.2.10",
+    "@sanity/client": "^7.11.0",
+    "@sanity/vision": "^4.7.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "astro": "^5.13.5",
-    "bcryptjs": "^3.0.2"
+    "bcryptjs": "^3.0.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sanity": "^4.7.0",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
