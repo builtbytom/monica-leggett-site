@@ -100,42 +100,54 @@ const aboutData = await getAboutPageContent();
         </h2>
         
         <div class="grid md:grid-cols-2 gap-8 mb-12">
-          <div class="bg-monica-bg rounded-2xl p-8 animate-slide-in-left">
-            <div class="text-4xl mb-4">👨‍👩‍👧‍👦</div>
-            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="story-family-title">
+          <div class="journey-card group animate-slide-in-up">
+            <div class="journey-icon-container">
+              <div class="journey-icon">👨‍👩‍👧‍👦</div>
+              <div class="journey-icon-bg"></div>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3 group-hover:text-monica-teal transition-colors duration-300" data-cms="story-family-title">
               Rooted in Connection
             </h3>
-            <p class="text-monica-light" data-cms="story-family-text">
+            <p class="text-monica-light leading-relaxed" data-cms="story-family-text">
               As one of 10 children, I learned early the power of connection, communication, and finding your unique voice in a crowd. These childhood lessons shaped my passion for helping others discover their authentic selves and build meaningful relationships.
             </p>
           </div>
 
-          <div class="bg-monica-bg rounded-2xl p-8 animate-slide-in-right">
-            <div class="text-4xl mb-4">💑</div>
-            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="story-marriage-title">
+          <div class="journey-card group animate-slide-in-up">
+            <div class="journey-icon-container">
+              <div class="journey-icon">💑</div>
+              <div class="journey-icon-bg"></div>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3 group-hover:text-monica-teal transition-colors duration-300" data-cms="story-marriage-title">
               37 Years of Partnership
             </h3>
-            <p class="text-monica-light" data-cms="story-marriage-text">
+            <p class="text-monica-light leading-relaxed" data-cms="story-marriage-text">
               Married to my husband Steve for 37 years and raising three wonderful children, I understand the beautiful complexity of balancing personal dreams with family life. As a grandmother now, I cherish the wisdom that comes from life's transitions.
             </p>
           </div>
 
-          <div class="bg-monica-bg rounded-2xl p-8 animate-slide-in-left">
-            <div class="text-4xl mb-4">🎯</div>
-            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="story-purpose-title">
+          <div class="journey-card group animate-slide-in-up">
+            <div class="journey-icon-container">
+              <div class="journey-icon">🎯</div>
+              <div class="journey-icon-bg"></div>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3 group-hover:text-monica-teal transition-colors duration-300" data-cms="story-purpose-title">
               Finding My Purpose
             </h3>
-            <p class="text-monica-light" data-cms="story-purpose-text">
+            <p class="text-monica-light leading-relaxed" data-cms="story-purpose-text">
               In 2007, I founded New Steps Life Coaching after recognizing my calling to help others navigate life's challenges. What started as a personal mission has grown into a thriving practice that has transformed hundreds of lives.
             </p>
           </div>
 
-          <div class="bg-monica-bg rounded-2xl p-8 animate-slide-in-right">
-            <div class="text-4xl mb-4">📚</div>
-            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3" data-cms="story-author-title">
+          <div class="journey-card group animate-slide-in-up">
+            <div class="journey-icon-container">
+              <div class="journey-icon">📚</div>
+              <div class="journey-icon-bg"></div>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-monica-navy mb-3 group-hover:text-monica-teal transition-colors duration-300" data-cms="story-author-title">
               Author & Thought Leader
             </h3>
-            <p class="text-monica-light" data-cms="story-author-text">
+            <p class="text-monica-light leading-relaxed" data-cms="story-author-text">
               My books "Doubtful to Decisive" and "Break Free from the S.T.O.P. Syndrome" distill years of coaching wisdom into practical, actionable strategies that help readers overcome overwhelm and take confident action.
             </p>
           </div>
@@ -400,4 +412,94 @@ const aboutData = await getAboutPageContent();
   .animate-fade-in {
     animation: fade-in 0.8s ease-out forwards;
   }
+
+  /* Modern Journey Cards */
+  .journey-card {
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px rgba(26, 60, 93, 0.08);
+    border: 1px solid rgba(26, 60, 93, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+
+  .journey-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #209697, #98B966);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .journey-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(26, 60, 93, 0.15);
+    border-color: rgba(32, 150, 151, 0.3);
+  }
+
+  .journey-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .journey-card:nth-child(even):hover {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+
+  .journey-icon-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-icon {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .journey-icon-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(32, 150, 151, 0.1) 0%, rgba(152, 185, 102, 0.1) 100%);
+    border-radius: 50%;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .journey-card:hover .journey-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .journey-card:hover .journey-icon-bg {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .journey-card:nth-child(even):hover .journey-icon {
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  /* Staggered animation entrance */
+  .journey-card:nth-child(1) { animation-delay: 0.1s; }
+  .journey-card:nth-child(2) { animation-delay: 0.2s; }
+  .journey-card:nth-child(3) { animation-delay: 0.3s; }
+  .journey-card:nth-child(4) { animation-delay: 0.4s; }
 </style>
