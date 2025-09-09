@@ -3,7 +3,7 @@ import { createClient } from '@sanity/client';
 export const client = createClient({
   projectId: 'li2bkslz',
   dataset: 'production',
-  useCdn: true,
+  useCdn: false, // Disable CDN for real-time updates during builds
   apiVersion: '2024-01-01',
 });
 
