@@ -18,7 +18,7 @@ const homepageData = await getHomepageContent();
     </div>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Carousel Container -->
-      <div id="hero-carousel" class="relative">
+      <div id="hero-carousel" class="relative min-h-[600px]">
         
         <!-- Slide 1: Book / Main (CMS Connected) -->
         <div class="hero-slide active" data-slide="0">
@@ -501,10 +501,16 @@ const homepageData = await getHomepageContent();
 <style>
   .hero-slide {
     display: none;
+    min-height: 600px;
   }
   
   .hero-slide.active {
     display: block;
+    min-height: 600px;
+  }
+  
+  .hero-slide .grid {
+    min-height: 600px;
   }
   
   .carousel-dot {
