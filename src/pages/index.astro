@@ -515,12 +515,26 @@ const homepageData = await getHomepageContent();
   
   /* Service card button consistency */
   .service-card-button {
-    min-height: 3.5rem;
+    height: 3.5rem; /* Fixed height instead of min-height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.1;
+    font-size: 1rem; /* Ensure consistent font size */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow if needed */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 640px) {
+    .service-card-button {
+      white-space: normal; /* Allow wrapping on mobile */
+      height: auto;
+      min-height: 3.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
   }
   
   .carousel-dot {
