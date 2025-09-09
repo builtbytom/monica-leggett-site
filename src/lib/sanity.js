@@ -378,4 +378,4 @@ export async function getHomepageContent() {
       }
     ]
   };
-}
+}// Force rebuild - Tue Sep  9 13:06:00 EDT 2025
