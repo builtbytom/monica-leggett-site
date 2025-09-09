@@ -37,20 +37,20 @@ const homepageData = await getHomepageContent();
           </div>
 
           <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4">
-            <span class="text-monica-dark">{homepageData.heroSlides[0].title.split(':')[0]}:</span>
-            <span class="text-monica-teal block text-5xl md:text-7xl">{homepageData.heroSlides[0].subtitle}</span>
+            <span class="text-monica-dark">{homepageData.hero.title}</span>
+            <span class="text-monica-teal block text-5xl md:text-7xl">{homepageData.hero.subtitle}</span>
           </h1>
           <p class="text-lg text-monica-light mb-8 leading-relaxed">
-            {homepageData.heroSlides[0].description}
+            {homepageData.hero.description}
           </p>
           
           <!-- Enhanced CTAs -->
           <div class="flex flex-wrap gap-4">
-            <a href={homepageData.heroSlides[0].primaryLink} class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-              {homepageData.heroSlides[0].primaryCTA}
+            <a href={homepageData.hero.primaryLink} class="bg-gradient-to-r from-monica-navy to-monica-teal text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              {homepageData.hero.primaryCTA}
             </a>
-            <a href={homepageData.heroSlides[0].secondaryLink} class="bg-white text-monica-navy px-8 py-4 rounded-lg font-semibold text-lg border-2 border-monica-navy hover:bg-monica-navy hover:text-white transition-all duration-300 shadow-lg">
-              {homepageData.heroSlides[0].secondaryCTA}
+            <a href={homepageData.hero.secondaryLink} class="bg-white text-monica-navy px-8 py-4 rounded-lg font-semibold text-lg border-2 border-monica-navy hover:bg-monica-navy hover:text-white transition-all duration-300 shadow-lg">
+              {homepageData.hero.secondaryCTA}
             </a>
           </div>
         </div>
@@ -68,7 +68,7 @@ const homepageData = await getHomepageContent();
           <!-- Book with enhanced presentation -->
           <div class="relative transform hover:scale-105 transition-transform duration-300">
             <img 
-              src={homepageData.heroSlides[0].image}
+              src="/images/doubtful-to-decisive-book.png"
               alt="Doubtful to Decisive book cover"
               class="w-auto h-[500px] drop-shadow-2xl relative z-10"
             >
@@ -96,20 +96,20 @@ const homepageData = await getHomepageContent();
         </div>
         <div class="order-1 md:order-2">
           <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4">
-            <span class="text-monica-dark">{homepageData.aboutSection.heading1}</span>
-            <span class="text-monica-teal block">{homepageData.aboutSection.heading2}</span>
+            <span class="text-monica-dark">{homepageData.about.heading1}</span>
+            <span class="text-monica-teal block">{homepageData.about.heading2}</span>
           </h2>
           <h3 class="text-xl text-monica-navy mb-6 font-semibold">
-            {homepageData.aboutSection.subtitle}
+            {homepageData.about.subtitle}
           </h3>
           <p class="text-lg text-monica-light mb-6">
-            {homepageData.aboutSection.bio1}
+            {homepageData.about.bio1}
           </p>
           <p class="text-lg text-monica-light mb-8">
-            {homepageData.aboutSection.bio2}
+            {homepageData.about.bio2}
           </p>
-          <a href={homepageData.aboutSection.ctaLink} class="bg-gradient-to-r from-monica-teal to-monica-sage text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center">
-            {homepageData.aboutSection.ctaText}
+          <a href={homepageData.about.ctaLink} class="bg-gradient-to-r from-monica-teal to-monica-sage text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center">
+            {homepageData.about.ctaText}
           </a>
         </div>
       </div>
@@ -263,21 +263,43 @@ const homepageData = await getHomepageContent();
   <!-- CMS Instructions -->
   <section class="py-12 bg-monica-navy text-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h3 class="text-2xl font-bold mb-4">🎯 For Monica: How to Edit This Page</h3>
+      <h3 class="text-2xl font-bold mb-4">✨ For Monica: How to Edit This Page</h3>
       <p class="text-lg mb-6 max-w-4xl mx-auto">
-        To edit any content on this homepage, go to your Sanity Studio and create a new "Post" with the slug "homepage-content". 
-        In the content area, paste JSON data with your hero, about, and testimonial sections.
+        All content on this homepage can be edited through simple form fields in Sanity Studio. 
+        Your current content is already loaded - just change what you want!
       </p>
-      <div class="max-w-2xl mx-auto text-left bg-monica-dark/20 p-6 rounded-lg">
-        <h4 class="text-lg font-semibold mb-3">Quick Start:</h4>
-        <ol class="list-decimal list-inside space-y-2 text-sm">
-          <li>Go to <strong>https://li2bkslz.sanity.studio</strong></li>
-          <li>Click "Create new Post"</li>
-          <li>Set title: "Homepage Content"</li>
-          <li>Set slug: "homepage-content"</li>
-          <li>In body content, paste your JSON structure</li>
-          <li>Publish and your changes appear here!</li>
-        </ol>
+      <div class="max-w-3xl mx-auto text-left bg-monica-dark/20 p-6 rounded-lg">
+        <h4 class="text-lg font-semibold mb-3">What Monica Sees in Sanity Studio:</h4>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <strong>Hero Section:</strong>
+            <ul class="list-disc list-inside ml-2 mt-1 space-y-1">
+              <li>Hero Title: "Doubtful to Decisive:"</li>
+              <li>Hero Subtitle: "Eight Steps to..."</li>
+              <li>Hero Description: "Transform your life..."</li>
+              <li>Primary Button Text: "📖 Get the Book"</li>
+              <li>Secondary Button Text: "🎁 Free Action Guide"</li>
+            </ul>
+          </div>
+          <div>
+            <strong>About Section:</strong>
+            <ul class="list-disc list-inside ml-2 mt-1 space-y-1">
+              <li>About Heading 1: "Meet"</li>
+              <li>About Heading 2: "Monica Leggett"</li>
+              <li>About Subtitle: "⭐ Certified Coach..."</li>
+              <li>About Bio 1: "I'm Monica Leggett..."</li>
+              <li>About Bio 2: "My approach isn't..."</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-4 text-center">
+          <strong>+ 3 Testimonial sections with Quote, Author, and Title fields</strong>
+        </div>
+        <div class="mt-6 text-center">
+          <a href="https://li2bkslz.sanity.studio" class="bg-monica-teal hover:bg-monica-sage px-6 py-3 rounded-lg font-bold text-white transition-colors">
+            🎯 Open Sanity Studio
+          </a>
+        </div>
       </div>
     </div>
   </section>

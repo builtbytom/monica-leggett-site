@@ -50,13 +50,33 @@ export async function getCategories() {
   return await client.fetch(query);
 }
 
-// Helper function to fetch homepage content from a special post
+// Helper function to fetch homepage content from proper Sanity fields
 export async function getHomepageContent() {
-  const query = `*[_type == "post" && slug.current == "homepage-content"][0] {
+  const query = `*[_type == "homepageSettings" && _id == "homepage-settings"][0] {
     _id,
-    title,
-    body,
-    "content": body[0].children[0].text
+    heroTitle,
+    heroSubtitle, 
+    heroDescription,
+    heroPrimaryCTA,
+    heroPrimaryLink,
+    heroSecondaryCTA,
+    heroSecondaryLink,
+    aboutHeading1,
+    aboutHeading2,
+    aboutSubtitle,
+    aboutBio1,
+    aboutBio2,
+    aboutCTAText,
+    aboutCTALink,
+    testimonial1Quote,
+    testimonial1Author,
+    testimonial1Title,
+    testimonial2Quote,
+    testimonial2Author,
+    testimonial2Title,
+    testimonial3Quote,
+    testimonial3Author,
+    testimonial3Title
   }`;
   
   const result = await client.fetch(query);
@@ -64,19 +84,16 @@ export async function getHomepageContent() {
   // If no homepage content exists, return default structure
   if (!result) {
     return {
-      heroSlides: [
-        {
-          title: "Doubtful to Decisive:",
-          subtitle: "Eight Steps to Get Unstuck and Take Action",
-          description: "Transform your life with my bestselling book. Learn the proven framework that's helped thousands move from paralysis to purposeful action.",
-          image: "/images/doubtful-to-decisive-book.png",
-          primaryCTA: "📖 Get the Book",
-          primaryLink: "/services/book",
-          secondaryCTA: "🎁 Free Action Guide", 
-          secondaryLink: "/learning-center"
-        }
-      ],
-      aboutSection: {
+      hero: {
+        title: "Doubtful to Decisive:",
+        subtitle: "Eight Steps to Get Unstuck and Take Action",
+        description: "Transform your life with my bestselling book. Learn the proven framework that's helped thousands move from paralysis to purposeful action.",
+        primaryCTA: "📖 Get the Book",
+        primaryLink: "/services/book",
+        secondaryCTA: "🎁 Free Action Guide", 
+        secondaryLink: "/learning-center"
+      },
+      about: {
         heading1: "Meet",
         heading2: "Monica Leggett",
         subtitle: "⭐ Certified Coach, Author, and Speaker",
@@ -105,11 +122,42 @@ export async function getHomepageContent() {
     };
   }
   
-  // Parse the content if it exists
-  try {
-    return JSON.parse(result.content);
-  } catch (e) {
-    // If parsing fails, return the default structure
-    return getHomepageContent();
-  }
+  // Convert Sanity fields to structured format
+  return {
+    hero: {
+      title: result.heroTitle || "Doubtful to Decisive:",
+      subtitle: result.heroSubtitle || "Eight Steps to Get Unstuck and Take Action", 
+      description: result.heroDescription || "Transform your life with my bestselling book...",
+      primaryCTA: result.heroPrimaryCTA || "📖 Get the Book",
+      primaryLink: result.heroPrimaryLink || "/services/book",
+      secondaryCTA: result.heroSecondaryCTA || "🎁 Free Action Guide",
+      secondaryLink: result.heroSecondaryLink || "/learning-center"
+    },
+    about: {
+      heading1: result.aboutHeading1 || "Meet",
+      heading2: result.aboutHeading2 || "Monica Leggett",
+      subtitle: result.aboutSubtitle || "⭐ Certified Coach, Author, and Speaker",
+      bio1: result.aboutBio1 || "I'm Monica Leggett...",
+      bio2: result.aboutBio2 || "My approach isn't just about reaching goals...",
+      ctaText: result.aboutCTAText || "✨ Learn More About Monica",
+      ctaLink: result.aboutCTALink || "/about"
+    },
+    testimonials: [
+      {
+        quote: result.testimonial1Quote || "Monica's coaching transformed my approach...",
+        author: result.testimonial1Author || "Sarah M.",
+        title: result.testimonial1Title || "Business Owner"
+      },
+      {
+        quote: result.testimonial2Quote || "The mastermind group changed everything...",
+        author: result.testimonial2Author || "Michael R.",
+        title: result.testimonial2Title || "Entrepreneur"
+      },
+      {
+        quote: result.testimonial3Quote || "'Doubtful to Decisive' gave me the tools...",
+        author: result.testimonial3Author || "Jennifer K.",
+        title: result.testimonial3Title || "Career Changer"
+      }
+    ]
+  };
 }
