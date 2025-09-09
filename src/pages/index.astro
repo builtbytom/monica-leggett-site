@@ -5,11 +5,7 @@ import { getHomepageContent } from '../lib/sanity.js';
 const homepageData = await getHomepageContent();
 ---
 
-<BaseLayout title="Home - Powered by Sanity CMS">
-  <!-- CMS Status Banner -->
-  <div class="bg-monica-teal text-white text-center py-2 text-sm">
-    ✨ This page is powered by Sanity CMS - All content can be edited by Monica
-  </div>
+<BaseLayout title="Home">
 
   <!-- Hero Carousel -->
   <section class="relative bg-gradient-to-br from-monica-navy/20 via-monica-teal/15 to-monica-sage/10 py-20 overflow-hidden">
@@ -260,49 +256,6 @@ const homepageData = await getHomepageContent();
     </div>
   </section>
 
-  <!-- CMS Instructions -->
-  <section class="py-12 bg-monica-navy text-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h3 class="text-2xl font-bold mb-4">✨ For Monica: How to Edit This Page</h3>
-      <p class="text-lg mb-6 max-w-4xl mx-auto">
-        All content on this homepage can be edited through simple form fields in Sanity Studio. 
-        Your current content is already loaded - just change what you want!
-      </p>
-      <div class="max-w-3xl mx-auto text-left bg-monica-dark/20 p-6 rounded-lg">
-        <h4 class="text-lg font-semibold mb-3">What Monica Sees in Sanity Studio:</h4>
-        <div class="grid md:grid-cols-2 gap-4 text-sm">
-          <div>
-            <strong>Hero Section:</strong>
-            <ul class="list-disc list-inside ml-2 mt-1 space-y-1">
-              <li>Hero Title: "Doubtful to Decisive:"</li>
-              <li>Hero Subtitle: "Eight Steps to..."</li>
-              <li>Hero Description: "Transform your life..."</li>
-              <li>Primary Button Text: "📖 Get the Book"</li>
-              <li>Secondary Button Text: "🎁 Free Action Guide"</li>
-            </ul>
-          </div>
-          <div>
-            <strong>About Section:</strong>
-            <ul class="list-disc list-inside ml-2 mt-1 space-y-1">
-              <li>About Heading 1: "Meet"</li>
-              <li>About Heading 2: "Monica Leggett"</li>
-              <li>About Subtitle: "⭐ Certified Coach..."</li>
-              <li>About Bio 1: "I'm Monica Leggett..."</li>
-              <li>About Bio 2: "My approach isn't..."</li>
-            </ul>
-          </div>
-        </div>
-        <div class="mt-4 text-center">
-          <strong>+ 3 Testimonial sections with Quote, Author, and Title fields</strong>
-        </div>
-        <div class="mt-6 text-center">
-          <a href="https://li2bkslz.sanity.studio" class="bg-monica-teal hover:bg-monica-sage px-6 py-3 rounded-lg font-bold text-white transition-colors">
-            🎯 Open Sanity Studio
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 </BaseLayout>
 
 <style>
