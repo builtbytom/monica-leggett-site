@@ -62,7 +62,17 @@ const relatedArticles = await getRelatedLearningCenterArticles(slug, article.cat
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <div class="prose prose-lg prose-monica max-w-none" data-cms={`article-content-${article.slug.current}`} data-cms-type="portabletext">
-          <PortableText value={article.content} />
+          <PortableText 
+            value={article.content}
+            components={{
+              types: {
+                image: ({ value }) => {
+                  const imageUrl = `https://cdn.sanity.io/images/li2bkslz/production/${value.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png').replace('-webp', '.webp')}`;
+                  return `<img src="${imageUrl}" alt="${value.alt || ''}" class="rounded-lg shadow-lg my-6" />`;
+                }
+              }
+            }}
+          />
         </div>
         
         <!-- Back to Learning Center -->
