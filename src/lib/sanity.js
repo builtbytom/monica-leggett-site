@@ -39,6 +39,53 @@ export async function getPost(slug) {
   return await client.fetch(query, { slug });
 }
 
+// Helper function to fetch About page content
+export async function getAboutPageContent() {
+  const query = `*[_type == "aboutPageSettings" && _id == "about-page-settings"][0] {
+    _id,
+    heroTitle,
+    heroSubtitle,
+    heroMotto,
+    heroImage,
+    heroStatTitle,
+    heroStatDescription,
+    heroDescription,
+    stat1Number,
+    stat1Label,
+    stat2Number,
+    stat2Label,
+    stat3Number,
+    stat3Label,
+    stat4Number,
+    stat4Label
+  }`;
+  
+  const result = await client.fetch(query);
+  
+  // If no About page content exists, return default structure
+  if (!result) {
+    return {
+      heroTitle: "Meet Monica Leggett",
+      heroSubtitle: "Professional Certified Coach | Author | Speaker",
+      heroMotto: '"Dream It. Plan It. Do It. Live It!"',
+      heroImage: null,
+      heroStatTitle: "15+ Years",
+      heroStatDescription: "Transforming Lives Through Coaching",
+      heroDescription: "For over 15 years, I've been helping individuals, couples, teams, and small business owners shift from struggling to thriving – one strategic step at a time. As a certified Professional Coach (PCC), mentor coach, and author, I'm passionate about helping you break free from doubt, overwhelm, and frustration to find clarity, confidence, and joy.\n\nKnown as the \"conversation whisperer,\" I specialize in helping my clients navigate crucial conversations that build or mend relationships. Whether you're an emerging leader, a small business owner, or someone seeking personal transformation, I provide the strategic guidance and support you need to achieve your goals.",
+      stat1Number: "500+",
+      stat1Label: "Clients Transformed",
+      stat2Number: "2",
+      stat2Label: "Published Books",
+      stat3Number: "15+",
+      stat3Label: "Years Experience",
+      stat4Number: "100%",
+      stat4Label: "Client Satisfaction"
+    };
+  }
+  
+  return result;
+}
+
 // Helper function to fetch categories
 export async function getCategories() {
   const query = `*[_type == "category"] {

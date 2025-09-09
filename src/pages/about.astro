@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAboutPageContent } from '../lib/sanity.js';
+
+const aboutData = await getAboutPageContent();
 ---
 
 <BaseLayout title="About Monica">
@@ -9,14 +12,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="max-w-6xl mx-auto">
         <!-- Centered Title Section -->
         <div class="text-center mb-12">
-          <h1 class="text-4xl lg:text-5xl font-serif font-bold text-monica-navy mb-4" data-cms="about-hero-title">
-            Meet Monica Leggett
+          <h1 class="text-4xl lg:text-5xl font-serif font-bold text-monica-navy mb-4">
+            {aboutData.heroTitle}
           </h1>
-          <p class="text-xl text-monica-teal font-medium mb-2" data-cms="about-hero-subtitle">
-            Professional Certified Coach | Author | Speaker
+          <p class="text-xl text-monica-teal font-medium mb-2">
+            {aboutData.heroSubtitle}
           </p>
-          <p class="text-lg text-monica-dark italic" data-cms="about-hero-motto">
-            "Dream It. Plan It. Do It. Live It!"
+          <p class="text-lg text-monica-dark italic">
+            {aboutData.heroMotto}
           </p>
         </div>
 
@@ -33,40 +36,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 data-cms-image="about-hero-image"
               >
               <div class="mt-4 bg-white rounded-lg shadow-lg p-4">
-                <p class="text-2xl font-serif font-bold text-monica-navy text-center" data-cms="about-hero-stat-title">15+ Years</p>
-                <p class="text-sm text-monica-light text-center" data-cms="about-hero-stat-description">Transforming Lives Through Coaching</p>
+                <p class="text-2xl font-serif font-bold text-monica-navy text-center">{aboutData.heroStatTitle}</p>
+                <p class="text-sm text-monica-light text-center">{aboutData.heroStatDescription}</p>
               </div>
             </div>
           </div>
 
           <!-- Right Column - Text Content -->
           <div class="lg:col-span-2 space-y-6">
-            <div class="prose prose-lg text-monica-light max-w-none" data-cms="about-hero-description" data-cms-type="markdown">
-              <p>
-                For over 15 years, I've been helping individuals, couples, teams, and small business owners shift from struggling to thriving – one strategic step at a time. As a certified Professional Coach (PCC), mentor coach, and author, I'm passionate about helping you break free from doubt, overwhelm, and frustration to find clarity, confidence, and joy.
-              </p>
-              <p>
-                Known as the "conversation whisperer," I specialize in helping my clients navigate crucial conversations that build or mend relationships. Whether you're an emerging leader, a small business owner, or someone seeking personal transformation, I provide the strategic guidance and support you need to achieve your goals.
-              </p>
+            <div class="prose prose-lg text-monica-light max-w-none">
+              {aboutData.heroDescription.split('\n').map(paragraph => paragraph.trim() && (
+                <p set:html={paragraph} />
+              ))}
             </div>
 
             <!-- Quick Stats -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div class="text-center p-4 bg-white rounded-lg shadow">
-                <p class="text-2xl font-bold text-monica-navy" data-cms="stat-1-number">500+</p>
-                <p class="text-sm text-monica-light" data-cms="stat-1-label">Clients Transformed</p>
+                <p class="text-2xl font-bold text-monica-navy">{aboutData.stat1Number}</p>
+                <p class="text-sm text-monica-light">{aboutData.stat1Label}</p>
               </div>
               <div class="text-center p-4 bg-white rounded-lg shadow">
-                <p class="text-2xl font-bold text-monica-navy" data-cms="stat-2-number">2</p>
-                <p class="text-sm text-monica-light" data-cms="stat-2-label">Published Books</p>
+                <p class="text-2xl font-bold text-monica-navy">{aboutData.stat2Number}</p>
+                <p class="text-sm text-monica-light">{aboutData.stat2Label}</p>
               </div>
               <div class="text-center p-4 bg-white rounded-lg shadow">
-                <p class="text-2xl font-bold text-monica-navy" data-cms="stat-3-number">37</p>
-                <p class="text-sm text-monica-light" data-cms="stat-3-label">Years Married</p>
+                <p class="text-2xl font-bold text-monica-navy">{aboutData.stat3Number}</p>
+                <p class="text-sm text-monica-light">{aboutData.stat3Label}</p>
               </div>
               <div class="text-center p-4 bg-white rounded-lg shadow">
-                <p class="text-2xl font-bold text-monica-navy" data-cms="stat-4-number">2019</p>
-                <p class="text-sm text-monica-light" data-cms="stat-4-label">ICF President</p>
+                <p class="text-2xl font-bold text-monica-navy">{aboutData.stat4Number}</p>
+                <p class="text-sm text-monica-light">{aboutData.stat4Label}</p>
               </div>
             </div>
 

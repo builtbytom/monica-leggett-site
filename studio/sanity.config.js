@@ -2,6 +2,104 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 
+// Schema for Monica's About page content
+const aboutPageSettings = {
+  name: 'aboutPageSettings',
+  title: 'About Page Content',
+  type: 'document',
+  fields: [
+    // Hero Section
+    {
+      name: 'heroTitle',
+      title: 'Main Headline',
+      type: 'string',
+      description: 'Main page title (e.g., "Meet Monica Leggett")'
+    },
+    {
+      name: 'heroSubtitle',
+      title: 'Professional Title',
+      type: 'string',
+      description: 'Professional credentials line'
+    },
+    {
+      name: 'heroMotto',
+      title: 'Personal Motto',
+      type: 'string',
+      description: 'Inspirational quote or motto'
+    },
+    {
+      name: 'heroImage',
+      title: 'Profile Photo',
+      type: 'image',
+      description: 'Main profile photo',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'heroStatTitle',
+      title: 'Experience Stat (Number)',
+      type: 'string',
+      description: 'Years of experience (e.g., "15+ Years")'
+    },
+    {
+      name: 'heroStatDescription',
+      title: 'Experience Stat (Description)',
+      type: 'string',
+      description: 'What the experience relates to'
+    },
+    {
+      name: 'heroDescription',
+      title: 'About Description',
+      type: 'text',
+      rows: 8,
+      description: 'Main about description paragraphs'
+    },
+    
+    // Quick Stats
+    {
+      name: 'stat1Number',
+      title: 'Stat 1 - Number',
+      type: 'string'
+    },
+    {
+      name: 'stat1Label',
+      title: 'Stat 1 - Label',
+      type: 'string'
+    },
+    {
+      name: 'stat2Number',
+      title: 'Stat 2 - Number',
+      type: 'string'
+    },
+    {
+      name: 'stat2Label',
+      title: 'Stat 2 - Label',
+      type: 'string'
+    },
+    {
+      name: 'stat3Number',
+      title: 'Stat 3 - Number',
+      type: 'string'
+    },
+    {
+      name: 'stat3Label',
+      title: 'Stat 3 - Label',
+      type: 'string'
+    },
+    {
+      name: 'stat4Number',
+      title: 'Stat 4 - Number',
+      type: 'string'
+    },
+    {
+      name: 'stat4Label',
+      title: 'Stat 4 - Label',
+      type: 'string'
+    }
+  ]
+}
+
 // Schema for Monica's homepage content
 const homepageSettings = {
   name: 'homepageSettings',
@@ -181,12 +279,21 @@ export default defineConfig({
                   .schemaType('homepageSettings')
                   .documentId('homepage-settings')
                   .title('Edit Homepage')
+              ),
+            S.listItem()
+              .title('About Page Content')
+              .icon(() => '👤')
+              .child(
+                S.document()
+                  .schemaType('aboutPageSettings')
+                  .documentId('about-page-settings')
+                  .title('Edit About Page')
               )
           ])
     }),
     visionTool()
   ],
   schema: {
-    types: [homepageSettings]
+    types: [homepageSettings, aboutPageSettings]
   }
 })
