@@ -2,6 +2,90 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 
+// Schema for Contact Page
+const contactPageSettings = {
+  name: 'contactPageSettings',
+  title: 'Contact Page Content',
+  type: 'document',
+  fields: [
+    // Hero Section
+    {
+      name: 'heroTitle',
+      title: 'Page Title',
+      type: 'string',
+      description: 'Main headline for contact page'
+    },
+    {
+      name: 'heroSubtitle',
+      title: 'Page Subtitle',
+      type: 'string',
+      description: 'Supporting text under the title'
+    },
+    {
+      name: 'heroDescription',
+      title: 'Introduction Text',
+      type: 'text',
+      rows: 2,
+      description: 'Opening paragraph'
+    },
+    
+    // Schedule Card
+    {
+      name: 'scheduleTitle',
+      title: 'Schedule Card - Title',
+      type: 'string'
+    },
+    {
+      name: 'scheduleDescription',
+      title: 'Schedule Card - Description',
+      type: 'string'
+    },
+    
+    // Contact Info
+    {
+      name: 'contactEmail',
+      title: 'Email Address',
+      type: 'string'
+    },
+    {
+      name: 'contactPhone',
+      title: 'Phone Number (optional)',
+      type: 'string'
+    },
+    {
+      name: 'contactLocation',
+      title: 'Location',
+      type: 'string'
+    },
+    
+    // Office Hours
+    {
+      name: 'officeHours',
+      title: 'Office Hours',
+      type: 'text',
+      rows: 3,
+      description: 'When you are available'
+    },
+    
+    // Social Links
+    {
+      name: 'linkedinUrl',
+      title: 'LinkedIn URL',
+      type: 'url'
+    },
+    {
+      name: 'facebookUrl',
+      title: 'Facebook URL',
+      type: 'url'
+    },
+    {
+      name: 'instagramUrl',
+      title: 'Instagram URL',
+      type: 'url'
+    }
+  ]
+}
+
 // Schema for Service Pages (Book, Coaching, Masterminds, etc.)
 const servicePageSettings = {
   name: 'servicePageSettings',
@@ -420,12 +504,21 @@ export default defineConfig({
                           .title('Edit Masterminds Page')
                       )
                   ])
+              ),
+            S.listItem()
+              .title('Contact Page')
+              .icon(() => '📞')
+              .child(
+                S.document()
+                  .schemaType('contactPageSettings')
+                  .documentId('contact-page-settings')
+                  .title('Edit Contact Page')
               )
           ])
     }),
     visionTool()
   ],
   schema: {
-    types: [homepageSettings, aboutPageSettings, servicePageSettings]
+    types: [homepageSettings, aboutPageSettings, servicePageSettings, contactPageSettings]
   }
 })

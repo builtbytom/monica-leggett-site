@@ -145,6 +145,47 @@ export async function getServicePageContent(serviceType) {
   return result;
 }
 
+// Helper function to fetch contact page content
+export async function getContactPageContent() {
+  const query = `*[_type == "contactPageSettings" && _id == "contact-page-settings"][0] {
+    _id,
+    heroTitle,
+    heroSubtitle,
+    heroDescription,
+    scheduleTitle,
+    scheduleDescription,
+    contactEmail,
+    contactPhone,
+    contactLocation,
+    officeHours,
+    linkedinUrl,
+    facebookUrl,
+    instagramUrl
+  }`;
+  
+  const result = await client.fetch(query);
+  
+  // If no contact content exists, return default structure
+  if (!result) {
+    return {
+      heroTitle: "Let's Start Your Transformation",
+      heroSubtitle: "Your Journey to Clarity and Confidence Begins Here",
+      heroDescription: "Whether you're ready to work together or just exploring your options, I'm here to help. Choose the best way to connect below.",
+      scheduleTitle: "Schedule a Free Discovery Call",
+      scheduleDescription: "30-minute no-pressure conversation about your goals",
+      contactEmail: "monica@monicaleggett.com",
+      contactPhone: "",
+      contactLocation: "Connecticut, USA",
+      officeHours: "Monday - Friday: 9:00 AM - 5:00 PM EST\nSaturday: By appointment\nSunday: Closed",
+      linkedinUrl: "https://www.linkedin.com/in/monicaleggett",
+      facebookUrl: "https://www.facebook.com/monicaleggettcoaching",
+      instagramUrl: "https://www.instagram.com/monicaleggett"
+    };
+  }
+  
+  return result;
+}
+
 // Helper function to fetch categories
 export async function getCategories() {
   const query = `*[_type == "category"] {
