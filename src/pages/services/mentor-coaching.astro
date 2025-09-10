@@ -129,14 +129,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
         <div class="space-y-8">
           <!-- Group Mentor Coaching -->
-          <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="program-card animate-slide-in-up">
             <div class="grid lg:grid-cols-3 gap-0">
-              <div class="bg-gradient-to-br from-monica-navy to-monica-teal p-8 text-white">
-                <h3 class="text-2xl font-serif font-bold mb-3" data-cms="group-title">
+              <div class="program-card-header bg-gradient-to-br from-monica-navy to-monica-teal">
+                <div class="program-icon-container">
+                  <div class="program-icon">👥</div>
+                  <div class="program-icon-bg"></div>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-3 text-white drop-shadow-lg" data-cms="group-title">
                   Group Mentor Coaching
                 </h3>
-                <p class="mb-4" data-cms="group-duration">10 hours over 3 months</p>
-                <p class="text-white/90" data-cms="group-description">
+                <p class="mb-4 text-white/95 font-medium drop-shadow" data-cms="group-duration">10 hours over 3 months</p>
+                <p class="text-white/90 drop-shadow" data-cms="group-description">
                   Learn alongside 3-5 other coaches in a supportive, collaborative environment
                 </p>
               </div>
@@ -176,14 +180,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </div>
 
           <!-- Individual Mentor Coaching -->
-          <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="program-card animate-slide-in-up" style="animation-delay: 0.2s">
             <div class="grid lg:grid-cols-3 gap-0">
-              <div class="bg-gradient-to-br from-monica-sage to-green-600 p-8 text-white">
-                <h3 class="text-2xl font-serif font-bold mb-3" data-cms="individual-title">
+              <div class="program-card-header bg-gradient-to-br from-monica-sage to-green-600">
+                <div class="program-icon-container">
+                  <div class="program-icon">🎯</div>
+                  <div class="program-icon-bg"></div>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-3 text-white drop-shadow-lg" data-cms="individual-title">
                   Individual Mentor Coaching
                 </h3>
-                <p class="mb-4" data-cms="individual-duration">Customized timeline</p>
-                <p class="text-white/90" data-cms="individual-description">
+                <p class="mb-4 text-white/95 font-medium drop-shadow" data-cms="individual-duration">Customized timeline</p>
+                <p class="text-white/90 drop-shadow" data-cms="individual-description">
                   Personalized one-on-one mentoring tailored to your specific needs
                 </p>
               </div>
@@ -235,21 +243,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </h2>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-            <h3 class="font-bold text-monica-navy mb-2" data-cms="competency-1-title">Foundation</h3>
-            <p class="text-sm text-monica-light" data-cms="competency-1-text">Ethics, coaching agreement, trust & safety</p>
+          <div class="competency-card animate-slide-in-up">
+            <div class="competency-icon-container">
+              <div class="competency-icon">⚖️</div>
+              <div class="competency-icon-bg"></div>
+            </div>
+            <h3 class="font-serif font-bold text-monica-navy mb-3" data-cms="competency-1-title">Foundation</h3>
+            <p class="text-monica-light leading-relaxed" data-cms="competency-1-text">Ethics, coaching agreement, trust & safety</p>
           </div>
-          <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-            <h3 class="font-bold text-monica-navy mb-2" data-cms="competency-2-title">Co-Creating</h3>
-            <p class="text-sm text-monica-light" data-cms="competency-2-text">Partnership, presence, and coaching mindset</p>
+          <div class="competency-card animate-slide-in-up" style="animation-delay: 0.1s">
+            <div class="competency-icon-container">
+              <div class="competency-icon">🤝</div>
+              <div class="competency-icon-bg"></div>
+            </div>
+            <h3 class="font-serif font-bold text-monica-navy mb-3" data-cms="competency-2-title">Co-Creating</h3>
+            <p class="text-monica-light leading-relaxed" data-cms="competency-2-text">Partnership, presence, and coaching mindset</p>
           </div>
-          <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-            <h3 class="font-bold text-monica-navy mb-2" data-cms="competency-3-title">Communicating</h3>
-            <p class="text-sm text-monica-light" data-cms="competency-3-text">Active listening, powerful questioning, direct communication</p>
+          <div class="competency-card animate-slide-in-up" style="animation-delay: 0.2s">
+            <div class="competency-icon-container">
+              <div class="competency-icon">💬</div>
+              <div class="competency-icon-bg"></div>
+            </div>
+            <h3 class="font-serif font-bold text-monica-navy mb-3" data-cms="competency-3-title">Communicating</h3>
+            <p class="text-monica-light leading-relaxed" data-cms="competency-3-text">Active listening, powerful questioning, direct communication</p>
           </div>
-          <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-            <h3 class="font-bold text-monica-navy mb-2" data-cms="competency-4-title">Cultivating</h3>
-            <p class="text-sm text-monica-light" data-cms="competency-4-text">Learning, growth, awareness, and client insights</p>
+          <div class="competency-card animate-slide-in-up" style="animation-delay: 0.3s">
+            <div class="competency-icon-container">
+              <div class="competency-icon">🌱</div>
+              <div class="competency-icon-bg"></div>
+            </div>
+            <h3 class="font-serif font-bold text-monica-navy mb-3" data-cms="competency-4-title">Cultivating</h3>
+            <p class="text-monica-light leading-relaxed" data-cms="competency-4-text">Learning, growth, awareness, and client insights</p>
           </div>
         </div>
       </div>
@@ -298,3 +322,206 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  @keyframes slide-in-up {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.6s ease-out forwards;
+  }
+
+  /* Program Cards */
+  .program-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px rgba(26, 60, 93, 0.08);
+    border: 1px solid rgba(26, 60, 93, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .program-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #209697, #98B966);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .program-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(26, 60, 93, 0.15);
+    border-color: rgba(32, 150, 151, 0.3);
+  }
+
+  .program-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .program-card:nth-child(even):hover {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+
+  .program-card-header {
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .program-card-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0);
+  }
+
+  .program-card:hover .program-card-header::before {
+    transform: scale(1);
+  }
+
+  .program-icon-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+  }
+
+  .program-icon {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .program-icon-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .program-card:hover .program-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .program-card:hover .program-icon-bg {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .program-card:nth-child(even):hover .program-icon {
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  /* Competency Cards */
+  .competency-card {
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px rgba(26, 60, 93, 0.08);
+    border: 1px solid rgba(26, 60, 93, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .competency-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #209697, #98B966);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .competency-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(26, 60, 93, 0.15);
+    border-color: rgba(32, 150, 151, 0.3);
+  }
+
+  .competency-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .competency-icon-container {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .competency-icon {
+    position: relative;
+    z-index: 2;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .competency-icon-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(32, 150, 151, 0.15) 0%, rgba(152, 185, 102, 0.15) 100%);
+    border-radius: 50%;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .competency-card:hover .competency-icon {
+    transform: scale(1.2) rotate(5deg);
+  }
+
+  .competency-card:hover .competency-icon-bg {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .competency-card:nth-child(even):hover .competency-icon {
+    transform: scale(1.2) rotate(-5deg);
+  }
+</style>
